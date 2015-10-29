@@ -27,8 +27,10 @@ public class Rotator2 extends EffectDialog
 		sampleCounter ++;
 		
 		double sample_divisor = 48000.0 / para[1];
-		double sample_reminder = (double)sampleCounter % sample_divisor;
-		double omega = sample_reminder * ( 2.0 * Math.PI);
+        //double sample_reminder = ((double)sampleCounter) % sample_divisor;
+        double sample_reminder = ((double)sampleCounter) / sample_divisor;
+		sample_reminder = sample_reminder - Math.floor( sample_reminder);
+        double omega = sample_reminder * ( 2.0 * Math.PI);
 		double splitter = para[2] * Math.sin( omega );
         double fak_bridge = para[0] + splitter;
         double fak_neck = 1.0 - para[0] - splitter;

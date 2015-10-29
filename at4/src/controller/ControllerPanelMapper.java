@@ -123,6 +123,7 @@ public class ControllerPanelMapper extends BorderPanel implements IFromMidi
     {
         left[index] = d;
         left2mid();
+        mid2right();
     }
 
     // ////////////////////////////////////////
