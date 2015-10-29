@@ -1,0 +1,258 @@
+Detected Java version: 1.8 in: G:\jdk_win\jre
+Detected OS: Windows 7
+parsing buildfile G:\ews_hold\launcher\build.xml with URI = file:/G:/ews_hold/launcher/build.xml
+Project base dir set to: G:\ews_hold\launcher
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean, build.number, build, PushOut, post_build, all, ]
+
+clean:
+   [delete] Deleting directory G:\ews_hold\launcher\dist
+   [delete] Deleting G:\ews_hold\launcher\dist\launcher.jar
+   [delete] Deleting G:\ews_hold\launcher\dist\fap.jar
+   [delete] Deleting G:\ews_hold\launcher\dist\launcher.json
+   [delete] Deleting G:\ews_hold\launcher\dist\run.bat
+   [delete] Deleting directory G:\ews_hold\launcher\dist
+   [delete] Deleting directory G:\ews_hold\launcher\bin
+   [delete] Deleting G:\ews_hold\launcher\bin\resources\launcher.buildnumber
+   [delete] Deleting directory G:\ews_hold\launcher\bin\resources
+   [delete] Deleting G:\ews_hold\launcher\bin\json\launcher.json
+   [delete] Deleting G:\ews_hold\launcher\bin\json\JsonControlFile.class
+   [delete] Deleting directory G:\ews_hold\launcher\bin\json
+   [delete] Deleting G:\ews_hold\launcher\bin\h1\Frame3.class
+   [delete] Deleting directory G:\ews_hold\launcher\bin\h1
+   [delete] Deleting G:\ews_hold\launcher\bin\util1.class
+   [delete] Deleting G:\ews_hold\launcher\bin\myLogger.class
+   [delete] Deleting G:\ews_hold\launcher\bin\PG.class
+   [delete] Deleting G:\ews_hold\launcher\bin\OsIdentifier.class
+   [delete] Deleting G:\ews_hold\launcher\bin\LauncherFrame$DeveloperSwitch.class
+   [delete] Deleting G:\ews_hold\launcher\bin\LauncherFrame.class
+   [delete] Deleting G:\ews_hold\launcher\bin\LauncherApps.class
+   [delete] Deleting G:\ews_hold\launcher\bin\LAFButton3$LAFSelect.class
+   [delete] Deleting G:\ews_hold\launcher\bin\LAFButton3.class
+   [delete] Deleting G:\ews_hold\launcher\bin\LAFButton3$bh.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ForeginLauncher.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationGroup.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryShowHomeDir.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryOutsideJVM.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryNativeScript.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryNativeCommand.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryJava.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryInsideJVM.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryExit.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntryDocument.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationEntry.class
+   [delete] Deleting G:\ews_hold\launcher\bin\ApplicationButton.class
+   [delete] Deleting directory G:\ews_hold\launcher\bin
+
+build.number:
+     [echo] build.number 16
+     [echo] build.number 17
+
+build:
+    [mkdir] Created dir: G:\ews_hold\launcher\bin
+    [mkdir] Created dir: G:\ews_hold\launcher\dist
+    [javac] G:\ews_hold\launcher\build.xml:65: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] LauncherApps.java added as LauncherApps.class doesn't exist.
+    [javac] Compiling 1 source file to G:\ews_hold\launcher\bin
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'G:\ews_hold\launcher\bin'
+    [javac] '-classpath'
+    [javac] 'G:\ews_hold\launcher\bin;G:\ews_hold\launcher\lib\javax.json-1.0.4.jar;G:\ant\lib\ant-launcher.jar;G:\ant\lib\ant-jdepend.jar;G:\ant\lib\ant-netrexx.jar;G:\ant\lib\ant-jmf.jar;G:\ant\lib\ant-javamail.jar;G:\ant\lib\ant-apache-resolver.jar;G:\ant\lib\ant-testutil.jar;G:\ant\lib\ant-commons-logging.jar;G:\ant\lib\ant-apache-oro.jar;G:\ant\lib\ant-swing.jar;G:\ant\lib\ant-junit4.jar;G:\ant\lib\ant-commons-net.jar;G:\ant\lib\ant-apache-xalan2.jar;G:\ant\lib\ant-apache-regexp.jar;G:\ant\lib\ant-apache-log4j.jar;G:\ant\lib\ant-junit.jar;G:\ant\lib\ant-antlr.jar;G:\ant\lib\ant-jsch.jar;G:\ant\lib\ant-apache-bsf.jar;G:\ant\lib\ant-jai.jar;G:\ant\lib\ant-apache-bcel.jar;G:\ant\lib\ant.jar;G:\jdk_win\lib\tools.jar'
+    [javac] '-sourcepath'
+    [javac] 'G:\ews_hold\launcher\src'
+    [javac] '-g'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] File to be compiled:
+    [javac]     G:\ews_hold\launcher\src\LauncherApps.java
+    [javac] Note: G:\ews_hold\launcher\src\ApplicationEntryInsideJVM.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+      [jar] Building jar: G:\ews_hold\launcher\dist\launcher.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding entry ApplicationButton.class
+      [jar] adding entry ApplicationEntry.class
+      [jar] adding entry ApplicationEntryDocument.class
+      [jar] adding entry ApplicationEntryExit.class
+      [jar] adding entry ApplicationEntryInsideJVM.class
+      [jar] adding entry ApplicationEntryJava.class
+      [jar] adding entry ApplicationEntryNativeScript.class
+      [jar] adding entry ApplicationEntryOutsideJVM.class
+      [jar] adding entry ApplicationEntryShowHomeDir.class
+      [jar] adding entry ApplicationGroup.class
+      [jar] adding entry ForeginLauncher.class
+      [jar] adding entry LAFButton3$LAFSelect.class
+      [jar] adding entry LAFButton3$bh.class
+      [jar] adding entry LAFButton3.class
+      [jar] adding entry LauncherApps.class
+      [jar] adding entry LauncherFrame$DeveloperSwitch.class
+      [jar] adding entry LauncherFrame.class
+      [jar] adding entry OsIdentifier.class
+      [jar] adding entry PG.class
+      [jar] adding directory h1/
+      [jar] adding entry h1/Frame3.class
+      [jar] adding directory json/
+      [jar] adding entry json/JsonControlFile.class
+      [jar] adding entry myLogger.class
+      [jar] adding entry util1.class
+      [jar] adding directory resources/
+      [jar] adding entry resources/launcher.buildnumber
+      [jar] adding entry json/launcher.json
+      [jar] adding directory javax/
+      [jar] adding directory javax/json/
+      [jar] adding entry javax/json/Json.class
+      [jar] adding entry javax/json/JsonArray.class
+      [jar] adding entry javax/json/JsonArrayBuilder.class
+      [jar] adding entry javax/json/JsonBuilderFactory.class
+      [jar] adding entry javax/json/JsonException.class
+      [jar] adding entry javax/json/JsonNumber.class
+      [jar] adding entry javax/json/JsonObject.class
+      [jar] adding entry javax/json/JsonObjectBuilder.class
+      [jar] adding entry javax/json/JsonReader.class
+      [jar] adding entry javax/json/JsonReaderFactory.class
+      [jar] adding entry javax/json/JsonString.class
+      [jar] adding entry javax/json/JsonStructure.class
+      [jar] adding entry javax/json/JsonValue$1.class
+      [jar] adding entry javax/json/JsonValue$2.class
+      [jar] adding entry javax/json/JsonValue$3.class
+      [jar] adding entry javax/json/JsonValue$ValueType.class
+      [jar] adding entry javax/json/JsonValue.class
+      [jar] adding entry javax/json/JsonWriter.class
+      [jar] adding entry javax/json/JsonWriterFactory.class
+      [jar] adding directory javax/json/spi/
+      [jar] adding entry javax/json/spi/JsonProvider.class
+      [jar] adding directory javax/json/stream/
+      [jar] adding entry javax/json/stream/JsonGenerationException.class
+      [jar] adding entry javax/json/stream/JsonGenerator.class
+      [jar] adding entry javax/json/stream/JsonGeneratorFactory.class
+      [jar] adding entry javax/json/stream/JsonLocation.class
+      [jar] adding entry javax/json/stream/JsonParser$Event.class
+      [jar] adding entry javax/json/stream/JsonParser.class
+      [jar] adding entry javax/json/stream/JsonParserFactory.class
+      [jar] adding entry javax/json/stream/JsonParsingException.class
+      [jar] adding directory org/
+      [jar] adding directory org/glassfish/
+      [jar] adding directory org/glassfish/json/
+      [jar] adding entry org/glassfish/json/BufferPoolImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl$JsonArrayImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonBuilderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Scope.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonLocationImpl.class
+      [jar] adding entry org/glassfish/json/JsonMessages.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonBigDecimalNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonIntNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonLongNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl$JsonObjectImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ArrayContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$NoneContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ObjectContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Stack.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$StateIterator.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl.class
+      [jar] adding entry org/glassfish/json/JsonPrettyGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonProviderImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl.class
+      [jar] adding entry org/glassfish/json/JsonStringImpl.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$1.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ArrayScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ObjectScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$Scope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer$JsonToken.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer.class
+      [jar] adding entry org/glassfish/json/JsonWriterFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl$NoFlushOutputStream.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl.class
+      [jar] adding entry org/glassfish/json/UnicodeDetectingInputStream.class
+      [jar] adding directory org/glassfish/json/api/
+      [jar] adding entry org/glassfish/json/api/BufferPool.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: G:\ews_hold\launcher\build.xml:72: 
+     [copy] fap.jar added as fap.jar doesn't exist.
+     [copy] launcher.json added as launcher.json doesn't exist.
+     [copy] run.bat added as run.bat doesn't exist.
+     [copy] Copying 3 files to G:\ews_hold\launcher\dist
+     [copy] Copying G:\ews_hold\launcher\dist_add\fap.jar to G:\ews_hold\launcher\dist\fap.jar
+     [copy] Copying G:\ews_hold\launcher\dist_add\launcher.json to G:\ews_hold\launcher\dist\launcher.json
+     [copy] Copying G:\ews_hold\launcher\dist_add\run.bat to G:\ews_hold\launcher\dist\run.bat
+
+PushOut:
+   [delete] Could not find file G:\backup\launcher_17.zip to delete.
+      [zip] Building zip: G:\backup\launcher_17.zip
+      [zip] adding directory dist/
+      [zip] adding directory dist_add/
+      [zip] adding directory lib/
+      [zip] adding directory src/
+      [zip] adding directory src/resources/
+      [zip] adding entry .classpath
+      [zip] adding entry .project
+      [zip] adding entry dist/fap.jar
+      [zip] adding entry dist/launcher.jar
+      [zip] adding entry dist/launcher.json
+      [zip] adding entry dist/run.bat
+      [zip] adding entry dist_add/fap.jar
+      [zip] adding entry dist_add/launcher.json
+      [zip] adding entry dist_add/run.bat
+      [zip] adding entry lib/JSON Processing.URL
+      [zip] adding entry lib/JSON_checker.URL
+      [zip] adding entry lib/Java API for JSON Processing.URL
+      [zip] adding entry lib/JsonArray (JSR 353 (JSON Processing) API 1.0-SNAPSHOT API).URL
+      [zip] adding entry lib/javax.json-1.0.4.jar
+      [zip] adding entry lib/jg.txt
+      [zip] adding entry lib/jsonlint.com.URL
+      [zip] adding entry lib/www.json.org.URL
+      [zip] adding entry src/ApplicationButton.java
+      [zip] adding entry src/ApplicationEntry.java
+      [zip] adding entry src/ApplicationEntryDocument.java
+      [zip] adding entry src/ApplicationEntryExit.java
+      [zip] adding entry src/ApplicationEntryInsideJVM.java
+      [zip] adding entry src/ApplicationEntryJava.java
+      [zip] adding entry src/ApplicationEntryNativeCommand.java
+      [zip] adding entry src/ApplicationEntryNativeScript.java
+      [zip] adding entry src/ApplicationEntryOutsideJVM.java
+      [zip] adding entry src/ApplicationEntryShowHomeDir.java
+      [zip] adding entry src/ApplicationGroup.java
+      [zip] adding entry src/ForeginLauncher.java
+      [zip] adding entry src/LAFButton3.java
+      [zip] adding entry src/LauncherApps.java
+      [zip] adding entry src/LauncherFrame.java
+      [zip] adding entry src/OsIdentifier.java
+      [zip] adding entry src/PG.java
+      [zip] adding directory src/h1/
+      [zip] adding entry src/h1/Frame3.java
+      [zip] adding directory src/json/
+      [zip] adding entry src/json/JsonControlFile.java
+      [zip] adding entry src/json/launcher.json
+      [zip] adding entry src/myLogger.java
+      [zip] adding entry src/resources/launcher.buildnumber
+      [zip] adding entry src/util1.java
+      [zip] adding entry Disabled_SetEnv.bat
+      [zip] adding entry ant_all.bat
+      [zip] adding entry build.xml
+      [zip] adding entry ant.log
+
+post_build:
+     [copy] No sources found.
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 4 seconds

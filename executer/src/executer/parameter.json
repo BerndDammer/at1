@@ -1,0 +1,15 @@
+{ 
+	"CommandPath" : "..\\PortableVLC", 
+	"sdfile" : "tvsd.m3u", 
+	"hdfile" : "tvhd.m3u", 
+	"sdfavorites" : 
+	[ 
+		"das erste",
+		"zdf"
+	 ],
+	 "hdfavorites" :
+	 [
+	 	"wefewgfieuw",
+	 	"erijgewrj"
+	 ]
+ }

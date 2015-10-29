@@ -1,0 +1,170 @@
+Detected Java version: 1.8 in: G:\jdk_win\jre
+Detected OS: Windows 7
+parsing buildfile G:\ews\atdaemon\build.xml with URI = file:/G:/ews/atdaemon/build.xml
+Project base dir set to: G:\ews\atdaemon
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean_thumbs, clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean_thumbs, clean, build.number, build, PushOut, post_build, all, ]
+
+clean_thumbs:
+
+clean:
+   [delete] Deleting directory G:\ews\atdaemon\dist
+   [delete] Deleting G:\ews\atdaemon\dist\atdaemon.jar
+   [delete] Deleting G:\ews\atdaemon\dist\run.bat
+   [delete] Deleting directory G:\ews\atdaemon\dist
+   [delete] Deleting directory G:\ews\atdaemon\bin
+   [delete] Deleting G:\ews\atdaemon\bin\starter\Atdaemon.class
+   [delete] Deleting G:\ews\atdaemon\bin\starter\CentralDeamon.class
+   [delete] Deleting directory G:\ews\atdaemon\bin\starter
+   [delete] Deleting G:\ews\atdaemon\bin\platform_base\PlatformBase.class
+   [delete] Deleting directory G:\ews\atdaemon\bin\platform_base
+   [delete] Deleting G:\ews\atdaemon\bin\splicing_sleeve\DeamonServer.class
+   [delete] Deleting directory G:\ews\atdaemon\bin\splicing_sleeve
+   [delete] Deleting G:\ews\atdaemon\bin\function\IFunction.class
+   [delete] Deleting G:\ews\atdaemon\bin\function\IPlayer.class
+   [delete] Deleting G:\ews\atdaemon\bin\function\IChain.class
+   [delete] Deleting directory G:\ews\atdaemon\bin\function
+   [delete] Deleting directory G:\ews\atdaemon\bin
+
+build.number:
+     [echo] build.number 4
+     [echo] build.number 5
+
+build:
+    [mkdir] Created dir: G:\ews\atdaemon\bin
+    [mkdir] Created dir: G:\ews\atdaemon\dist
+    [javac] G:\ews\atdaemon\build.xml:78: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] starter\Atdaemon.java added as starter\Atdaemon.class doesn't exist.
+    [javac] Compiling 1 source file to G:\ews\atdaemon\bin
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'G:\ews\atdaemon\bin'
+    [javac] '-classpath'
+    [javac] 'G:\ews\atdaemon\bin;G:\ews\atinterfaces\bin;G:\ant\lib\ant-launcher.jar;G:\ant\lib\ant-jdepend.jar;G:\ant\lib\ant-netrexx.jar;G:\ant\lib\ant-jmf.jar;G:\ant\lib\ant-javamail.jar;G:\ant\lib\ant-apache-resolver.jar;G:\ant\lib\ant-testutil.jar;G:\ant\lib\ant-commons-logging.jar;G:\ant\lib\ant-apache-oro.jar;G:\ant\lib\ant-swing.jar;G:\ant\lib\ant-junit4.jar;G:\ant\lib\ant-commons-net.jar;G:\ant\lib\ant-apache-xalan2.jar;G:\ant\lib\ant-apache-regexp.jar;G:\ant\lib\ant-apache-log4j.jar;G:\ant\lib\ant-junit.jar;G:\ant\lib\ant-antlr.jar;G:\ant\lib\ant-jsch.jar;G:\ant\lib\ant-apache-bsf.jar;G:\ant\lib\ant-jai.jar;G:\ant\lib\ant-apache-bcel.jar;G:\ant\lib\ant.jar;G:\jdk_win\lib\tools.jar'
+    [javac] '-sourcepath'
+    [javac] 'G:\ews\atdaemon\src'
+    [javac] '-g'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] File to be compiled:
+    [javac]     G:\ews\atdaemon\src\starter\Atdaemon.java
+      [jar] found a total of 0 manifests in 4 resource collections
+      [jar] Building jar: G:\ews\atdaemon\dist\atdaemon.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding directory function/
+      [jar] adding entry function/IChain.class
+      [jar] adding entry function/IFunction.class
+      [jar] adding entry function/IPlayer.class
+      [jar] adding directory platform_base/
+      [jar] adding entry platform_base/PlatformBase.class
+      [jar] adding directory splicing_sleeve/
+      [jar] adding entry splicing_sleeve/DeamonServer.class
+      [jar] adding directory starter/
+      [jar] adding entry starter/Atdaemon.class
+      [jar] adding entry starter/CentralDeamon.class
+      [jar] adding directory buildnumber/
+      [jar] adding entry buildnumber/atdaemon.buildnumber
+      [jar] adding directory generals/
+      [jar] adding entry generals/ATConstants.class
+      [jar] adding entry platform_base/PLATFORM.class
+      [jar] adding entry splicing_sleeve/AutomaticNetworkInterface.class
+      [jar] adding entry splicing_sleeve/IControlClient.class
+      [jar] adding entry splicing_sleeve/IControlPortBase.class
+      [jar] adding entry splicing_sleeve/IControlServer.class
+      [jar] adding entry splicing_sleeve/MonitorPort.class
+      [jar] adding entry starter/error.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: G:\ews\atdaemon\build.xml:90: 
+     [copy] run.bat added as run.bat doesn't exist.
+     [copy] Copying 1 file to G:\ews\atdaemon\dist
+     [copy] Copying G:\ews\atdaemon\dist_add\run.bat to G:\ews\atdaemon\dist\run.bat
+
+PushOut:
+   [delete] Could not find file G:\backup\atdaemon_5.zip to delete.
+      [zip] Building zip: G:\backup\atdaemon_5.zip
+      [zip] adding directory dist/
+      [zip] adding directory dist_add/
+      [zip] adding directory lib/
+      [zip] adding directory lib/jasio/
+      [zip] adding directory lib/portaudio/
+      [zip] adding directory src/
+      [zip] adding directory src/buildnumber/
+      [zip] adding entry .classpath
+      [zip] adding entry .project
+      [zip] adding entry dist/atdaemon.jar
+      [zip] adding entry dist/run.bat
+      [zip] adding entry dist_add/run.bat
+      [zip] adding entry lib/Vector.jar
+      [zip] adding entry lib/jasio/JAsioHost.jar
+      [zip] adding entry lib/jasio/jasiohost-master.zip
+      [zip] adding entry lib/jasio/jasiohost32.dll
+      [zip] adding entry lib/jasio/jasiohost64.dll
+      [zip] adding entry lib/jasio/mhrothjasiohost · GitHub.URL
+      [zip] adding entry lib/javax.json-1.0.4.jar
+      [zip] adding entry lib/portaudio/PortAudio com.portaudio.PortAudio Class Reference.URL
+      [zip] adding entry lib/portaudio/index.html
+      [zip] adding entry lib/portaudio/jportaudio.jar
+      [zip] adding entry lib/portaudio/jportaudio_pc_20120904.zip
+      [zip] adding entry lib/portaudio/jportaudio_x64.dll
+      [zip] adding entry lib/portaudio/jportaudio_x86.dll
+      [zip] adding entry lib/portaudio/portaudio_x64.dll
+      [zip] adding entry lib/portaudio/portaudio_x86.dll
+      [zip] adding entry src/buildnumber/atdaemon.buildnumber
+      [zip] adding entry src/buildnumber/atdeamon.buildnumber
+      [zip] adding directory src/effect/
+      [zip] adding entry src/effect/ArcTan.java
+      [zip] adding entry src/effect/ArcTan2.java
+      [zip] adding entry src/effect/ArcTan3.java
+      [zip] adding entry src/effect/DNote.java
+      [zip] adding entry src/effect/EffectDialog.java
+      [zip] adding entry src/effect/EffectDialog2.java
+      [zip] adding entry src/effect/LoopMono.java
+      [zip] adding entry src/effect/LoopMul1.java
+      [zip] adding entry src/effect/OutputTest.java
+      [zip] adding entry src/effect/Rotator1.java
+      [zip] adding entry src/effect/Tuner.java
+      [zip] adding directory src/function/
+      [zip] adding entry src/function/IChain.java
+      [zip] adding entry src/function/IFunction.java
+      [zip] adding entry src/function/IFunction2.java
+      [zip] adding entry src/function/IPlayer.java
+      [zip] adding entry src/function/IRuncontrol.java
+      [zip] adding directory src/platform/
+      [zip] adding directory src/platform/asio/
+      [zip] adding entry src/platform/asio/PlatformAsio.java
+      [zip] adding entry src/platform/asio/PlatformPlayerAsio.java
+      [zip] adding directory src/platform/javasound/
+      [zip] adding entry src/platform/javasound/PlatformJavaSound.java
+      [zip] adding entry src/platform/javasound/PlatformPlayerJavaSound.java
+      [zip] adding directory src/platform_base/
+      [zip] adding entry src/platform_base/PlatformBase.java
+      [zip] adding directory src/splicing_sleeve/
+      [zip] adding entry src/splicing_sleeve/DeamonServer.java
+      [zip] adding directory src/starter/
+      [zip] adding entry src/starter/Atdaemon.java
+      [zip] adding entry src/starter/CentralDeamon.java
+      [zip] adding entry src/starter/MainFrame.java
+      [zip] adding entry ant_all.bat
+      [zip] adding entry build.xml
+      [zip] adding entry ant.log
+      [zip] adding directory dotdot_slash_dotdot/
+      [zip] adding entry dotdot_slash_dotdot/SetEnv.bat
+      [zip] adding entry dotdot_slash_dotdot/SetEnv.sh
+
+post_build:
+     [copy] No sources found.
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 4 seconds

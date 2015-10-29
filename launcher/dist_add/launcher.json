@@ -1,0 +1,49 @@
+{
+    "SpecVersionIndex" : 1,
+    "Project" : "fap",
+    "groups" :
+    [
+        {
+            "headline" : "fap",
+            "entries" :
+            [
+                {
+                    "label" : "fap (dont work)",
+                    "type" : "embedded",
+                    "cmd" : "fap"
+                },
+                {
+                    "label" : "fap",
+                    "type" : "childvm",
+                    "cmd" : "fap"
+                },
+                {
+                    "label" : "Multicast Monitor",
+                    "type" : "childvm",
+                    "cmd" : "McMonitor"
+                }
+            ]
+        },
+        {
+            "headline" : "Demos",
+            "entries" :
+            [
+                {
+                    "label" : "SwingSet2",
+                    "type" : "childvm",
+                    "cmd" : "SwingSet2"
+                },
+                {
+                    "label" : "2Demo",
+                    "type" : "childvm",
+                    "cmd" : "Java2Demo"
+                }
+            ]
+        }
+    ],
+    "development" : false
+}
+
+
+
+ 

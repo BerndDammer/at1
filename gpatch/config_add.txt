@@ -1,0 +1,6 @@
+[user]
+	name = BerndDammer
+	email = BerndDammer@web.de
+[push]
+	default = simple
+

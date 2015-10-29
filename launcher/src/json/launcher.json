@@ -1,0 +1,32 @@
+{
+    "SpecVersionIndex" : 1,
+    "Project" : "fap",
+    "groups" :
+    [
+    	{
+        	"headline" : "fap",
+	        "entries" :
+			[
+			    {
+			    	"label" : "fap",
+			    	"tooltip" : "GAIN Status",
+                    "label" : "fap",
+                    "type" : "embedded",
+                    "cmd" : "fap"
+			    },
+			    {
+			    	"label" : "fap out",
+			    	"tooltip" : "GAIN Status",
+                    "label" : "fap",
+                    "type" : "childvm",
+                    "cmd" : "fap"
+			    }
+			]
+		}
+	],
+	"development" : false
+}
+
+
+
+ 

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="all" basedir="." default="all">
+
+
+
+	<!-- ********************************** Main dependencies *************************** -->
+
+
+	<description>
+    at1
+    
+    </description>
+
+	<property environment="env" />
+	<property name="projectname" value="at2" />
+
+	<target name="all" depends="clean,build,PushOut,post_build" />
+
+	<splash imageurl="${ant.home}/images/ant_logo_large.gif" showduration="1000" />
+
+	<target name="build.number">
+		<buildnumber file="src/resources/${projectname}.buildnumber" />
+		<echo message="build.number ${build.number}" />
+		<loadproperties srcfile="src/resources/${projectname}.buildnumber" prefix="lbn."/>
+		<echo message="build.number ${lbn.build.number}" />
+	</target>
+
+
+
+	<target name="clean" depends="clean_thumbs">
+		<delete dir="dist" />
+		<delete dir="bin" />
+	</target>
+
+	<target name="clean_thumbs">
+		<delete includeemptydirs="true">
+			<fileset dir="src" includes="**/Thumbs.db" />
+		</delete>
+	</target>
+
+	<target name="post_build">
+		<exec command="chmod" dir="dist" osfamily="unix">
+			<arg value="a+rwx" />
+			<arg value="run.sh" />
+		</exec>
+		<exec command="chmod" dir="dist" osfamily="unix">
+			<arg value="a+rwx" />
+			<arg value="run2.sh" />
+		</exec>
+	</target>
+
+
+	<!-- ******************************************************************************
+     *                                                                            *    
+     *      ${projectname}                                                        *
+     *                                                                            *    
+     *                                                                            *
+     ******************************************************************************-->
+
+	<target name="build" depends="clean,build.number">
+		<mkdir dir="bin" />
+		<mkdir dir="dist" />
+
+		<!-- delete without the dir itself -->
+		<delete includeemptydirs="true">
+			<fileset dir="dist" includes="**/*" />
+			<fileset dir="bin" includes="**/*" />
+		</delete>
+
+
+		<javac srcdir="src" destdir="bin" debug="on" includeantruntime="0">
+			<include name="starter/at1.java" />
+			<classpath>
+				<pathelement location="lib/javax.json-1.0.4.jar" />
+				<pathelement location="lib/jasio/JAsioHost.jar" />
+				<pathelement location="lib/portaudio/jportaudio.jar" />
+			</classpath>
+		</javac>
+
+		<patternset id="non.jar.merge">
+			<exclude name="META-INF/NOTICE" />
+			<exclude name="META-INF/LICENSE" />
+		</patternset>
+
+		<jar destfile="dist/${projectname}.jar" duplicate="fail" filesetmanifest="mergewithoutmain">
+			<fileset dir="bin">
+				<include name="**/*.class" />
+			</fileset>
+			
+			<fileset dir=".">
+				<include name="resources/**" />
+			</fileset>
+			<fileset dir="src">
+				<include name="resources/${projectname}.buildnumber" />
+			</fileset>
+			<fileset dir="src">
+				<include name="starter/*.json" />
+			</fileset>
+
+			<zipfileset src="lib/javax.json-1.0.4.jar" includes="**/*.class">
+				<patternset id="non.jar.merge" />
+				<exclude name="META_INF/*" />
+			</zipfileset>
+			<zipfileset src="lib/jasio/JAsioHost.jar" includes="**/*.class">
+				<patternset id="non.jar.merge" />
+				<exclude name="META_INF/*" />
+			</zipfileset>
+
+			<manifest>
+				<attribute name="Main-Class" value="starter.at1" />
+			</manifest>
+
+		</jar>
+
+		<copy todir="dist" preservelastmodified="true" includeemptydirs="false" verbose="true" failonerror="false">
+			<fileset dir="dist_add" casesensitive="false">
+				<include name="*" />
+			</fileset>
+			<fileset dir="lib/jasio" casesensitive="false">
+				<include name="*.dll" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<!-- ******************************************************************************************************** -->
+
+	<target name="PushOut" depends="build">
+		<!-- double entrys in zip file ????? -->
+		<property name="backuparc" location="${env.SAVE_LOC}/${projectname}_${lbn.build.number}.zip" />
+		<delete file="${backuparc}" />
+		<zip destfile="${backuparc}" update="false">
+			<fileset dir=".">
+				<include name="src/**/*.java" />
+				<include name="src/**/*.png" />
+				<include name="src/**/*.json" />
+				<include name=".project" />
+				<include name=".classpath" />
+				<include name="dist_add/**" />
+				<include name="lib/**" />
+				<include name="doc/**" />
+				<include name="resources/**" />
+				<include name="src/resources/**" />
+				<include name="doclinks/**" />
+				<include name="dist/**" />
+				<include name="disabled_sources/**" />
+				<include name="**/*buildnumber*" />
+				<include name="template/**" />
+				<include name="META-INF/services/*" />
+				<include name="jackson/**" />
+				<include name="theOthers/**" />
+			</fileset>
+			<fileset dir=".">
+				<include name="*.bat" />
+				<include name="*.sh" />
+				<include name="*.xml" />
+				<include name="*.txt" />
+			</fileset>
+			<fileset dir=".">
+				<include name="*.log" />
+			</fileset>
+		</zip>
+	</target>
+	<!-- ************************************************************* -->
+</project>
+

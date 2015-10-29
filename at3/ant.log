@@ -1,0 +1,137 @@
+Detected Java version: 1.8 in: C:\Program Files\Java\jre1.8.0_45
+Detected OS: Windows 7
+parsing buildfile g:\ews\at3\build.xml with URI = file:/g:/ews/at3/build.xml
+Project base dir set to: g:\ews\at3
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean, build.number, build, PushOut, post_build, all, ]
+
+clean:
+   [delete] Deleting directory g:\ews\at3\dist
+   [delete] Deleting g:\ews\at3\dist\at3.jar
+   [delete] Deleting g:\ews\at3\dist\jasiohost32.dll
+   [delete] Deleting g:\ews\at3\dist\jasiohost64.dll
+   [delete] Deleting g:\ews\at3\dist\run.bat
+   [delete] Deleting directory g:\ews\at3\dist
+   [delete] Deleting directory g:\ews\at3\bin
+   [delete] Deleting g:\ews\at3\bin\starter\at3.class
+   [delete] Deleting g:\ews\at3\bin\starter\Central.class
+   [delete] Deleting g:\ews\at3\bin\starter\MainFrame$myPanel.class
+   [delete] Deleting g:\ews\at3\bin\starter\MainFrame.class
+   [delete] Deleting g:\ews\at3\bin\starter\JFrame2.class
+   [delete] Deleting g:\ews\at3\bin\starter\error.class
+   [delete] Deleting directory g:\ews\at3\bin\starter
+   [delete] Deleting g:\ews\at3\bin\platform_base\PlatformBase.class
+   [delete] Deleting g:\ews\at3\bin\platform_base\PlatformPanel$PlatformChoice.class
+   [delete] Deleting g:\ews\at3\bin\platform_base\PlatformPanel.class
+   [delete] Deleting g:\ews\at3\bin\platform_base\PLATFORM.class
+   [delete] Deleting directory g:\ews\at3\bin\platform_base
+   [delete] Deleting g:\ews\at3\bin\function\IFunction.class
+   [delete] Deleting g:\ews\at3\bin\function\IPlayer.class
+   [delete] Deleting g:\ews\at3\bin\function\IChain.class
+   [delete] Deleting g:\ews\at3\bin\function\FunctionPanel$EffectStarter.class
+   [delete] Deleting g:\ews\at3\bin\function\FunctionPanel.class
+   [delete] Deleting g:\ews\at3\bin\function\IFunction2.class
+   [delete] Deleting directory g:\ews\at3\bin\function
+   [delete] Deleting g:\ews\at3\bin\gui_help\MyGC.class
+   [delete] Deleting g:\ews\at3\bin\gui_help\BorderPanel.class
+   [delete] Deleting g:\ews\at3\bin\gui_help\ShowText.class
+   [delete] Deleting directory g:\ews\at3\bin\gui_help
+   [delete] Deleting g:\ews\at3\bin\util\Util.class
+   [delete] Deleting g:\ews\at3\bin\util\DIR.class
+   [delete] Deleting directory g:\ews\at3\bin\util
+   [delete] Deleting g:\ews\at3\bin\controller\ControllerPanel$ControllerChoice.class
+   [delete] Deleting g:\ews\at3\bin\controller\ControllerPanel$TestButton.class
+   [delete] Deleting g:\ews\at3\bin\controller\ControllerPanel.class
+   [delete] Deleting g:\ews\at3\bin\controller\ControllerTestDialog$myPanel.class
+   [delete] Deleting g:\ews\at3\bin\controller\ControllerTestDialog$StopButton.class
+   [delete] Deleting g:\ews\at3\bin\controller\ControllerTestDialog.class
+   [delete] Deleting directory g:\ews\at3\bin\controller
+   [delete] Deleting g:\ews\at3\bin\effect\ArcTan.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog$myPanel.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog$StopButton.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog$RemView$Syncer.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog$RemView.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog.class
+   [delete] Deleting g:\ews\at3\bin\effect\ArcTan2.class
+   [delete] Deleting g:\ews\at3\bin\effect\ArcTan3.class
+   [delete] Deleting g:\ews\at3\bin\effect\LoopMono.class
+   [delete] Deleting g:\ews\at3\bin\effect\LoopMul1.class
+   [delete] Deleting g:\ews\at3\bin\effect\OutputTest.class
+   [delete] Deleting g:\ews\at3\bin\effect\Rotator1.class
+   [delete] Deleting g:\ews\at3\bin\effect\Tuner$MyPanel$NoteChoice.class
+   [delete] Deleting g:\ews\at3\bin\effect\Tuner$MyPanel.class
+   [delete] Deleting g:\ews\at3\bin\effect\Tuner$1.class
+   [delete] Deleting g:\ews\at3\bin\effect\Tuner.class
+   [delete] Deleting g:\ews\at3\bin\effect\DNote.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog2$myPanel.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog2$StopButton.class
+   [delete] Deleting g:\ews\at3\bin\effect\EffectDialog2.class
+   [delete] Deleting directory g:\ews\at3\bin\effect
+   [delete] Deleting g:\ews\at3\bin\platform\asio\PlatformAsio.class
+   [delete] Deleting g:\ews\at3\bin\platform\asio\PlatformParameterAsio$PanelStarter.class
+   [delete] Deleting g:\ews\at3\bin\platform\asio\PlatformParameterAsio.class
+   [delete] Deleting g:\ews\at3\bin\platform\asio\PlatformPlayerAsio.class
+   [delete] Deleting directory g:\ews\at3\bin\platform\asio
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformJavaSound.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformParameterJavaSound$Element.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformParameterJavaSound$MixerChoice.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformParameterJavaSound$LineChoice.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformParameterJavaSound$ViewStarter.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformParameterJavaSound$1.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformParameterJavaSound.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\PlatformPlayerJavaSound.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myPanel.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myScrollPane.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myTree$L0Top.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myTree$L1Mixer.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myTree$L2Line.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myTree$L3Control.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myTree$L3AudioFormat.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$myTree.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView$1.class
+   [delete] Deleting g:\ews\at3\bin\platform\javasound\MixerView.class
+   [delete] Deleting directory g:\ews\at3\bin\platform\javasound
+   [delete] Deleting directory g:\ews\at3\bin\platform
+   [delete] Deleting g:\ews\at3\bin\buildnumber\at3.buildnumber
+   [delete] Deleting directory g:\ews\at3\bin\buildnumber
+   [delete] Deleting directory g:\ews\at3\bin
+
+build.number:
+     [echo] build.number 13
+     [echo] build.number 14
+
+build:
+    [mkdir] Created dir: g:\ews\at3\bin
+    [mkdir] Created dir: g:\ews\at3\dist
+
+BUILD FAILED
+g:\ews\at3\build.xml:66: Unable to find a javac compiler;
+com.sun.tools.javac.Main is not on the classpath.
+Perhaps JAVA_HOME does not point to the JDK.
+It is currently set to "C:\Program Files\Java\jre1.8.0_45"
+	at org.apache.tools.ant.taskdefs.compilers.CompilerAdapterFactory.getCompiler(CompilerAdapterFactory.java:130)
+	at org.apache.tools.ant.taskdefs.Javac.findSupportedFileExtensions(Javac.java:984)
+	at org.apache.tools.ant.taskdefs.Javac.scanDir(Javac.java:961)
+	at org.apache.tools.ant.taskdefs.Javac.execute(Javac.java:932)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.Target.performTasks(Target.java:456)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1393)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1364)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1248)
+	at org.apache.tools.ant.Main.runBuild(Main.java:851)
+	at org.apache.tools.ant.Main.startAnt(Main.java:235)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+
+Total time: 5 seconds

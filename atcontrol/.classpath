@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="platform_base/PlatformPanel.java|platform/asio/PlatformParameterAsio.java" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/atinterfaces"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/atdaemon"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,233 @@
+Detected Java version: 1.8 in: G:\jdk_win\jre
+Detected OS: Windows 7
+parsing buildfile G:\ews_hold\executer\build.xml with URI = file:/G:/ews_hold/executer/build.xml
+Project base dir set to: G:\ews_hold\executer
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean_thumbs, clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean_thumbs, clean, build.number, build, PushOut, post_build, all, ]
+
+clean_thumbs:
+
+clean:
+   [delete] Deleting directory G:\ews_hold\executer\dist
+   [delete] Deleting G:\ews_hold\executer\dist\executer.jar
+   [delete] Deleting G:\ews_hold\executer\dist\run.sh
+   [delete] Deleting G:\ews_hold\executer\dist\tvhd.m3u
+   [delete] Deleting G:\ews_hold\executer\dist\tvsd.m3u
+   [delete] Deleting directory G:\ews_hold\executer\dist
+   [delete] Deleting directory G:\ews_hold\executer\bin
+   [delete] Deleting G:\ews_hold\executer\bin\executer\executer.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\Parameter.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\M3UReader.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\Elements.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\Element.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\mainframe$myPanel.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\mainframe.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\JFrame2.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\MyPane$MyList.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\MyPane.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\RunButton.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\Hangman$MyTextArea.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\Hangman$UpdatePort.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\Hangman.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\error.class
+   [delete] Deleting G:\ews_hold\executer\bin\executer\parameter.json
+   [delete] Deleting directory G:\ews_hold\executer\bin\executer
+   [delete] Deleting directory G:\ews_hold\executer\bin
+
+build.number:
+     [echo] build.number 4
+     [echo] build.number 5
+
+build:
+    [mkdir] Created dir: G:\ews_hold\executer\bin
+    [mkdir] Created dir: G:\ews_hold\executer\dist
+    [javac] G:\ews_hold\executer\build.xml:78: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] executer\executer.java added as executer\executer.class doesn't exist.
+    [javac] Compiling 1 source file to G:\ews_hold\executer\bin
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'G:\ews_hold\executer\bin'
+    [javac] '-classpath'
+    [javac] 'G:\ews_hold\executer\bin;G:\ews_hold\executer\lib\javax.json-1.0.4.jar;G:\ant\lib\ant-launcher.jar;G:\ant\lib\ant-jdepend.jar;G:\ant\lib\ant-netrexx.jar;G:\ant\lib\ant-jmf.jar;G:\ant\lib\ant-javamail.jar;G:\ant\lib\ant-apache-resolver.jar;G:\ant\lib\ant-testutil.jar;G:\ant\lib\ant-commons-logging.jar;G:\ant\lib\ant-apache-oro.jar;G:\ant\lib\ant-swing.jar;G:\ant\lib\ant-junit4.jar;G:\ant\lib\ant-commons-net.jar;G:\ant\lib\ant-apache-xalan2.jar;G:\ant\lib\ant-apache-regexp.jar;G:\ant\lib\ant-apache-log4j.jar;G:\ant\lib\ant-junit.jar;G:\ant\lib\ant-antlr.jar;G:\ant\lib\ant-jsch.jar;G:\ant\lib\ant-apache-bsf.jar;G:\ant\lib\ant-jai.jar;G:\ant\lib\ant-apache-bcel.jar;G:\ant\lib\ant.jar;G:\jdk_win\lib\tools.jar'
+    [javac] '-sourcepath'
+    [javac] 'G:\ews_hold\executer\src'
+    [javac] '-g'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] File to be compiled:
+    [javac]     G:\ews_hold\executer\src\executer\executer.java
+Overriding previous definition of reference to non.jar.merge
+      [jar] found a total of 0 manifests in 5 resource collections
+      [jar] Building jar: G:\ews_hold\executer\dist\executer.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding directory executer/
+      [jar] adding entry executer/Element.class
+      [jar] adding entry executer/Elements.class
+      [jar] adding entry executer/Hangman$MyTextArea.class
+      [jar] adding entry executer/Hangman$UpdatePort.class
+      [jar] adding entry executer/Hangman.class
+      [jar] adding entry executer/JFrame2.class
+      [jar] adding entry executer/M3UReader.class
+      [jar] adding entry executer/MyPane$MyList.class
+      [jar] adding entry executer/MyPane.class
+      [jar] adding entry executer/Parameter.class
+      [jar] adding entry executer/RunButton.class
+      [jar] adding entry executer/error.class
+      [jar] adding entry executer/executer.class
+      [jar] adding entry executer/mainframe$myPanel.class
+      [jar] adding entry executer/mainframe.class
+      [jar] adding directory buildnumber/
+      [jar] adding entry buildnumber/executer.buildnumber
+      [jar] adding entry executer/parameter.json
+      [jar] adding directory javax/
+      [jar] adding directory javax/json/
+      [jar] adding entry javax/json/Json.class
+      [jar] adding entry javax/json/JsonArray.class
+      [jar] adding entry javax/json/JsonArrayBuilder.class
+      [jar] adding entry javax/json/JsonBuilderFactory.class
+      [jar] adding entry javax/json/JsonException.class
+      [jar] adding entry javax/json/JsonNumber.class
+      [jar] adding entry javax/json/JsonObject.class
+      [jar] adding entry javax/json/JsonObjectBuilder.class
+      [jar] adding entry javax/json/JsonReader.class
+      [jar] adding entry javax/json/JsonReaderFactory.class
+      [jar] adding entry javax/json/JsonString.class
+      [jar] adding entry javax/json/JsonStructure.class
+      [jar] adding entry javax/json/JsonValue$1.class
+      [jar] adding entry javax/json/JsonValue$2.class
+      [jar] adding entry javax/json/JsonValue$3.class
+      [jar] adding entry javax/json/JsonValue$ValueType.class
+      [jar] adding entry javax/json/JsonValue.class
+      [jar] adding entry javax/json/JsonWriter.class
+      [jar] adding entry javax/json/JsonWriterFactory.class
+      [jar] adding directory javax/json/spi/
+      [jar] adding entry javax/json/spi/JsonProvider.class
+      [jar] adding directory javax/json/stream/
+      [jar] adding entry javax/json/stream/JsonGenerationException.class
+      [jar] adding entry javax/json/stream/JsonGenerator.class
+      [jar] adding entry javax/json/stream/JsonGeneratorFactory.class
+      [jar] adding entry javax/json/stream/JsonLocation.class
+      [jar] adding entry javax/json/stream/JsonParser$Event.class
+      [jar] adding entry javax/json/stream/JsonParser.class
+      [jar] adding entry javax/json/stream/JsonParserFactory.class
+      [jar] adding entry javax/json/stream/JsonParsingException.class
+      [jar] adding directory org/
+      [jar] adding directory org/glassfish/
+      [jar] adding directory org/glassfish/json/
+      [jar] adding entry org/glassfish/json/BufferPoolImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl$JsonArrayImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonBuilderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Scope.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonLocationImpl.class
+      [jar] adding entry org/glassfish/json/JsonMessages.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonBigDecimalNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonIntNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonLongNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl$JsonObjectImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ArrayContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$NoneContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ObjectContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Stack.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$StateIterator.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl.class
+      [jar] adding entry org/glassfish/json/JsonPrettyGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonProviderImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl.class
+      [jar] adding entry org/glassfish/json/JsonStringImpl.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$1.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ArrayScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ObjectScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$Scope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer$JsonToken.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer.class
+      [jar] adding entry org/glassfish/json/JsonWriterFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl$NoFlushOutputStream.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl.class
+      [jar] adding entry org/glassfish/json/UnicodeDetectingInputStream.class
+      [jar] adding directory org/glassfish/json/api/
+      [jar] adding entry org/glassfish/json/api/BufferPool.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: G:\ews_hold\executer\build.xml:90: 
+     [copy] run.sh added as run.sh doesn't exist.
+     [copy] tvhd.m3u added as tvhd.m3u doesn't exist.
+     [copy] tvsd.m3u added as tvsd.m3u doesn't exist.
+     [copy] Copying 3 files to G:\ews_hold\executer\dist
+     [copy] Copying G:\ews_hold\executer\dist_add\run.sh to G:\ews_hold\executer\dist\run.sh
+     [copy] Copying G:\ews_hold\executer\dist_add\tvhd.m3u to G:\ews_hold\executer\dist\tvhd.m3u
+     [copy] Copying G:\ews_hold\executer\dist_add\tvsd.m3u to G:\ews_hold\executer\dist\tvsd.m3u
+
+PushOut:
+   [delete] Could not find file G:\backup\executer_5.zip to delete.
+      [zip] Building zip: G:\backup\executer_5.zip
+      [zip] adding directory dist/
+      [zip] adding directory dist_add/
+      [zip] adding directory lib/
+      [zip] adding directory src/
+      [zip] adding directory src/buildnumber/
+      [zip] adding entry .classpath
+      [zip] adding entry .project
+      [zip] adding entry dist/executer.jar
+      [zip] adding entry dist/run.sh
+      [zip] adding entry dist/tvhd.m3u
+      [zip] adding entry dist/tvsd.m3u
+      [zip] adding entry dist_add/run.sh
+      [zip] adding entry dist_add/tvhd.m3u
+      [zip] adding entry dist_add/tvsd.m3u
+      [zip] adding entry lib/javax.json-1.0.4.jar
+      [zip] adding entry src/buildnumber/executer.buildnumber
+      [zip] adding directory src/executer/
+      [zip] adding entry src/executer/ControlFileAFileReader.java
+      [zip] adding entry src/executer/Element.java
+      [zip] adding entry src/executer/Elements.java
+      [zip] adding entry src/executer/Hangman.java
+      [zip] adding entry src/executer/JFrame2.java
+      [zip] adding entry src/executer/M3UReader.java
+      [zip] adding entry src/executer/MyPane.java
+      [zip] adding entry src/executer/Parameter.java
+      [zip] adding entry src/executer/RunButton.java
+      [zip] adding entry src/executer/error.java
+      [zip] adding entry src/executer/executer.java
+      [zip] adding entry src/executer/mainframe.java
+      [zip] adding entry src/executer/parameter.json
+      [zip] adding entry ant_all.bat
+      [zip] adding entry ant_all.sh
+      [zip] adding entry build.xml
+      [zip] adding entry tvhd.m3u
+      [zip] adding entry tvsd.m3u
+      [zip] adding entry ant.log
+      [zip] adding directory dotdot_slash_dotdot/
+      [zip] adding entry dotdot_slash_dotdot/SetEnv.bat
+      [zip] adding entry dotdot_slash_dotdot/SetEnv.sh
+
+post_build:
+     [copy] executer\parameter.json added as executer\parameter.json doesn't exist.
+     [copy] Copying 1 file to G:\ews_hold\executer\bin
+     [copy] Copying G:\ews_hold\executer\src\executer\parameter.json to G:\ews_hold\executer\bin\executer\parameter.json
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 4 seconds

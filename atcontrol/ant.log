@@ -1,0 +1,216 @@
+Detected Java version: 1.8 in: G:\jdk_win\jre
+Detected OS: Windows 7
+parsing buildfile G:\ews\atcontrol\build.xml with URI = file:/G:/ews/atcontrol/build.xml
+Project base dir set to: G:\ews\atcontrol
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean, build.number, build, PushOut, post_build, all, ]
+
+clean:
+   [delete] Deleting directory G:\ews\atcontrol\dist
+   [delete] Deleting G:\ews\atcontrol\dist\atcontrol.jar
+   [delete] Deleting G:\ews\atcontrol\dist\run.bat
+   [delete] Deleting directory G:\ews\atcontrol\dist
+   [delete] Deleting directory G:\ews\atcontrol\bin
+   [delete] Deleting G:\ews\atcontrol\bin\starter\Atcontrol.class
+   [delete] Deleting G:\ews\atcontrol\bin\starter\CentralControl.class
+   [delete] Deleting G:\ews\atcontrol\bin\starter\MainFrame$myPanel.class
+   [delete] Deleting G:\ews\atcontrol\bin\starter\MainFrame.class
+   [delete] Deleting G:\ews\atcontrol\bin\starter\JFrame2.class
+   [delete] Deleting directory G:\ews\atcontrol\bin\starter
+   [delete] Deleting G:\ews\atcontrol\bin\splicing_sleeve\ControlServer.class
+   [delete] Deleting G:\ews\atcontrol\bin\splicing_sleeve\ServerViewPanel$MTShowText.class
+   [delete] Deleting G:\ews\atcontrol\bin\splicing_sleeve\ServerViewPanel$1.class
+   [delete] Deleting G:\ews\atcontrol\bin\splicing_sleeve\ServerViewPanel.class
+   [delete] Deleting directory G:\ews\atcontrol\bin\splicing_sleeve
+   [delete] Deleting G:\ews\atcontrol\bin\gui_help\BorderPanel.class
+   [delete] Deleting G:\ews\atcontrol\bin\gui_help\MyGC.class
+   [delete] Deleting G:\ews\atcontrol\bin\gui_help\ShowText.class
+   [delete] Deleting directory G:\ews\atcontrol\bin\gui_help
+   [delete] Deleting G:\ews\atcontrol\bin\function\FunctionPanel$EffectStarter.class
+   [delete] Deleting G:\ews\atcontrol\bin\function\FunctionPanel.class
+   [delete] Deleting directory G:\ews\atcontrol\bin\function
+   [delete] Deleting G:\ews\atcontrol\bin\util\Util.class
+   [delete] Deleting directory G:\ews\atcontrol\bin\util
+   [delete] Deleting G:\ews\atcontrol\bin\controller\ControllerPanel$ControllerChoice.class
+   [delete] Deleting G:\ews\atcontrol\bin\controller\ControllerPanel$TestButton.class
+   [delete] Deleting G:\ews\atcontrol\bin\controller\ControllerPanel.class
+   [delete] Deleting G:\ews\atcontrol\bin\controller\ControllerTestDialog$myPanel.class
+   [delete] Deleting G:\ews\atcontrol\bin\controller\ControllerTestDialog$StopButton.class
+   [delete] Deleting G:\ews\atcontrol\bin\controller\ControllerTestDialog.class
+   [delete] Deleting directory G:\ews\atcontrol\bin\controller
+   [delete] Deleting G:\ews\atcontrol\bin\effect\ArcTan.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\EffectDialog$myPanel.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\EffectDialog$StopButton.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\EffectDialog$RemView$Syncer.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\EffectDialog$RemView.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\EffectDialog.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\ArcTan2.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\ArcTan3.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\LoopMono.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\LoopMul1.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\OutputTest.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\Rotator1.class
+   [delete] Deleting G:\ews\atcontrol\bin\effect\Tuner.class
+   [delete] Deleting directory G:\ews\atcontrol\bin\effect
+   [delete] Deleting directory G:\ews\atcontrol\bin
+
+build.number:
+     [echo] build.number 11
+     [echo] build.number 12
+
+build:
+    [mkdir] Created dir: G:\ews\atcontrol\bin
+    [mkdir] Created dir: G:\ews\atcontrol\dist
+    [javac] G:\ews\atcontrol\build.xml:73: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] starter\Atcontrol.java added as starter\Atcontrol.class doesn't exist.
+    [javac] No sources found.
+    [javac] Compiling 1 source file to G:\ews\atcontrol\bin
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'G:\ews\atcontrol\bin'
+    [javac] '-classpath'
+    [javac] 'G:\ews\atcontrol\bin;G:\ews\atdaemon\bin;G:\ews\atinterfaces\bin;G:\ant\lib\ant-launcher.jar;G:\ant\lib\ant-jdepend.jar;G:\ant\lib\ant-netrexx.jar;G:\ant\lib\ant-jmf.jar;G:\ant\lib\ant-javamail.jar;G:\ant\lib\ant-apache-resolver.jar;G:\ant\lib\ant-testutil.jar;G:\ant\lib\ant-commons-logging.jar;G:\ant\lib\ant-apache-oro.jar;G:\ant\lib\ant-swing.jar;G:\ant\lib\ant-junit4.jar;G:\ant\lib\ant-commons-net.jar;G:\ant\lib\ant-apache-xalan2.jar;G:\ant\lib\ant-apache-regexp.jar;G:\ant\lib\ant-apache-log4j.jar;G:\ant\lib\ant-junit.jar;G:\ant\lib\ant-antlr.jar;G:\ant\lib\ant-jsch.jar;G:\ant\lib\ant-apache-bsf.jar;G:\ant\lib\ant-jai.jar;G:\ant\lib\ant-apache-bcel.jar;G:\ant\lib\ant.jar;G:\jdk_win\lib\tools.jar'
+    [javac] '-sourcepath'
+    [javac] 'G:\ews\atcontrol\src;G:\ews\atdaemon\src'
+    [javac] '-g'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] File to be compiled:
+    [javac]     G:\ews\atcontrol\src\starter\Atcontrol.java
+      [jar] found a total of 0 manifests in 5 resource collections
+      [jar] Building jar: G:\ews\atcontrol\dist\atcontrol.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding directory controller/
+      [jar] adding entry controller/ControllerPanel$ControllerChoice.class
+      [jar] adding entry controller/ControllerPanel$TestButton.class
+      [jar] adding entry controller/ControllerPanel.class
+      [jar] adding entry controller/ControllerTestDialog$StopButton.class
+      [jar] adding entry controller/ControllerTestDialog$myPanel.class
+      [jar] adding entry controller/ControllerTestDialog.class
+      [jar] adding directory effect/
+      [jar] adding entry effect/ArcTan.class
+      [jar] adding entry effect/ArcTan2.class
+      [jar] adding entry effect/ArcTan3.class
+      [jar] adding entry effect/EffectDialog$RemView$Syncer.class
+      [jar] adding entry effect/EffectDialog$RemView.class
+      [jar] adding entry effect/EffectDialog$StopButton.class
+      [jar] adding entry effect/EffectDialog$myPanel.class
+      [jar] adding entry effect/EffectDialog.class
+      [jar] adding entry effect/LoopMono.class
+      [jar] adding entry effect/LoopMul1.class
+      [jar] adding entry effect/OutputTest.class
+      [jar] adding entry effect/Rotator1.class
+      [jar] adding entry effect/Tuner.class
+      [jar] adding directory function/
+      [jar] adding entry function/FunctionPanel$EffectStarter.class
+      [jar] adding entry function/FunctionPanel.class
+      [jar] adding directory gui_help/
+      [jar] adding entry gui_help/BorderPanel.class
+      [jar] adding entry gui_help/MyGC.class
+      [jar] adding entry gui_help/ShowText.class
+      [jar] adding directory splicing_sleeve/
+      [jar] adding entry splicing_sleeve/ControlServer.class
+      [jar] adding entry splicing_sleeve/ServerViewPanel$1.class
+      [jar] adding entry splicing_sleeve/ServerViewPanel$MTShowText.class
+      [jar] adding entry splicing_sleeve/ServerViewPanel.class
+      [jar] adding directory starter/
+      [jar] adding entry starter/Atcontrol.class
+      [jar] adding entry starter/CentralControl.class
+      [jar] adding entry starter/JFrame2.class
+      [jar] adding entry starter/MainFrame$myPanel.class
+      [jar] adding entry starter/MainFrame.class
+      [jar] adding directory util/
+      [jar] adding entry util/Util.class
+      [jar] adding directory buildnumber/
+      [jar] adding entry buildnumber/atcontrol.buildnumber
+      [jar] adding directory generals/
+      [jar] adding entry generals/ATConstants.class
+      [jar] adding directory platform_base/
+      [jar] adding entry platform_base/PLATFORM.class
+      [jar] adding entry splicing_sleeve/AutomaticNetworkInterface.class
+      [jar] adding entry splicing_sleeve/IControlClient.class
+      [jar] adding entry splicing_sleeve/IControlPortBase.class
+      [jar] adding entry splicing_sleeve/IControlServer.class
+      [jar] adding entry splicing_sleeve/MonitorPort.class
+      [jar] adding entry starter/error.class
+      [jar] adding entry function/IChain.class
+      [jar] adding entry function/IFunction.class
+      [jar] adding entry function/IPlayer.class
+      [jar] adding entry platform_base/PlatformBase.class
+      [jar] adding entry splicing_sleeve/DeamonServer.class
+      [jar] adding entry starter/Atdaemon.class
+      [jar] adding entry starter/CentralDeamon.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: G:\ews\atcontrol\build.xml:87: 
+     [copy] run.bat added as run.bat doesn't exist.
+     [copy] Copying 1 file to G:\ews\atcontrol\dist
+     [copy] Copying G:\ews\atcontrol\dist_add\run.bat to G:\ews\atcontrol\dist\run.bat
+
+PushOut:
+   [delete] Could not find file G:\backup\atcontrol_12.zip to delete.
+      [zip] Building zip: G:\backup\atcontrol_12.zip
+      [zip] adding directory dist/
+      [zip] adding directory dist_add/
+      [zip] adding directory src/
+      [zip] adding directory src/buildnumber/
+      [zip] adding entry .classpath
+      [zip] adding entry .project
+      [zip] adding entry dist/atcontrol.jar
+      [zip] adding entry dist/run.bat
+      [zip] adding entry dist_add/run.bat
+      [zip] adding entry src/buildnumber/atcontrol.buildnumber
+      [zip] adding directory src/controller/
+      [zip] adding entry src/controller/ControllerPanel.java
+      [zip] adding entry src/controller/ControllerTestDialog.java
+      [zip] adding directory src/effect/
+      [zip] adding entry src/effect/EffectDialog.java
+      [zip] adding entry src/effect/EffectDialog2.java
+      [zip] adding directory src/function/
+      [zip] adding entry src/function/FunctionPanel.java
+      [zip] adding directory src/gui_help/
+      [zip] adding entry src/gui_help/BorderPanel.java
+      [zip] adding entry src/gui_help/MyGC.java
+      [zip] adding entry src/gui_help/ShowText.java
+      [zip] adding directory src/platform/
+      [zip] adding directory src/platform/asio/
+      [zip] adding entry src/platform/asio/PlatformParameterAsio.java
+      [zip] adding directory src/platform/javasound/
+      [zip] adding entry src/platform/javasound/MixerView.java
+      [zip] adding entry src/platform/javasound/PlatformParameterJavaSound.java
+      [zip] adding directory src/platform_base/
+      [zip] adding entry src/platform_base/PlatformPanel.java
+      [zip] adding directory src/splicing_sleeve/
+      [zip] adding entry src/splicing_sleeve/ControlServer.java
+      [zip] adding entry src/splicing_sleeve/ServerViewPanel.java
+      [zip] adding directory src/starter/
+      [zip] adding entry src/starter/Atcontrol.java
+      [zip] adding entry src/starter/CentralControl.java
+      [zip] adding entry src/starter/JFrame2.java
+      [zip] adding entry src/starter/MainFrame.java
+      [zip] adding directory src/util/
+      [zip] adding entry src/util/DIR.java
+      [zip] adding entry src/util/Util.java
+      [zip] adding entry ant_all.bat
+      [zip] adding entry build.xml
+      [zip] adding entry ant.log
+      [zip] adding directory dotdot_slash_dotdot/
+      [zip] adding entry dotdot_slash_dotdot/SetEnv.bat
+      [zip] adding entry dotdot_slash_dotdot/SetEnv.sh
+
+post_build:
+     [copy] No sources found.
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 4 seconds

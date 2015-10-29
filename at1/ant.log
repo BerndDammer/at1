@@ -1,0 +1,270 @@
+Detected Java version: 1.8 in: G:\jdk_win\jdk\jre
+Detected OS: Windows 7
+parsing buildfile G:\ews_hold\at1\build.xml with URI = file:/G:/ews_hold/at1/build.xml
+Project base dir set to: G:\ews_hold\at1
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean_thumbs, clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean_thumbs, clean, build.number, build, PushOut, post_build, all, ]
+
+clean_thumbs:
+
+clean:
+   [delete] Deleting directory G:\ews_hold\at1\bin
+   [delete] Deleting G:\ews_hold\at1\bin\at1\Central.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\InputTest.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\JFrame2.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\Loop2.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\Loop2$myPanel.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\Loop2$StopButton.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\Loop2$Runner.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\LoopBase$Runner.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\LoopBase.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\LoopBase$StopButton.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\LoopBase$myPanel.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\LoopConvert.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\LoopMul1.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\LoopTest.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame$LoopStart.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame$Loop2Start.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame$InputStart.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame$OutputStart.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame$ViewStarter.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame$Mul1.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MainFrame$myPanel.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerSelector$MixerChoice.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerSelector$MODE.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerSelector.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerSelector$LineChoice.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerSelector$Element.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myTree.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myTree$L3AudioFormat.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myTree$L0Top.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myTree$L3Control.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myTree$L2Line.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myScrollPane.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myPanel.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\MixerView$myTree$L1Mixer.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\OutputTest.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\at1.class
+   [delete] Deleting G:\ews_hold\at1\bin\at1\error.class
+   [delete] Deleting directory G:\ews_hold\at1\bin\at1
+   [delete] Deleting G:\ews_hold\at1\bin\resources\at1.buildnumber
+   [delete] Deleting directory G:\ews_hold\at1\bin\resources
+   [delete] Deleting directory G:\ews_hold\at1\bin
+
+build.number:
+     [echo] build.number 14
+     [echo] build.number 15
+
+build:
+    [mkdir] Created dir: G:\ews_hold\at1\bin
+    [mkdir] Created dir: G:\ews_hold\at1\dist
+    [javac] at1\at1.java added as at1\at1.class doesn't exist.
+    [javac] Compiling 1 source file to G:\ews_hold\at1\bin
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'G:\ews_hold\at1\bin'
+    [javac] '-classpath'
+    [javac] 'G:\ews_hold\at1\bin;G:\ews_hold\at1\lib\javax.json-1.0.4.jar'
+    [javac] '-sourcepath'
+    [javac] 'G:\ews_hold\at1\src'
+    [javac] '-g'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] File to be compiled:
+    [javac]     G:\ews_hold\at1\src\at1\at1.java
+Overriding previous definition of reference to non.jar.merge
+      [jar] found a total of 0 manifests in 5 resource collections
+      [jar] Building jar: G:\ews_hold\at1\dist\at1.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding directory at1/
+      [jar] adding entry at1/Central.class
+      [jar] adding entry at1/InputTest.class
+      [jar] adding entry at1/JFrame2.class
+      [jar] adding entry at1/Loop2$1.class
+      [jar] adding entry at1/Loop2$Runner.class
+      [jar] adding entry at1/Loop2$StopButton.class
+      [jar] adding entry at1/Loop2$myPanel.class
+      [jar] adding entry at1/Loop2.class
+      [jar] adding entry at1/LoopBase$1.class
+      [jar] adding entry at1/LoopBase$Runner.class
+      [jar] adding entry at1/LoopBase$StopButton.class
+      [jar] adding entry at1/LoopBase$myPanel.class
+      [jar] adding entry at1/LoopBase.class
+      [jar] adding entry at1/LoopConvert.class
+      [jar] adding entry at1/LoopMul1.class
+      [jar] adding entry at1/LoopTest.class
+      [jar] adding entry at1/MainFrame$InputStart.class
+      [jar] adding entry at1/MainFrame$Loop2Start.class
+      [jar] adding entry at1/MainFrame$LoopStart.class
+      [jar] adding entry at1/MainFrame$Mul1.class
+      [jar] adding entry at1/MainFrame$OutputStart.class
+      [jar] adding entry at1/MainFrame$ViewStarter.class
+      [jar] adding entry at1/MainFrame$myPanel.class
+      [jar] adding entry at1/MainFrame.class
+      [jar] adding entry at1/MixerSelector$1.class
+      [jar] adding entry at1/MixerSelector$Element.class
+      [jar] adding entry at1/MixerSelector$LineChoice.class
+      [jar] adding entry at1/MixerSelector$MODE.class
+      [jar] adding entry at1/MixerSelector$MixerChoice.class
+      [jar] adding entry at1/MixerSelector.class
+      [jar] adding entry at1/MixerView$1.class
+      [jar] adding entry at1/MixerView$myPanel.class
+      [jar] adding entry at1/MixerView$myScrollPane.class
+      [jar] adding entry at1/MixerView$myTree$L0Top.class
+      [jar] adding entry at1/MixerView$myTree$L1Mixer.class
+      [jar] adding entry at1/MixerView$myTree$L2Line.class
+      [jar] adding entry at1/MixerView$myTree$L3AudioFormat.class
+      [jar] adding entry at1/MixerView$myTree$L3Control.class
+      [jar] adding entry at1/MixerView$myTree.class
+      [jar] adding entry at1/MixerView.class
+      [jar] adding entry at1/OutputTest.class
+      [jar] adding entry at1/at1.class
+      [jar] adding entry at1/error.class
+      [jar] adding directory resources/
+      [jar] adding entry resources/at1.buildnumber
+      [jar] adding directory javax/
+      [jar] adding directory javax/json/
+      [jar] adding entry javax/json/Json.class
+      [jar] adding entry javax/json/JsonArray.class
+      [jar] adding entry javax/json/JsonArrayBuilder.class
+      [jar] adding entry javax/json/JsonBuilderFactory.class
+      [jar] adding entry javax/json/JsonException.class
+      [jar] adding entry javax/json/JsonNumber.class
+      [jar] adding entry javax/json/JsonObject.class
+      [jar] adding entry javax/json/JsonObjectBuilder.class
+      [jar] adding entry javax/json/JsonReader.class
+      [jar] adding entry javax/json/JsonReaderFactory.class
+      [jar] adding entry javax/json/JsonString.class
+      [jar] adding entry javax/json/JsonStructure.class
+      [jar] adding entry javax/json/JsonValue$1.class
+      [jar] adding entry javax/json/JsonValue$2.class
+      [jar] adding entry javax/json/JsonValue$3.class
+      [jar] adding entry javax/json/JsonValue$ValueType.class
+      [jar] adding entry javax/json/JsonValue.class
+      [jar] adding entry javax/json/JsonWriter.class
+      [jar] adding entry javax/json/JsonWriterFactory.class
+      [jar] adding directory javax/json/spi/
+      [jar] adding entry javax/json/spi/JsonProvider.class
+      [jar] adding directory javax/json/stream/
+      [jar] adding entry javax/json/stream/JsonGenerationException.class
+      [jar] adding entry javax/json/stream/JsonGenerator.class
+      [jar] adding entry javax/json/stream/JsonGeneratorFactory.class
+      [jar] adding entry javax/json/stream/JsonLocation.class
+      [jar] adding entry javax/json/stream/JsonParser$Event.class
+      [jar] adding entry javax/json/stream/JsonParser.class
+      [jar] adding entry javax/json/stream/JsonParserFactory.class
+      [jar] adding entry javax/json/stream/JsonParsingException.class
+      [jar] adding directory org/
+      [jar] adding directory org/glassfish/
+      [jar] adding directory org/glassfish/json/
+      [jar] adding entry org/glassfish/json/BufferPoolImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl$JsonArrayImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonBuilderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Scope.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonLocationImpl.class
+      [jar] adding entry org/glassfish/json/JsonMessages.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonBigDecimalNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonIntNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonLongNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl$JsonObjectImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ArrayContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$NoneContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ObjectContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Stack.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$StateIterator.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl.class
+      [jar] adding entry org/glassfish/json/JsonPrettyGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonProviderImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl.class
+      [jar] adding entry org/glassfish/json/JsonStringImpl.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$1.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ArrayScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ObjectScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$Scope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer$JsonToken.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer.class
+      [jar] adding entry org/glassfish/json/JsonWriterFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl$NoFlushOutputStream.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl.class
+      [jar] adding entry org/glassfish/json/UnicodeDetectingInputStream.class
+      [jar] adding directory org/glassfish/json/api/
+      [jar] adding entry org/glassfish/json/api/BufferPool.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: G:\ews_hold\at1\build.xml:84: 
+     [copy] run.bat added as run.bat doesn't exist.
+     [copy] Copying 1 file to G:\ews_hold\at1\dist
+     [copy] Copying G:\ews_hold\at1\dist_add\run.bat to G:\ews_hold\at1\dist\run.bat
+
+PushOut:
+   [delete] Could not find file G:\backup\at1_15.zip to delete.
+      [zip] Building zip: G:\backup\at1_15.zip
+      [zip] adding directory dist/
+      [zip] adding directory dist_add/
+      [zip] adding directory doclinks/
+      [zip] adding directory lib/
+      [zip] adding directory src/
+      [zip] adding directory src/resources/
+      [zip] adding entry .classpath
+      [zip] adding entry .project
+      [zip] adding entry dist/at1.jar
+      [zip] adding entry dist/run.bat
+      [zip] adding entry dist_add/run.bat
+      [zip] adding entry doclinks/AudioSystem (Java Platform SE 7 ).URL
+      [zip] adding entry doclinks/Overview (Java Platform SE 8 ).URL
+      [zip] adding entry doclinks/Trail Sound (The Java÷ Tutorials).URL
+      [zip] adding entry lib/Vector.jar
+      [zip] adding entry lib/javax.json-1.0.4.jar
+      [zip] adding directory src/at1/
+      [zip] adding entry src/at1/Central.java
+      [zip] adding entry src/at1/InputTest.java
+      [zip] adding entry src/at1/JFrame2.java
+      [zip] adding entry src/at1/Loop2.java
+      [zip] adding entry src/at1/LoopBase.java
+      [zip] adding entry src/at1/LoopConvert.java
+      [zip] adding entry src/at1/LoopMul1.java
+      [zip] adding entry src/at1/LoopTest.java
+      [zip] adding entry src/at1/MainFrame.java
+      [zip] adding entry src/at1/MixerSelector.java
+      [zip] adding entry src/at1/MixerView.java
+      [zip] adding entry src/at1/OutputTest.java
+      [zip] adding entry src/at1/at1.java
+      [zip] adding entry src/at1/error.java
+      [zip] adding entry src/resources/at1.buildnumber
+      [zip] adding entry SetEnv.bat
+      [zip] adding entry ant_all.bat
+      [zip] adding entry ant_all.sh
+      [zip] adding entry build.xml
+      [zip] adding entry template.xml
+      [zip] adding entry ant.log
+
+post_build:
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds

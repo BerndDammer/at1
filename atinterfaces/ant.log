@@ -1,0 +1,130 @@
+Detected Java version: 1.8 in: G:\jdk_win\jre
+Detected OS: Windows 7
+parsing buildfile G:\ews\atinterfaces\build.xml with URI = file:/G:/ews/atinterfaces/build.xml
+Project base dir set to: G:\ews\atinterfaces
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean, build.number, build, PushOut, post_build, all, ]
+
+clean:
+   [delete] Deleting directory G:\ews\atinterfaces\dist
+   [delete] Deleting G:\ews\atinterfaces\dist\atinterfaces.jar
+   [delete] Deleting directory G:\ews\atinterfaces\dist
+   [delete] Deleting directory G:\ews\atinterfaces\bin
+   [delete] Deleting G:\ews\atinterfaces\bin\generals\ATConstants.class
+   [delete] Deleting directory G:\ews\atinterfaces\bin\generals
+   [delete] Deleting G:\ews\atinterfaces\bin\platform_base\PLATFORM.class
+   [delete] Deleting directory G:\ews\atinterfaces\bin\platform_base
+   [delete] Deleting G:\ews\atinterfaces\bin\splicing_sleeve\AutomaticNetworkInterface.class
+   [delete] Deleting G:\ews\atinterfaces\bin\splicing_sleeve\IControlClient.class
+   [delete] Deleting G:\ews\atinterfaces\bin\splicing_sleeve\IControlPortBase.class
+   [delete] Deleting G:\ews\atinterfaces\bin\splicing_sleeve\IControlServer.class
+   [delete] Deleting G:\ews\atinterfaces\bin\splicing_sleeve\MonitorPort.class
+   [delete] Deleting directory G:\ews\atinterfaces\bin\splicing_sleeve
+   [delete] Deleting G:\ews\atinterfaces\bin\starter\error.class
+   [delete] Deleting directory G:\ews\atinterfaces\bin\starter
+   [delete] Deleting G:\ews\atinterfaces\bin\buildnumber\RTCommon.buildnumber
+   [delete] Deleting G:\ews\atinterfaces\bin\buildnumber\atinterfaces.buildnumber
+   [delete] Deleting directory G:\ews\atinterfaces\bin\buildnumber
+   [delete] Deleting directory G:\ews\atinterfaces\bin
+
+build.number:
+     [echo] build.number 4
+     [echo] build.number 5
+
+build:
+    [mkdir] Created dir: G:\ews\atinterfaces\bin
+    [mkdir] Created dir: G:\ews\atinterfaces\dist
+    [javac] G:\ews\atinterfaces\build.xml:60: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] generals\ATConstants.java added as generals\ATConstants.class doesn't exist.
+    [javac] platform_base\PLATFORM.java added as platform_base\PLATFORM.class doesn't exist.
+    [javac] splicing_sleeve\AutomaticNetworkInterface.java added as splicing_sleeve\AutomaticNetworkInterface.class doesn't exist.
+    [javac] splicing_sleeve\IControlClient.java added as splicing_sleeve\IControlClient.class doesn't exist.
+    [javac] splicing_sleeve\IControlPortBase.java added as splicing_sleeve\IControlPortBase.class doesn't exist.
+    [javac] splicing_sleeve\IControlServer.java added as splicing_sleeve\IControlServer.class doesn't exist.
+    [javac] splicing_sleeve\MonitorPort.java added as splicing_sleeve\MonitorPort.class doesn't exist.
+    [javac] starter\error.java added as starter\error.class doesn't exist.
+    [javac] Compiling 8 source files to G:\ews\atinterfaces\bin
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'G:\ews\atinterfaces\bin'
+    [javac] '-classpath'
+    [javac] 'G:\ews\atinterfaces\bin;G:\ant\lib\ant-launcher.jar;G:\ant\lib\ant-jdepend.jar;G:\ant\lib\ant-netrexx.jar;G:\ant\lib\ant-jmf.jar;G:\ant\lib\ant-javamail.jar;G:\ant\lib\ant-apache-resolver.jar;G:\ant\lib\ant-testutil.jar;G:\ant\lib\ant-commons-logging.jar;G:\ant\lib\ant-apache-oro.jar;G:\ant\lib\ant-swing.jar;G:\ant\lib\ant-junit4.jar;G:\ant\lib\ant-commons-net.jar;G:\ant\lib\ant-apache-xalan2.jar;G:\ant\lib\ant-apache-regexp.jar;G:\ant\lib\ant-apache-log4j.jar;G:\ant\lib\ant-junit.jar;G:\ant\lib\ant-antlr.jar;G:\ant\lib\ant-jsch.jar;G:\ant\lib\ant-apache-bsf.jar;G:\ant\lib\ant-jai.jar;G:\ant\lib\ant-apache-bcel.jar;G:\ant\lib\ant.jar;G:\jdk_win\lib\tools.jar'
+    [javac] '-sourcepath'
+    [javac] 'G:\ews\atinterfaces\src'
+    [javac] '-g'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] Files to be compiled:
+    [javac]     G:\ews\atinterfaces\src\generals\ATConstants.java
+    [javac]     G:\ews\atinterfaces\src\platform_base\PLATFORM.java
+    [javac]     G:\ews\atinterfaces\src\splicing_sleeve\AutomaticNetworkInterface.java
+    [javac]     G:\ews\atinterfaces\src\splicing_sleeve\IControlClient.java
+    [javac]     G:\ews\atinterfaces\src\splicing_sleeve\IControlPortBase.java
+    [javac]     G:\ews\atinterfaces\src\splicing_sleeve\IControlServer.java
+    [javac]     G:\ews\atinterfaces\src\splicing_sleeve\MonitorPort.java
+    [javac]     G:\ews\atinterfaces\src\starter\error.java
+      [jar] found a total of 0 manifests in 3 resource collections
+      [jar] Building jar: G:\ews\atinterfaces\dist\atinterfaces.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding directory generals/
+      [jar] adding entry generals/ATConstants.class
+      [jar] adding directory platform_base/
+      [jar] adding entry platform_base/PLATFORM.class
+      [jar] adding directory splicing_sleeve/
+      [jar] adding entry splicing_sleeve/AutomaticNetworkInterface.class
+      [jar] adding entry splicing_sleeve/IControlClient.class
+      [jar] adding entry splicing_sleeve/IControlPortBase.class
+      [jar] adding entry splicing_sleeve/IControlServer.class
+      [jar] adding entry splicing_sleeve/MonitorPort.class
+      [jar] adding directory starter/
+      [jar] adding entry starter/error.class
+      [jar] adding directory buildnumber/
+      [jar] adding entry buildnumber/atinterfaces.buildnumber
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: G:\ews\atinterfaces\build.xml:64: 
+     [copy] Warning: G:\ews\atinterfaces\dist_add does not exist.
+
+PushOut:
+   [delete] Could not find file G:\backup\atinterfaces_5.tgz to delete.
+      [tar] Warning: dist\atinterfaces.jar modified in the future.
+      [tar] disabled_sources added as atinterfaces_5.tgz doesn't exist.
+      [tar] dist added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\buildnumber added as atinterfaces_5.tgz doesn't exist.
+      [tar] .classpath added as atinterfaces_5.tgz doesn't exist.
+      [tar] .project added as atinterfaces_5.tgz doesn't exist.
+      [tar] disabled_sources\CopyOfPLATFORM.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] dist\atinterfaces.jar added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\buildnumber\RTCommon.buildnumber added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\buildnumber\atinterfaces.buildnumber added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\generals\ATConstants.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\platform_base\PLATFORM.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\splicing_sleeve\AutomaticNetworkInterface.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\splicing_sleeve\IControlClient.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\splicing_sleeve\IControlPortBase.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\splicing_sleeve\IControlServer.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\splicing_sleeve\MonitorPort.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] src\starter\error.java added as atinterfaces_5.tgz doesn't exist.
+      [tar] ant_all.bat added as atinterfaces_5.tgz doesn't exist.
+      [tar] build.xml added as atinterfaces_5.tgz doesn't exist.
+      [tar] ant.log added as atinterfaces_5.tgz doesn't exist.
+      [tar] SetEnv.bat added as atinterfaces_5.tgz doesn't exist.
+      [tar] SetEnv.sh added as atinterfaces_5.tgz doesn't exist.
+      [tar] Building tar: G:\backup\atinterfaces_5.tgz
+
+post_build:
+     [copy] buildnumber\RTCommon.buildnumber added as buildnumber\RTCommon.buildnumber doesn't exist.
+     [copy] buildnumber\atinterfaces.buildnumber added as buildnumber\atinterfaces.buildnumber doesn't exist.
+     [copy] Copying 2 files to G:\ews\atinterfaces\bin
+     [copy] Copying G:\ews\atinterfaces\src\buildnumber\RTCommon.buildnumber to G:\ews\atinterfaces\bin\buildnumber\RTCommon.buildnumber
+     [copy] Copying G:\ews\atinterfaces\src\buildnumber\atinterfaces.buildnumber to G:\ews\atinterfaces\bin\buildnumber\atinterfaces.buildnumber
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 3 seconds

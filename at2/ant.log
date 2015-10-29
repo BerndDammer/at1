@@ -1,0 +1,545 @@
+Detected Java version: 1.8 in: G:\jdk_win\jdk\jre
+Detected OS: Windows 7
+parsing buildfile G:\ews_hold\at2\build.xml with URI = file:/G:/ews_hold/at2/build.xml
+Project base dir set to: G:\ews_hold\at2
+parsing buildfile jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/G:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+   [splash] Creating new SplashScreen
+Build sequence for target(s) `all' is [clean_thumbs, clean, build.number, build, PushOut, post_build, all]
+Complete build sequence is [clean_thumbs, clean, build.number, build, PushOut, post_build, all, ]
+
+clean_thumbs:
+
+clean:
+   [delete] Deleting directory G:\ews_hold\at2\bin
+   [delete] Deleting G:\ews_hold\at2\bin\resources\at2.buildnumber
+   [delete] Deleting directory G:\ews_hold\at2\bin\resources
+   [delete] Deleting G:\ews_hold\at2\bin\utils\MyGC.class
+   [delete] Deleting G:\ews_hold\at2\bin\utils\DIR.class
+   [delete] Deleting G:\ews_hold\at2\bin\utils\BorderPanel.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\utils
+   [delete] Deleting G:\ews_hold\at2\bin\testjasio\JAsioTest1.class
+   [delete] Deleting G:\ews_hold\at2\bin\testjasio\JAsioTest1$Collector.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\testjasio
+   [delete] Deleting G:\ews_hold\at2\bin\starter\error.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\at1.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$JATCP_B.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$ViewStarter.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$OutputStart.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$InputStart.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$LoopStart.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$Mul1.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$JATCP.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$Loop2Start.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$JAT1.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$PAT1.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\MainFrame$myPanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\JFrame2.class
+   [delete] Deleting G:\ews_hold\at2\bin\starter\Central.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\starter
+   [delete] Deleting G:\ews_hold\at2\bin\portaudiotest\PALoopTest.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\portaudiotest
+   [delete] Deleting G:\ews_hold\at2\bin\player\PlatformPlayerJavaSound.class
+   [delete] Deleting G:\ews_hold\at2\bin\player\PlatformPlayerJAsioHost.class
+   [delete] Deleting G:\ews_hold\at2\bin\player\PlatformPlayerBase.class
+   [delete] Deleting G:\ews_hold\at2\bin\player\IPlatformPlayer.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\player
+   [delete] Deleting G:\ews_hold\at2\bin\platform\PlatformPanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\platform\PlatformPanel$PlatformChoice.class
+   [delete] Deleting G:\ews_hold\at2\bin\platform\PlatformJavaSound.class
+   [delete] Deleting G:\ews_hold\at2\bin\platform\PlatformJAsioHost.class
+   [delete] Deleting G:\ews_hold\at2\bin\platform\PlatformBase.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\platform
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\OperatorOutputTest.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\OperatorLoopTest.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\OperatorBase.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\OperatingModePanel$Start.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\OperatingModePanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\OperatingModePanel$OpChoice.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\OperatingEffectGroup1.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\IOperation.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\IFunction.class
+   [delete] Deleting G:\ews_hold\at2\bin\operating_mode\IChain.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\operating_mode
+   [delete] Deleting G:\ews_hold\at2\bin\old\OutputTest.class
+   [delete] Deleting G:\ews_hold\at2\bin\old\LoopTest.class
+   [delete] Deleting G:\ews_hold\at2\bin\old\Loop2.class
+   [delete] Deleting G:\ews_hold\at2\bin\old\Loop2$StopButton.class
+   [delete] Deleting G:\ews_hold\at2\bin\old\Loop2$myPanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\old\Loop2$Runner.class
+   [delete] Deleting G:\ews_hold\at2\bin\old\IntSyncer.class
+   [delete] Deleting G:\ews_hold\at2\bin\old\InputTest.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\old
+   [delete] Deleting G:\ews_hold\at2\bin\channel\ChannelSelectorJavaSound$JavaSoundSubPanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\ChannelSelectorJavaSound.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\ChannelSelectorJavaSound$JavaSoundSubPanel$ViewStarter.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\ChannelSelectorJAsioHost.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\ChannelSelectorJAsioHost$JAsioHostSubPanel$PanelStarter.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\ChannelSelectorJAsioHost$JAsioHostSubPanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\ChannelSelectorBase.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\AudioSubChannelIdentifier.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\AudioChannelIdentifierJavaSound.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\AudioChannelIdentifier.class
+   [delete] Deleting G:\ews_hold\at2\bin\channel\AudioChannelChoice.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\channel
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myTree$L0Top.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myTree.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myTree$L3AudioFormat.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myTree$L1Mixer.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myScrollPane.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myTree$L3Control.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myPanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerView$myTree$L2Line.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerSelector.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerSelector$MixerChoice.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerSelector$LineChoice.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerSelector$Element.class
+   [delete] Deleting G:\ews_hold\at2\bin\background\MixerSelector$MODE.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\background
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopMul1.class
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopConvert.class
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopBase$myPanel.class
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopBase$RemView.class
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopBase$StopButton.class
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopBase$Runner.class
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopBase.class
+   [delete] Deleting G:\ews_hold\at2\bin\act\LoopBase$RemView$Syncer.class
+   [delete] Deleting directory G:\ews_hold\at2\bin\act
+   [delete] Deleting directory G:\ews_hold\at2\bin\aaa
+   [delete] Deleting directory G:\ews_hold\at2\bin
+
+build.number:
+     [echo] build.number 33
+     [echo] build.number 34
+
+build:
+    [mkdir] Created dir: G:\ews_hold\at2\bin
+    [mkdir] Created dir: G:\ews_hold\at2\dist
+    [javac] starter\at1.java added as starter\at1.class doesn't exist.
+    [javac] Compiling 1 source file to G:\ews_hold\at2\bin
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'G:\ews_hold\at2\bin'
+    [javac] '-classpath'
+    [javac] 'G:\ews_hold\at2\bin;G:\ews_hold\at2\lib\javax.json-1.0.4.jar;G:\ews_hold\at2\lib\jasio\JAsioHost.jar;G:\ews_hold\at2\lib\portaudio\jportaudio.jar'
+    [javac] '-sourcepath'
+    [javac] 'G:\ews_hold\at2\src'
+    [javac] '-g'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] File to be compiled:
+    [javac]     G:\ews_hold\at2\src\starter\at1.java
+Overriding previous definition of reference to non.jar.merge
+Overriding previous definition of reference to non.jar.merge
+      [jar] found a total of 0 manifests in 6 resource collections
+      [jar] Building jar: G:\ews_hold\at2\dist\at2.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding directory act/
+      [jar] adding entry act/LoopBase$1.class
+      [jar] adding entry act/LoopBase$RemView$Syncer.class
+      [jar] adding entry act/LoopBase$RemView.class
+      [jar] adding entry act/LoopBase$Runner.class
+      [jar] adding entry act/LoopBase$StopButton.class
+      [jar] adding entry act/LoopBase$myPanel.class
+      [jar] adding entry act/LoopBase.class
+      [jar] adding entry act/LoopConvert.class
+      [jar] adding entry act/LoopMul1.class
+      [jar] adding directory background/
+      [jar] adding entry background/MixerSelector$1.class
+      [jar] adding entry background/MixerSelector$Element.class
+      [jar] adding entry background/MixerSelector$LineChoice.class
+      [jar] adding entry background/MixerSelector$MODE.class
+      [jar] adding entry background/MixerSelector$MixerChoice.class
+      [jar] adding entry background/MixerSelector.class
+      [jar] adding entry background/MixerView$1.class
+      [jar] adding entry background/MixerView$myPanel.class
+      [jar] adding entry background/MixerView$myScrollPane.class
+      [jar] adding entry background/MixerView$myTree$L0Top.class
+      [jar] adding entry background/MixerView$myTree$L1Mixer.class
+      [jar] adding entry background/MixerView$myTree$L2Line.class
+      [jar] adding entry background/MixerView$myTree$L3AudioFormat.class
+      [jar] adding entry background/MixerView$myTree$L3Control.class
+      [jar] adding entry background/MixerView$myTree.class
+      [jar] adding entry background/MixerView.class
+      [jar] adding directory channel/
+      [jar] adding entry channel/AudioChannelChoice.class
+      [jar] adding entry channel/AudioChannelIdentifier.class
+      [jar] adding entry channel/AudioChannelIdentifierJavaSound.class
+      [jar] adding entry channel/AudioSubChannelIdentifier.class
+      [jar] adding entry channel/ChannelSelectorBase.class
+      [jar] adding entry channel/ChannelSelectorJAsioHost$1.class
+      [jar] adding entry channel/ChannelSelectorJAsioHost$JAsioHostSubPanel$PanelStarter.class
+      [jar] adding entry channel/ChannelSelectorJAsioHost$JAsioHostSubPanel.class
+      [jar] adding entry channel/ChannelSelectorJAsioHost.class
+      [jar] adding entry channel/ChannelSelectorJavaSound$JavaSoundSubPanel$ViewStarter.class
+      [jar] adding entry channel/ChannelSelectorJavaSound$JavaSoundSubPanel.class
+      [jar] adding entry channel/ChannelSelectorJavaSound.class
+      [jar] adding directory old/
+      [jar] adding entry old/InputTest.class
+      [jar] adding entry old/Loop2$1.class
+      [jar] adding entry old/Loop2$Runner.class
+      [jar] adding entry old/Loop2$StopButton.class
+      [jar] adding entry old/Loop2$myPanel.class
+      [jar] adding entry old/Loop2.class
+      [jar] adding entry old/LoopTest.class
+      [jar] adding entry old/OutputTest.class
+      [jar] adding directory operating_mode/
+      [jar] adding entry operating_mode/IChain.class
+      [jar] adding entry operating_mode/IOperation.class
+      [jar] adding entry operating_mode/OperatingEffectGroup1.class
+      [jar] adding entry operating_mode/OperatingModePanel$OpChoice.class
+      [jar] adding entry operating_mode/OperatingModePanel$Start.class
+      [jar] adding entry operating_mode/OperatingModePanel.class
+      [jar] adding entry operating_mode/OperatorBase.class
+      [jar] adding entry operating_mode/OperatorLoopTest.class
+      [jar] adding entry operating_mode/OperatorOutputTest.class
+      [jar] adding directory platform/
+      [jar] adding entry platform/PlatformBase.class
+      [jar] adding entry platform/PlatformJAsioHost.class
+      [jar] adding entry platform/PlatformJavaSound.class
+      [jar] adding entry platform/PlatformPanel$PlatformChoice.class
+      [jar] adding entry platform/PlatformPanel.class
+      [jar] adding directory player/
+      [jar] adding entry player/IPlatformPlayer.class
+      [jar] adding entry player/PlatformPlayerBase.class
+      [jar] adding entry player/PlatformPlayerJAsioHost.class
+      [jar] adding entry player/PlatformPlayerJavaSound.class
+      [jar] adding directory portaudiotest/
+      [jar] adding entry portaudiotest/PALoopTest.class
+      [jar] adding directory starter/
+      [jar] adding entry starter/Central.class
+      [jar] adding entry starter/JFrame2.class
+      [jar] adding entry starter/MainFrame$InputStart.class
+      [jar] adding entry starter/MainFrame$JAT1.class
+      [jar] adding entry starter/MainFrame$JATCP.class
+      [jar] adding entry starter/MainFrame$JATCP_B.class
+      [jar] adding entry starter/MainFrame$Loop2Start.class
+      [jar] adding entry starter/MainFrame$LoopStart.class
+      [jar] adding entry starter/MainFrame$Mul1.class
+      [jar] adding entry starter/MainFrame$OutputStart.class
+      [jar] adding entry starter/MainFrame$PAT1.class
+      [jar] adding entry starter/MainFrame$ViewStarter.class
+      [jar] adding entry starter/MainFrame$myPanel.class
+      [jar] adding entry starter/MainFrame.class
+      [jar] adding entry starter/at1.class
+      [jar] adding entry starter/error.class
+      [jar] adding directory testjasio/
+      [jar] adding entry testjasio/JAsioTest1$Collector.class
+      [jar] adding entry testjasio/JAsioTest1.class
+      [jar] adding directory utils/
+      [jar] adding entry utils/BorderPanel.class
+      [jar] adding entry utils/DIR.class
+      [jar] adding entry utils/MyGC.class
+      [jar] adding directory resources/
+      [jar] adding entry resources/at2.buildnumber
+      [jar] adding directory javax/
+      [jar] adding directory javax/json/
+      [jar] adding entry javax/json/Json.class
+      [jar] adding entry javax/json/JsonArray.class
+      [jar] adding entry javax/json/JsonArrayBuilder.class
+      [jar] adding entry javax/json/JsonBuilderFactory.class
+      [jar] adding entry javax/json/JsonException.class
+      [jar] adding entry javax/json/JsonNumber.class
+      [jar] adding entry javax/json/JsonObject.class
+      [jar] adding entry javax/json/JsonObjectBuilder.class
+      [jar] adding entry javax/json/JsonReader.class
+      [jar] adding entry javax/json/JsonReaderFactory.class
+      [jar] adding entry javax/json/JsonString.class
+      [jar] adding entry javax/json/JsonStructure.class
+      [jar] adding entry javax/json/JsonValue$1.class
+      [jar] adding entry javax/json/JsonValue$2.class
+      [jar] adding entry javax/json/JsonValue$3.class
+      [jar] adding entry javax/json/JsonValue$ValueType.class
+      [jar] adding entry javax/json/JsonValue.class
+      [jar] adding entry javax/json/JsonWriter.class
+      [jar] adding entry javax/json/JsonWriterFactory.class
+      [jar] adding directory javax/json/spi/
+      [jar] adding entry javax/json/spi/JsonProvider.class
+      [jar] adding directory javax/json/stream/
+      [jar] adding entry javax/json/stream/JsonGenerationException.class
+      [jar] adding entry javax/json/stream/JsonGenerator.class
+      [jar] adding entry javax/json/stream/JsonGeneratorFactory.class
+      [jar] adding entry javax/json/stream/JsonLocation.class
+      [jar] adding entry javax/json/stream/JsonParser$Event.class
+      [jar] adding entry javax/json/stream/JsonParser.class
+      [jar] adding entry javax/json/stream/JsonParserFactory.class
+      [jar] adding entry javax/json/stream/JsonParsingException.class
+      [jar] adding directory org/
+      [jar] adding directory org/glassfish/
+      [jar] adding directory org/glassfish/json/
+      [jar] adding entry org/glassfish/json/BufferPoolImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl$JsonArrayImpl.class
+      [jar] adding entry org/glassfish/json/JsonArrayBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonBuilderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl$Scope.class
+      [jar] adding entry org/glassfish/json/JsonGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonLocationImpl.class
+      [jar] adding entry org/glassfish/json/JsonMessages.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonBigDecimalNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonIntNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl$JsonLongNumber.class
+      [jar] adding entry org/glassfish/json/JsonNumberImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl$JsonObjectImpl.class
+      [jar] adding entry org/glassfish/json/JsonObjectBuilderImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ArrayContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Context.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$NoneContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$ObjectContext.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$Stack.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl$StateIterator.class
+      [jar] adding entry org/glassfish/json/JsonParserImpl.class
+      [jar] adding entry org/glassfish/json/JsonPrettyGeneratorImpl.class
+      [jar] adding entry org/glassfish/json/JsonProviderImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl$1.class
+      [jar] adding entry org/glassfish/json/JsonReaderImpl.class
+      [jar] adding entry org/glassfish/json/JsonStringImpl.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$1.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ArrayScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$ObjectScope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser$Scope.class
+      [jar] adding entry org/glassfish/json/JsonStructureParser.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer$JsonToken.class
+      [jar] adding entry org/glassfish/json/JsonTokenizer.class
+      [jar] adding entry org/glassfish/json/JsonWriterFactoryImpl.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl$NoFlushOutputStream.class
+      [jar] adding entry org/glassfish/json/JsonWriterImpl.class
+      [jar] adding entry org/glassfish/json/UnicodeDetectingInputStream.class
+      [jar] adding directory org/glassfish/json/api/
+      [jar] adding entry org/glassfish/json/api/BufferPool.class
+      [jar] adding directory com/
+      [jar] adding directory com/synthbot/
+      [jar] adding directory com/synthbot/jasiohost/
+      [jar] adding entry com/synthbot/jasiohost/AsioChannel.class
+      [jar] adding entry com/synthbot/jasiohost/AsioDriver.class
+      [jar] adding entry com/synthbot/jasiohost/AsioDriverInfo.class
+      [jar] adding entry com/synthbot/jasiohost/AsioDriverListener.class
+      [jar] adding entry com/synthbot/jasiohost/AsioDriverState.class
+      [jar] adding entry com/synthbot/jasiohost/AsioException.class
+      [jar] adding entry com/synthbot/jasiohost/AsioSampleType.class
+      [jar] adding entry com/synthbot/jasiohost/ExampleHost$1.class
+      [jar] adding entry com/synthbot/jasiohost/ExampleHost$2.class
+      [jar] adding entry com/synthbot/jasiohost/ExampleHost$3.class
+      [jar] adding entry com/synthbot/jasiohost/ExampleHost$4.class
+      [jar] adding entry com/synthbot/jasiohost/ExampleHost$5.class
+      [jar] adding entry com/synthbot/jasiohost/ExampleHost.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: G:\ews_hold\at2\build.xml:86: 
+     [copy] run.bat added as run.bat doesn't exist.
+     [copy] jasiohost32.dll added as jasiohost32.dll doesn't exist.
+     [copy] jasiohost64.dll added as jasiohost64.dll doesn't exist.
+     [copy] Copying 3 files to G:\ews_hold\at2\dist
+     [copy] Copying G:\ews_hold\at2\dist_add\run.bat to G:\ews_hold\at2\dist\run.bat
+     [copy] Copying G:\ews_hold\at2\lib\jasio\jasiohost32.dll to G:\ews_hold\at2\dist\jasiohost32.dll
+     [copy] Copying G:\ews_hold\at2\lib\jasio\jasiohost64.dll to G:\ews_hold\at2\dist\jasiohost64.dll
+
+PushOut:
+   [delete] Could not find file G:\backup\at2_34.zip to delete.
+      [zip] Building zip: G:\backup\at2_34.zip
+      [zip] adding directory dist/
+      [zip] adding directory dist_add/
+      [zip] adding directory doclinks/
+      [zip] adding directory lib/
+      [zip] adding directory lib/jasio/
+      [zip] adding directory lib/portaudio/
+      [zip] adding directory src/
+      [zip] adding directory src/resources/
+      [zip] adding directory theOthers/
+      [zip] adding directory theOthers/PreSonus/
+      [zip] adding directory theOthers/alsa_lib/
+      [zip] adding directory theOthers/analyser/
+      [zip] adding directory theOthers/asio2ks/
+      [zip] adding directory theOthers/behringer/
+      [zip] adding directory theOthers/book/
+      [zip] adding directory theOthers/controller/
+      [zip] adding directory theOthers/hardware/
+      [zip] adding directory theOthers/interfacing/
+      [zip] adding directory theOthers/mic_circut/
+      [zip] adding directory theOthers/odroid/
+      [zip] adding directory theOthers/progs/
+      [zip] adding directory theOthers/stecker/
+      [zip] adding directory theOthers/steinberg_asio/
+      [zip] adding directory theOthers/wrapper/
+      [zip] adding entry .classpath
+      [zip] adding entry .project
+      [zip] adding entry dist/at2.jar
+      [zip] adding entry dist/jasiohost32.dll
+      [zip] adding entry dist/jasiohost64.dll
+      [zip] adding entry dist/run.bat
+      [zip] adding entry dist_add/run.bat
+      [zip] adding entry doclinks/AudioSystem (Java Platform SE 7 ).URL
+      [zip] adding entry doclinks/GC SystemUtils - org.apache.commons.lang.SystemUtils (.java) - GrepCode Class Source.URL
+      [zip] adding entry doclinks/Mixer.Info (Java Platform SE 7 ).URL
+      [zip] adding entry doclinks/Overview (Java Platform SE 8 ).URL
+      [zip] adding entry doclinks/The Java÷ Tutorials.URL
+      [zip] adding entry doclinks/Trail Sound (The Java÷ Tutorials).URL
+      [zip] adding entry lib/Vector.jar
+      [zip] adding entry lib/jasio/JAsioHost.jar
+      [zip] adding entry lib/jasio/jasiohost-master.zip
+      [zip] adding entry lib/jasio/jasiohost32.dll
+      [zip] adding entry lib/jasio/jasiohost64.dll
+      [zip] adding entry lib/jasio/mhrothjasiohost ¿ GitHub.URL
+      [zip] adding entry lib/javax.json-1.0.4.jar
+      [zip] adding entry lib/portaudio/PortAudio com.portaudio.PortAudio Class Reference.URL
+      [zip] adding entry lib/portaudio/index.html
+      [zip] adding entry lib/portaudio/jportaudio.jar
+      [zip] adding entry lib/portaudio/jportaudio_pc_20120904.zip
+      [zip] adding entry lib/portaudio/jportaudio_x64.dll
+      [zip] adding entry lib/portaudio/jportaudio_x86.dll
+      [zip] adding entry lib/portaudio/portaudio_x64.dll
+      [zip] adding entry lib/portaudio/portaudio_x86.dll
+      [zip] adding directory src/aaa/
+      [zip] adding entry src/aaa/Concept.java
+      [zip] adding directory src/act/
+      [zip] adding entry src/act/LoopBase.java
+      [zip] adding entry src/act/LoopConvert.java
+      [zip] adding entry src/act/LoopMul1.java
+      [zip] adding directory src/background/
+      [zip] adding entry src/background/MixerSelector.java
+      [zip] adding entry src/background/MixerView.java
+      [zip] adding directory src/channel/
+      [zip] adding entry src/channel/AudioChannelChoice.java
+      [zip] adding entry src/channel/AudioChannelIdentifier.java
+      [zip] adding entry src/channel/AudioChannelIdentifierJavaSound.java
+      [zip] adding entry src/channel/AudioSubChannelIdentifier.java
+      [zip] adding entry src/channel/ChannelSelectorBase.java
+      [zip] adding entry src/channel/ChannelSelectorJAsioHost.java
+      [zip] adding entry src/channel/ChannelSelectorJavaSound.java
+      [zip] adding directory src/old/
+      [zip] adding entry src/old/InputTest.java
+      [zip] adding entry src/old/IntSyncer.java
+      [zip] adding entry src/old/Loop2.java
+      [zip] adding entry src/old/LoopTest.java
+      [zip] adding entry src/old/OutputTest.java
+      [zip] adding directory src/operating_mode/
+      [zip] adding entry src/operating_mode/IChain.java
+      [zip] adding entry src/operating_mode/IEffect.java
+      [zip] adding entry src/operating_mode/IFunction.java
+      [zip] adding entry src/operating_mode/IOperation.java
+      [zip] adding entry src/operating_mode/OperatingEffectGroup1.java
+      [zip] adding entry src/operating_mode/OperatingModePanel.java
+      [zip] adding entry src/operating_mode/OperatorBase.java
+      [zip] adding entry src/operating_mode/OperatorLoopTest.java
+      [zip] adding entry src/operating_mode/OperatorOutputTest.java
+      [zip] adding directory src/platform/
+      [zip] adding entry src/platform/PlatformBase.java
+      [zip] adding entry src/platform/PlatformJAsioHost.java
+      [zip] adding entry src/platform/PlatformJavaSound.java
+      [zip] adding entry src/platform/PlatformPanel.java
+      [zip] adding directory src/player/
+      [zip] adding entry src/player/IPlatformPlayer.java
+      [zip] adding entry src/player/PlatformPlayerBase.java
+      [zip] adding entry src/player/PlatformPlayerJAsioHost.java
+      [zip] adding entry src/player/PlatformPlayerJavaSound.java
+      [zip] adding directory src/portaudiotest/
+      [zip] adding entry src/portaudiotest/PALoopTest.java
+      [zip] adding entry src/resources/at2.buildnumber
+      [zip] adding directory src/starter/
+      [zip] adding entry src/starter/Central.java
+      [zip] adding entry src/starter/JFrame2.java
+      [zip] adding entry src/starter/MainFrame.java
+      [zip] adding entry src/starter/at1.java
+      [zip] adding entry src/starter/error.java
+      [zip] adding directory src/testjasio/
+      [zip] adding entry src/testjasio/JAsioTest1.java
+      [zip] adding directory src/utils/
+      [zip] adding entry src/utils/BorderPanel.java
+      [zip] adding entry src/utils/DIR.java
+      [zip] adding entry src/utils/MyGC.java
+      [zip] adding entry theOthers/PreSonus/PreSonus_AudioBox_Installer_v1_3_5653.exe
+      [zip] adding entry theOthers/PreSonus/iOne-iTwo_OwnersManual_DE_24032015.pdf
+      [zip] adding entry theOthers/alsa_lib/A Guide Through The Linux Sound API Jungle.URL
+      [zip] adding entry theOthers/alsa_lib/A tutorial on using the ALSA Audio API.URL
+      [zip] adding entry theOthers/alsa_lib/ALSA Programming HOWTO v.1.0.0.URL
+      [zip] adding entry theOthers/alsa_lib/JAudioLibs ¿ GitHub.URL
+      [zip] adding entry theOthers/alsa_lib/java-jack - JACK bridge for Java - Google Project Hosting.URL
+      [zip] adding entry theOthers/analyser/GraphicalAnalyzer.exe
+      [zip] adding entry theOthers/analyser/OpenAsio.dll
+      [zip] adding entry theOthers/analyser/analyzer.zip
+      [zip] adding entry theOthers/analyser/te_goertzel.dll
+      [zip] adding entry theOthers/asio2ks/asio2ks.cpl
+      [zip] adding entry theOthers/asio2ks/asio2ks_beta.zip
+      [zip] adding entry theOthers/asio2ks/readme.txt
+      [zip] adding entry theOthers/behringer/BEHRINGER_UMC_Driver_v2_23_0.zip
+      [zip] adding entry theOthers/behringer/BEHRINGER_UMC_Firmware_v1_12.zip
+      [zip] adding entry theOthers/book/Alsa ˚ wiki.archlinux.de.URL
+      [zip] adding entry theOthers/book/Arch Linux - alsa-lib 1.0.29-1 (i686) - File List.URL
+      [zip] adding entry theOthers/book/Arch Linux - alsa-utils 1.0.29-1 (i686).URL
+      [zip] adding entry theOthers/book/Debian -- File list of package libasound2-docwheezyall.URL
+      [zip] adding entry theOthers/book/Java Sound Resources.URL
+      [zip] adding entry theOthers/book/Programming and Using Linux Sound.URL
+      [zip] adding entry theOthers/book/alsa.opensrc.org.URL
+      [zip] adding entry theOthers/controller/FBV MkII Series Controller Advanced User Guide - German ( Rev B ).pdf
+      [zip] adding entry theOthers/controller/if67743262894_d_man_9.pdf
+      [zip] adding entry theOthers/hardware/001011100-da-01-en-IC_OPAMP_GP_10MHZ_DU_NE5532AP_PDIP_8_TID.pdf
+      [zip] adding entry theOthers/hardware/151768-da-01-en-NE_5532P.pdf
+      [zip] adding entry theOthers/hardware/ALESIS iO 2 Express.URL
+      [zip] adding entry theOthers/hardware/AudioBoxUSB_OwnersManual_DE1.pdf
+      [zip] adding entry theOthers/hardware/AudioInterfaces_01.odt
+      [zip] adding entry theOthers/hardware/Audiolink_III_manual_deutsch-engl.pdf
+      [zip] adding entry theOthers/hardware/UMC204_UMC202_UMC22_UM2_WebBrochure.pdf
+      [zip] adding entry theOthers/hardware/_ Audio Interface Comparison - YouTube.URL
+      [zip] adding entry theOthers/hardware/_ Best budget USB audio interfaces - YouTube.URL
+      [zip] adding entry theOthers/hardware/_ Peavey Ampkit on andriod Phone Samsung Galaxy Note II guitar amp pedal iphone american fender - YouTube.URL
+      [zip] adding entry theOthers/hardware/maxresdefault.jpg
+      [zip] adding entry theOthers/hardware/om_usbphonoplusps.pdf
+      [zip] adding entry theOthers/interfacing/738027-da-01-de-COMBOFLANSCH_STEREO_SCHALTER_NCJ_9FIS.pdf
+      [zip] adding entry theOthers/interfacing/Audio Stream InputOutput ˚ Wikipedia.URL
+      [zip] adding entry theOthers/interfacing/Downloads - java-jack - JACK bridge for Java - Google Project Hosting.URL
+      [zip] adding entry theOthers/interfacing/ECE497 Notes on Rakarrack - eLinux.org.URL
+      [zip] adding entry theOthers/interfacing/JACK Audio Connection KitHome.URL
+      [zip] adding entry theOthers/interfacing/PortAudio Public API definitions for users of PortAudio.URL
+      [zip] adding entry theOthers/interfacing/PortAudio com.portaudio.PortAudio Class Reference.URL
+      [zip] adding entry theOthers/interfacing/Pro Audio - ArchWiki.URL
+      [zip] adding entry theOthers/interfacing/_ Tutorial Realtime (RT) Audio on Linux The Basics (for Laymen) - YouTube.URL
+      [zip] adding entry theOthers/interfacing/behringer_xenyx_502_sch.pdf
+      [zip] adding entry theOthers/interfacing/centrevillagejsasio ¿ GitHub.URL
+      [zip] adding entry theOthers/interfacing/com.groovemanager.spi.asio Class Hierarchy.URL
+      [zip] adding entry theOthers/interfacing/jsasio-master.zip
+      [zip] adding entry theOthers/interfacing/lac07_slides_gulden1.pdf
+      [zip] adding entry theOthers/interfacing/lac07_slides_gulden1.pdf.URL
+      [zip] adding entry theOthers/interfacing/scarlett-2i2-bedienungsanleitung0.pdf
+      [zip] adding entry theOthers/interfacing/scarlett2i4-user-guidede_0.pdf
+      [zip] adding entry theOthers/mic_circut/59941_fig_01.gif
+      [zip] adding entry theOthers/mic_circut/Mikrofonbuch_komplett.pdf
+      [zip] adding entry theOthers/mic_circut/electret_xlr2.gif
+      [zip] adding entry theOthers/odroid/$35 Quad core ARMv7 PC ODROID-C1.URL
+      [zip] adding entry theOthers/progs/SoftSynth - music and computers.URL
+      [zip] adding entry theOthers/progs/_ Guitar PRO Linux - YouTube.URL
+      [zip] adding entry theOthers/progs/_ rakarrack Guitar Rig Alternative unter Linux - YouTube.URL
+      [zip] adding entry theOthers/progs/analyzer.zip
+      [zip] adding entry theOthers/progs/asio2ks_beta.zip
+      [zip] adding entry theOthers/stecker/Drawing+NC3MD-L-1.pdf
+      [zip] adding entry theOthers/stecker/Product+Guide+-+Section+XLR.pdf
+      [zip] adding entry theOthers/steinberg_asio/Developers····httpwww.steinberg.net.URL
+      [zip] adding entry theOthers/steinberg_asio/asiosdk2.3.zip
+      [zip] adding entry theOthers/wrapper/VSTModuleArchitectureSDK.zip
+      [zip] adding entry theOthers/wrapper/jVSTwRapper - Java-Based Audio Plug-Ins.URL
+      [zip] adding entry theOthers/wrapper/jVSTwRapper-Release-1.0beta-win.zip
+      [zip] adding entry SetEnv.bat
+      [zip] adding entry ant_all.bat
+      [zip] adding entry ant_all.sh
+      [zip] adding entry build.xml
+      [zip] adding entry template.xml
+      [zip] adding entry ant.log
+
+post_build:
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+     [exec] The command attribute is deprecated.
+     [exec] Please use the executable attribute and nested arg elements.
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 12 seconds

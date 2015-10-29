@@ -1,0 +1,1 @@
+start \eclipse_win\eclipse -data . -vm \jdk_win\bin
