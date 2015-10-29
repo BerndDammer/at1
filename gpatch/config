@@ -5,7 +5,7 @@
 	logallrefupdates = true
 	symlinks = false
 [remote "origin"]
-	url = https://github.com/BerndDammer/at1.git
+	url = https://BerndDammer@github.com/BerndDammer/at1.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
 	remote = origin
