@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import controller.ControlReceiveParameter;
 import starter.Central;
 import starter.MainFrame;
 
@@ -21,7 +20,9 @@ public abstract class EffectDialog extends BorderPanel implements IFunction
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getAnonymousLogger();
 
-	private RemView remView;
+    private IPlayer player;
+
+    private RemView remView;
     protected MainFrame parent;
 
 	public EffectDialog()
@@ -34,7 +35,6 @@ public abstract class EffectDialog extends BorderPanel implements IFunction
         
         Central.getMainFrame().setEffectPanel(this);
 	}
-	private IPlayer player;
 	protected void startIt()
 	{
 		logger.info("Starting effect ...");
