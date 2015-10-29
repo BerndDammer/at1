@@ -5,11 +5,12 @@ import gui_help.BorderPanel;
 import java.awt.GridBagConstraints;
 import java.util.logging.Logger;
 
-import javax.sound.midi.MidiMessage;
-
 import starter.MainFrame;
+import controller.interfaces.IFromMidi;
+import controller.interfaces.IControlOutTransmitter.ControlReceiveParameter;
+import controller.interfaces.IPotsOut;
 
-public class ControllerPanelMapper extends BorderPanel implements IFromMidi
+public class ControllerPanelMapper extends BorderPanel implements IFromMidi, IPotsOut
 {
     private static final long serialVersionUID = 1L;
     private static final Logger logger = Logger.getLogger("miditest");
@@ -108,15 +109,49 @@ public class ControllerPanelMapper extends BorderPanel implements IFromMidi
 //        return right[3];
 //    }
 
-    // ////////////////////////////////////
-    // /
-    public double[] lockValuesForSample()
+    // ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////
+    // /syncronizing of data traversal
+    //
+    //
+    private final SimpleLock lockLeft = new SimpleLock();
+    private final SimpleLock lockRight = new SimpleLock();
+    
+    private final class SimpleLock
     {
-        return right;
+        private int counter = 0;
+        public synchronized void lock()
+        {
+            while(counter != 0)
+                try
+                {
+                    wait();
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+            counter++;
+        }
+        
+        public synchronized void unlock()
+        {
+            counter--;
+            if(counter != 0)
+                notify();
+        }
     }
 
+    @Override
+    public double[] lockValuesForSample()
+    {
+        lockRight.lock();
+        return right;
+    }
+    @Override
     public void freeValuesForSample()
     {
+        lockRight.unlock();
     }
 
     public void potChanged(double d, int index)
@@ -129,11 +164,17 @@ public class ControllerPanelMapper extends BorderPanel implements IFromMidi
     // ////////////////////////////////////////
     private final synchronized void left2mid()
     {
+        lockLeft.lock();
         System.arraycopy(left, 0, mid, 0, POT_COUNT);
+        lockLeft.unlock();
     }
 
     private final synchronized void mid2right()
     {
+        lockLeft.lock();
+        lockRight.lock();
         System.arraycopy(mid, 0, right, 0, POT_COUNT);
+        lockRight.unlock();
+        lockLeft.unlock();
     }
 }

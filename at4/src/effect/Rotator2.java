@@ -1,10 +1,10 @@
 package effect;
 
-import controller.ControlReceiveParameter;
-import starter.MainFrame;
+import controller.interfaces.IControlOutReceiver;
+import controller.interfaces.IControlOutTransmitter.ControlReceiveParameter;
 
 
-public class Rotator2 extends EffectDialog
+public class Rotator2 extends EffectDialog implements IControlOutReceiver
 {
 	private static final long serialVersionUID = 1L;
 	private static final long SPR = 4800l;

@@ -33,30 +33,6 @@ public abstract class ControllerGroupBase implements Receiver
             logger.info("Problem init midi");
             logger.throwing("ControllerGroupBase", "init", e);
         }
-        
-//        logger.info("Start init midi");
-//        try
-//        {
-//            MidiDevice md = MidiSystem.getMidiDevice(mi);
-//            tm = md.getTransmitter();
-//            md.open();
-//            tm.setReceiver(this);
-//            logger.info("End init midi");
-//        } catch (MidiUnavailableException e)
-//        {
-//            e.printStackTrace();
-//            logger.info("Problem init midi");
-//        }
-//
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
 
     // /////////////////////////////////////////////////

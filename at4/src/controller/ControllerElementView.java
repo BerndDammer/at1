@@ -8,7 +8,10 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JPanel;
 
-public class ControllerElementView extends JPanel implements IPot127Listener
+import controller.interfaces.IControlInReceiver;
+import controller.interfaces.IControlOutTransmitter;
+
+public class ControllerElementView extends JPanel implements IControlInReceiver, IControlOutTransmitter
 {
     private static final Color COLOR_BACKGROUND = new Color(100, 100, 100);
     private MidiPotControl midiPotControl = null;
@@ -22,7 +25,7 @@ public class ControllerElementView extends JPanel implements IPot127Listener
 
     private final ControllerPanelMapper parent;
     private final int index;
-    private ControlReceiveParameter controlReceiveParameter = null;
+    private IControlOutTransmitter.ControlReceiveParameter controlReceiveParameter = null;
     private double factor, offset;
     
     public ControllerElementView(ControllerPanelMapper parent, int index)
@@ -42,6 +45,7 @@ public class ControllerElementView extends JPanel implements IPot127Listener
         updateViewState();
     }
 
+    @Override
     public void connectPot(MidiPotControl midiPotControl)
     {
         this.midiPotControl = midiPotControl;
@@ -64,6 +68,7 @@ public class ControllerElementView extends JPanel implements IPot127Listener
         parent.potChanged(va, index);
     }
 
+    @Override
     public void setUseParameter(ControlReceiveParameter controlReceiveParameter)
     {
         this.controlReceiveParameter = controlReceiveParameter;
@@ -72,7 +77,7 @@ public class ControllerElementView extends JPanel implements IPot127Listener
         offset = controlReceiveParameter.min;
         updateViewState();
     }
-
+    //////////////////////////////////////////////////////////////
     private void updateViewState()
     {
         int r, g, b;
