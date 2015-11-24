@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="platform_base/PlatformParameterPanel.java|XYOperator.java|controller/ControllerMapper.java|controller/ControllerElementBase.java|controller/ControlReceiveParameter.java|controller/IPot127Listener.java" kind="src" path="src"/>
+	<classpathentry excluding="platform_base/PlatformParameterPanel.java|XYOperator.java|controller/ControllerMapper.java|controller/ControllerElementBase.java|controller/ControlReceiveParameter.java|controller/IPot127Listener.java|controller/ControllerPanelMapperLDP8.java" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/jasio/JAsioHost.jar"/>
 	<classpathentry kind="output" path="bin"/>

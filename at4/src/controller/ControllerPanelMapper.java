@@ -6,24 +6,21 @@ import java.awt.GridBagConstraints;
 import java.util.logging.Logger;
 
 import starter.MainFrame;
-import controller.interfaces.IFromMidi;
 import controller.interfaces.IControlOutTransmitter.ControlReceiveParameter;
+import controller.interfaces.IFromMidi;
 import controller.interfaces.IPotsOut;
 
 public class ControllerPanelMapper extends BorderPanel implements IFromMidi, IPotsOut
 {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = Logger.getLogger("miditest");
+    //private static final Logger logger = Logger.getLogger("miditest");
 
-    // private final List<MidiPotControl> pots = new LinkedList<>();
     private static final int BRIDGE_COUNT = 16;
-    // private final MidiPotControl pots[] = new MidiPotControl[BRIDGE_COUNT];
 
-    private final double left[] = new double[BRIDGE_COUNT];
-    private final double mid[] = new double[BRIDGE_COUNT];
-    private final double right[] = new double[BRIDGE_COUNT];
-
-    // private final MidiPotControl pots[] = new MidiPotControl[BRIDGE_COUNT];
+    private final double writeableForMidi[] = new double[BRIDGE_COUNT];
+    private final double readableForEffect[] = new double[BRIDGE_COUNT];
+    private final SimpleLock lockTransfer = new SimpleLock();
+    
 
     private static final int POT_COUNT = 8;
 
@@ -60,12 +57,9 @@ public class ControllerPanelMapper extends BorderPanel implements IFromMidi, IPo
 
         for (int i = 0; i < BRIDGE_COUNT; i++)
         {
-            left[i] = 0;
-            mid[i] = 0;
-            right[i] = 0;
-
+            writeableForMidi[i] = 0;
+            readableForEffect[i] = 0;
         }
-
     }
 
     // /////////////////////////////////////////
@@ -87,94 +81,103 @@ public class ControllerPanelMapper extends BorderPanel implements IFromMidi, IPo
         views[index].setUseParameter(mpc);
     }
 
-    // /////////////////////////////////
-    // to Effect
-//    public double get0()
-//    {
-//        return right[0];
-//    }
-//
-//    public double get1()
-//    {
-//        return right[1];
-//    }
-//
-//    public double get2()
-//    {
-//        return right[2];
-//    }
-//
-//    public double get3()
-//    {
-//        return right[3];
-//    }
-
     // ///////////////////////////////////////////////////////////
     ///////////////////////////////////////////
     // /syncronizing of data traversal
     //
     //
-    private final SimpleLock lockLeft = new SimpleLock();
-    private final SimpleLock lockRight = new SimpleLock();
-    
     private final class SimpleLock
     {
-        private int counter = 0;
-        public synchronized void lock()
+        private static final long TIMEOUT = 700;
+        //private int counter = 0;
+        private boolean isReading = false;
+        private boolean isWriting = false;
+
+        public synchronized void lockWriting()
         {
-            while(counter != 0)
+            long time;
+            if( isWriting ) problem("Double Write Entry");
+            isWriting = true;
+            time = System.currentTimeMillis();
+            if(isReading)
+            {
                 try
                 {
                     wait();
                 }
                 catch (InterruptedException e)
                 {
-                    e.printStackTrace();
+                    problem("Write Interrupted");
                 }
-            counter++;
+                if( System.currentTimeMillis() - time > TIMEOUT) problem("Long Write lock");
+            }
         }
         
-        public synchronized void unlock()
+        public synchronized void unlockWriting()
         {
-            counter--;
-            if(counter != 0)
+            if( !isWriting ) problem("Unexpected Write unlock");
+            if( isReading)
                 notify();
+            isWriting = false;
+        }
+        public synchronized void lockReading()
+        {
+            long time;
+            if( isReading ) problem("Double Read Entry");
+            isReading = true;
+            time = System.currentTimeMillis();
+            if(isWriting)
+            {
+                try
+                {
+                    wait();
+                }
+                catch (InterruptedException e)
+                {
+                    problem("Read Interrupted");
+                }
+                if( System.currentTimeMillis() - time > TIMEOUT) problem("Long Read lock");
+            }
+        }
+        
+        public synchronized void unlockReading()
+        {
+            if( !isReading ) problem("Unexpected Write unlock");
+            if( isWriting)
+                notify();
+            isReading = false;
+        }
+        private void problem(String text)
+        {
+            throw new Error( text );
         }
     }
 
     @Override
     public double[] lockValuesForSample()
     {
-        lockRight.lock();
-        return right;
+        lockTransfer.lockReading();
+        return readableForEffect;
     }
     @Override
     public void freeValuesForSample()
     {
-        lockRight.unlock();
+        lockTransfer.unlockReading();
     }
 
     public void potChanged(double d, int index)
     {
-        left[index] = d;
-        left2mid();
-        mid2right();
+        writeableForMidi[index] = d;
+        updatePotValues();
     }
 
     // ////////////////////////////////////////
-    private final synchronized void left2mid()
+    private final void updatePotValues()
     {
-        lockLeft.lock();
-        System.arraycopy(left, 0, mid, 0, POT_COUNT);
-        lockLeft.unlock();
+        lockTransfer.lockWriting();
+        System.arraycopy(writeableForMidi, 0, 
+                readableForEffect, 0, POT_COUNT);
+        lockTransfer.unlockWriting();
     }
 
-    private final synchronized void mid2right()
-    {
-        lockLeft.lock();
-        lockRight.lock();
-        System.arraycopy(mid, 0, right, 0, POT_COUNT);
-        lockRight.unlock();
-        lockLeft.unlock();
-    }
 }

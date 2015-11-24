@@ -7,10 +7,12 @@ import controller.interfaces.IControlOutTransmitter.ControlReceiveParameter;
 public class Rotator2 extends EffectDialog implements IControlOutReceiver
 {
 	private static final long serialVersionUID = 1L;
-	private static final long SPR = 4800l;
-	long sampleCounter;
+	//private static final long SPR = 4800l;
+	//private long sampleCounter;
+	private double omega = 0.0;
+	private final double omega_max = Math.PI * 2.0;
+	private final double fak_para_2_omega = Math.PI * 2.0 / 48000.0;
 
-	
 	public Rotator2()
 	{
 		//thread start before setVisible
@@ -24,13 +26,14 @@ public class Rotator2 extends EffectDialog implements IControlOutReceiver
 	public double nextSample(double l, double r)
 	{
 	    double[] para = parent.getControllerPanelMapper().lockValuesForSample();
-		sampleCounter ++;
+		//sampleCounter ++;
 		
-		double sample_divisor = 48000.0 / para[1];
+		//double sample_divisor = 48000.0 / para[1];
         //double sample_reminder = ((double)sampleCounter) % sample_divisor;
-        double sample_reminder = ((double)sampleCounter) / sample_divisor;
-		sample_reminder = sample_reminder - Math.floor( sample_reminder);
-        double omega = sample_reminder * ( 2.0 * Math.PI);
+        //double sample_reminder = ((double)sampleCounter) / sample_divisor;
+		//sample_reminder = sample_reminder - Math.floor( sample_reminder);
+        omega += para[1] * fak_para_2_omega;
+        if( omega > omega_max) omega -= omega_max;
 		double splitter = para[2] * Math.sin( omega );
         double fak_bridge = para[0] + splitter;
         double fak_neck = 1.0 - para[0] - splitter;
@@ -39,6 +42,7 @@ public class Rotator2 extends EffectDialog implements IControlOutReceiver
 		parent.getControllerPanelMapper().freeValuesForSample();
 		return result;
 	}
+
 	@Override
 	public void commitControls()
 	{
