@@ -22,7 +22,7 @@ public class ControllerPanelMapper extends BorderPanel implements IFromMidi, IPo
     private final SimpleLock lockTransfer = new SimpleLock();
     
 
-    private static final int POT_COUNT = 8;
+    private static final int POT_COUNT = 16;
 
     private final ControllerElementView[] views = new ControllerElementView[POT_COUNT];
 

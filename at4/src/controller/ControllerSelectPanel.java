@@ -106,7 +106,7 @@ public class ControllerSelectPanel extends BorderPanel
         {
 //            MainFrame mf = Central.getMainFrame();
 //            mf.newMidiControl(new ControllerPanelMapper( parent ));
-            ControllerGroupBase cgb = new ControllerGroupLDP8(parent, controllerChoice.get() );
+            ControllerGroupBase cgb = new ControllerGroupMidiFighterTwister(parent, controllerChoice.get() );
             //ControllerGroupBase cgb = new ControllerGroupLDP8_Test(parent, controllerChoice.get() );
             parent.getControllerPanelMapper().newControllerGroupBase(  cgb );
         }

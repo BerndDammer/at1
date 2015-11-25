@@ -11,7 +11,7 @@ import javax.swing.Timer;
 
 import starter.MainFrame;
 
-public class ControllerGroupLDP8_Test extends ControllerGroupLDP8 implements ActionListener
+public class ControllerGroupLDP8_Test extends ControllerGroupMidiFighterTwister implements ActionListener
 {
     int data = 0;
 

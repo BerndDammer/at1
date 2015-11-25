@@ -3,8 +3,6 @@ package controller;
 import gui_help.MyGC;
 import gui_help.ShowText;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Logger;
@@ -12,7 +10,6 @@ import java.util.logging.Logger;
 import javax.sound.midi.MidiDevice;
 import javax.sound.midi.MidiMessage;
 import javax.sound.midi.Transmitter;
-import javax.swing.JButton;
 
 public class ControllerPanelTest extends ControllerPanelBase
 {
@@ -130,5 +127,4 @@ public class ControllerPanelTest extends ControllerPanelBase
     {
 
     }
-
 }
