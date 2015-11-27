@@ -1,82 +1,57 @@
 package effect;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import controller.interfaces.IControlOutReceiver;
+import controller.interfaces.IControlOutTransmitter.ControlReceiveParameter;
 
-import javax.swing.JComboBox;
-import javax.swing.JPanel;
-
-import function.IFunction2;
-import gui_help.BorderPanel;
-
-public class Waschbrett implements IFunction2
+public class Waschbrett extends EffectDialog implements IControlOutReceiver
 {
 	private static final long serialVersionUID = 1L;
-	private static final double SAMPLE_FREQ = 48000.0;
+	//private static final double SAMPLE_FREQ = 48000.0;
 
-	transient private double agl_factor = 1000.0 * 2.0 * Math.PI / SAMPLE_FREQ;
-
-    private static final double wellendicke = 0.1;
-    private static final double wellenzahl = 5;
-    private static final double ff = wellenzahl * Math.PI * 2.0;
+	private final double omega_max = Math.PI * 2.0;
+    private final double fak_para_2_omega = Math.PI * 2.0 / 48000.0;
+    private double phase = 0.0;
 	
-	long sampleCounter;
 
 	public Waschbrett()
 	{
-		EffectDialog2 d = new EffectDialog2(this);
-		d.startIt();
-		d.setVisible(true);
+		startIt();
 	}
 
 	@Override
 	public double nextSample(double l, double r)
 	{
-	    double s = (l + r) * 0.5;
-	    double result = s;
-	    s = Math.sin( s * ff) * wellendicke;
+        double[] para = parent.getControllerPanelMapper().lockValuesForSample();
+
+        double s = (r* para[12] + l * (1.0 - para[12])) * 0.5;
+
+        double wellenzahl = para[13];
+        double ff = wellenzahl * Math.PI * 2.0;
+        double wellendicke = para[14];
+
+        phase += para[15] * fak_para_2_omega;
+        if(phase > omega_max)  phase -= omega_max;
+        
+        double result = s;
+
+        s = Math.sin( s * ff + phase) * wellendicke;
 	    result += s;
-	    return result;
+
+	    parent.getControllerPanelMapper().freeValuesForSample();
+        return result;
 	}
 
 	@Override
-	public JPanel getPanel()
-	{
-		return myPanel;
-	}
-
-	private final MyPanel myPanel = new MyPanel();
-
-	private class MyPanel extends BorderPanel
-	{
-		class NoteChoice extends JComboBox<DNote> implements ActionListener
-		{
-			NoteChoice()
-			{
-				addItem( new DNote(-1,4));
-				addItem( new DNote(-1,9));
-				addItem( new DNote(0,2));
-				addItem( new DNote(0,7));
-				addItem( new DNote(0,4));
-				addItem( new DNote(0,9));
-				addItem( new DNote(1,2));
-				addItem( new DNote(1,7));
-				addActionListener(this);
-			}
-
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				DNote note = getItemAt(getSelectedIndex());
-				agl_factor = note.getFrequency()
-				* 2.0 * Math.PI / SAMPLE_FREQ;
-			}
-		}
-
-		private MyPanel()
-		{	
-			super("Out of function");
-			add( new NoteChoice());
-		}
-	}
+    public void commitControls()
+    {
+        ControlReceiveParameter controlReceiveParameter;
+        controlReceiveParameter = new ControlReceiveParameter("mix", 0.0, +1.0);
+        parent.getControllerPanelMapper().add(controlReceiveParameter, 12);
+        controlReceiveParameter = new ControlReceiveParameter("wellenzahl", 0.0, +20.0);
+        parent.getControllerPanelMapper().add(controlReceiveParameter, 13);
+        controlReceiveParameter = new ControlReceiveParameter("wellendicke", 0.0, +0.1);
+        parent.getControllerPanelMapper().add(controlReceiveParameter, 14);
+        controlReceiveParameter = new ControlReceiveParameter("ShiftFreq", 0.0, +20.0);
+        parent.getControllerPanelMapper().add(controlReceiveParameter, 15);
+    }
 }
