@@ -166,7 +166,5 @@ public abstract class EffectDialog extends BorderPanel implements IFunction
     }
     ///////////////////////////////////////////
     //intended to be overwritten
-    public void commitControls()
-    {
-    }
+    public abstract void commitControls();
 }

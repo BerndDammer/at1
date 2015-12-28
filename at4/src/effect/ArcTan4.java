@@ -20,8 +20,10 @@ public class ArcTan4 extends EffectDialog implements IControlOutReceiver
         double xr = para[4];
         double yr = para[5];
         double x,y,result;
+
         x = r-xr;
         y = l-yr;
+
         result = Math.atan2(y, x) / Math.PI;
 		parent.getControllerPanelMapper().freeValuesForSample();
 		return result;

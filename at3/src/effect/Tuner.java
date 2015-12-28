@@ -34,7 +34,7 @@ public class Tuner implements IFunction2
 		sampleCounter++;
 		double al = (double) (sampleCounter) * agl_factor;
 		double result = Math.sin(al);
-		result = result * result * result * 0.27;
+		//result = result * result * result * 0.27;
 		return result;
 	}
 

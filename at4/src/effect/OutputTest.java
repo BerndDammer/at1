@@ -25,5 +25,13 @@ public class OutputTest extends EffectDialog
 		double result = Math.sin( al );
 		return result;
 	}
+
+
+    @Override
+    public void commitControls()
+    {
+        // TODO Auto-generated method stub
+        
+    }
 }
 

@@ -18,5 +18,13 @@ public class LoopMono extends EffectDialog
 	{
 		return( (l+r) *0.5);
 	}
+
+
+    @Override
+    public void commitControls()
+    {
+        // TODO Auto-generated method stub
+        
+    }
 }
 

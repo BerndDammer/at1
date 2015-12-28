@@ -1,8 +1,9 @@
 package platform.base;
 
-import java.awt.GridBagConstraints;
+import gui_help.BorderPanel;
+import gui_help.MyGC;
+
 import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,8 +12,6 @@ import javax.swing.JLabel;
 
 import starter.Central;
 import starter.error;
-import gui_help.BorderPanel;
-import gui_help.MyGC;
 
 public class PlatformPanel extends BorderPanel
 {

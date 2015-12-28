@@ -23,5 +23,13 @@ public class Rotator1 extends EffectDialog
 		double result = Math.sin( al ) * l + Math.cos(al) * r;
 		return result;
 	}
+
+
+    @Override
+    public void commitControls()
+    {
+        // TODO Auto-generated method stub
+        
+    }
 }
 

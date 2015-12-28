@@ -18,5 +18,13 @@ public class LoopMul1 extends EffectDialog
 	{
 		return l*r;
 	}
+
+
+    @Override
+    public void commitControls()
+    {
+        // TODO Auto-generated method stub
+        
+    }
 }
 
