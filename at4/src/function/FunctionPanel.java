@@ -3,6 +3,7 @@ package function;
 import effect.ArcTan4;
 import effect.CubeMix;
 import effect.Delay;
+import effect.DualWashboard;
 import effect.EffectDialog;
 import effect.LoopMono;
 import effect.LoopMul1;
@@ -35,7 +36,7 @@ public class FunctionPanel extends BorderPanel
     // ArcTan.class, ArcTan2.class, ArcTan3.class, Tuner.class,
     // Waschbrett.class, Rotator2.class };
     private static final Class<?>[] effects = { OutputTest.class, LoopMono.class, LoopMul1.class, ArcTan4.class, Tuner.class,
-            Waschbrett.class, Rotator2.class, CubeMix.class, Reverb.class, Delay.class, Noiser.class, LowMix.class };
+            Waschbrett.class, Rotator2.class, CubeMix.class, Reverb.class, Delay.class, Noiser.class, LowMix.class, DualWashboard.class };
 
     private final MyGC gc = new MyGC();
 
