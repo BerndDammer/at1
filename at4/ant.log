@@ -1,5 +1,5 @@
-Detected Java version: 1.8 in: m:\jdk_win\jre
-Detected OS: Windows 8.1
+Detected Java version: 1.8 in: m:\jdk_win64\jre
+Detected OS: Windows 10
 parsing buildfile m:\ews\at4\build.xml with URI = file:/m:/ews/at4/build.xml
 Project base dir set to: m:\ews\at4
 parsing buildfile jar:file:/M:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/M:/ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
@@ -11,115 +11,114 @@ Complete build sequence is [clean, build.number, build, PushOut, post_build, all
 clean:
    [delete] Deleting directory m:\ews\at4\dist
    [delete] Deleting m:\ews\at4\dist\at4.jar
+   [delete] Deleting m:\ews\at4\dist\run.bat
    [delete] Deleting m:\ews\at4\dist\jasiohost32.dll
    [delete] Deleting m:\ews\at4\dist\jasiohost64.dll
-   [delete] Deleting m:\ews\at4\dist\run.bat
    [delete] Deleting directory m:\ews\at4\dist
    [delete] Deleting directory m:\ews\at4\bin
-   [delete] Deleting m:\ews\at4\bin\buildnumber\at4.buildnumber
-   [delete] Deleting directory m:\ews\at4\bin\buildnumber
-   [delete] Deleting m:\ews\at4\bin\util\Util.class
-   [delete] Deleting m:\ews\at4\bin\util\DIR.class
-   [delete] Deleting directory m:\ews\at4\bin\util
-   [delete] Deleting m:\ews\at4\bin\starter\error.class
    [delete] Deleting m:\ews\at4\bin\starter\at4.class
-   [delete] Deleting m:\ews\at4\bin\starter\MainFrame.class
-   [delete] Deleting m:\ews\at4\bin\starter\MainFrame$myPanel.class
-   [delete] Deleting m:\ews\at4\bin\starter\JFrame2.class
    [delete] Deleting m:\ews\at4\bin\starter\Central.class
+   [delete] Deleting m:\ews\at4\bin\starter\MainFrame$myPanel.class
+   [delete] Deleting m:\ews\at4\bin\starter\MainFrame.class
+   [delete] Deleting m:\ews\at4\bin\starter\JFrame2.class
+   [delete] Deleting m:\ews\at4\bin\starter\error.class
    [delete] Deleting directory m:\ews\at4\bin\starter
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformPlayerJavaSound.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$MixerChoice.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$LineChoice.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$ViewStarter.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$Element.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformJavaSound.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L2Line.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myPanel.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L0Top.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L3Control.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myScrollPane.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L3AudioFormat.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree.class
-   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L1Mixer.class
-   [delete] Deleting directory m:\ews\at4\bin\platform\javasound
-   [delete] Deleting m:\ews\at4\bin\platform\base\PlatformPanel.class
-   [delete] Deleting m:\ews\at4\bin\platform\base\PlatformPanel$PlatformChoice.class
    [delete] Deleting m:\ews\at4\bin\platform\base\PlatformBase.class
+   [delete] Deleting m:\ews\at4\bin\platform\base\PlatformPanel$PlatformChoice.class
+   [delete] Deleting m:\ews\at4\bin\platform\base\PlatformPanel.class
    [delete] Deleting m:\ews\at4\bin\platform\base\PLATFORM.class
    [delete] Deleting directory m:\ews\at4\bin\platform\base
-   [delete] Deleting m:\ews\at4\bin\platform\asio\PlatformPlayerAsio.class
+   [delete] Deleting m:\ews\at4\bin\platform\asio\PlatformAsio.class
    [delete] Deleting m:\ews\at4\bin\platform\asio\PlatformParameterAsio$PanelStarter.class
    [delete] Deleting m:\ews\at4\bin\platform\asio\PlatformParameterAsio.class
-   [delete] Deleting m:\ews\at4\bin\platform\asio\PlatformAsio.class
+   [delete] Deleting m:\ews\at4\bin\platform\asio\PlatformPlayerAsio.class
    [delete] Deleting directory m:\ews\at4\bin\platform\asio
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformJavaSound.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$Element.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$MixerChoice.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$LineChoice.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$ViewStarter.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound$1.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformParameterJavaSound.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\PlatformPlayerJavaSound.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myPanel.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myScrollPane.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L0Top.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L1Mixer.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L2Line.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L3Control.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree$L3AudioFormat.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$myTree.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView$1.class
+   [delete] Deleting m:\ews\at4\bin\platform\javasound\MixerView.class
+   [delete] Deleting directory m:\ews\at4\bin\platform\javasound
    [delete] Deleting directory m:\ews\at4\bin\platform
-   [delete] Deleting m:\ews\at4\bin\gui_help\ShowText.class
-   [delete] Deleting m:\ews\at4\bin\gui_help\MyGC.class
-   [delete] Deleting m:\ews\at4\bin\gui_help\BorderPanel.class
-   [delete] Deleting directory m:\ews\at4\bin\gui_help
-   [delete] Deleting m:\ews\at4\bin\function\IRuncontrol.class
-   [delete] Deleting m:\ews\at4\bin\function\IPlayer.class
-   [delete] Deleting m:\ews\at4\bin\function\IFunction2.class
    [delete] Deleting m:\ews\at4\bin\function\IFunction.class
+   [delete] Deleting m:\ews\at4\bin\function\IPlayer.class
    [delete] Deleting m:\ews\at4\bin\function\IChain.class
    [delete] Deleting m:\ews\at4\bin\function\FunctionPanel$EffectStarter.class
    [delete] Deleting m:\ews\at4\bin\function\FunctionPanel.class
+   [delete] Deleting m:\ews\at4\bin\function\IFunction2.class
    [delete] Deleting directory m:\ews\at4\bin\function
-   [delete] Deleting m:\ews\at4\bin\effect\Waschbrett.class
-   [delete] Deleting m:\ews\at4\bin\effect\Tuner.class
-   [delete] Deleting m:\ews\at4\bin\effect\Tuner$MyPanel.class
-   [delete] Deleting m:\ews\at4\bin\effect\Tuner$MyPanel$NoteChoice.class
-   [delete] Deleting m:\ews\at4\bin\effect\Rotator2.class
-   [delete] Deleting m:\ews\at4\bin\effect\Rotator1.class
-   [delete] Deleting m:\ews\at4\bin\effect\Reverb.class
-   [delete] Deleting m:\ews\at4\bin\effect\OutputTest.class
-   [delete] Deleting m:\ews\at4\bin\effect\OldDelay.class
-   [delete] Deleting m:\ews\at4\bin\effect\Noiser.class
-   [delete] Deleting m:\ews\at4\bin\effect\LowMix.class
-   [delete] Deleting m:\ews\at4\bin\effect\LoopMul1.class
-   [delete] Deleting m:\ews\at4\bin\effect\LoopMono.class
-   [delete] Deleting m:\ews\at4\bin\effect\ForwardDelay.class
-   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog2.class
-   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog2$StopButton.class
-   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog$RemView$Syncer.class
-   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog.class
-   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog$RemView.class
-   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog$StopButton.class
-   [delete] Deleting m:\ews\at4\bin\effect\DelayBase.class
-   [delete] Deleting m:\ews\at4\bin\effect\Delay.class
-   [delete] Deleting m:\ews\at4\bin\effect\DNote.class
-   [delete] Deleting m:\ews\at4\bin\effect\CubeMix.class
-   [delete] Deleting m:\ews\at4\bin\effect\ArcTan4.class
-   [delete] Deleting directory m:\ews\at4\bin\effect
-   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IPotsOut.class
-   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IFromMidi.class
+   [delete] Deleting m:\ews\at4\bin\gui_help\MyGC.class
+   [delete] Deleting m:\ews\at4\bin\gui_help\BorderPanel.class
+   [delete] Deleting m:\ews\at4\bin\gui_help\ShowText.class
+   [delete] Deleting directory m:\ews\at4\bin\gui_help
    [delete] Deleting m:\ews\at4\bin\controller\interfaces\IControlOutTransmitter$ControlReceiveParameter.class
    [delete] Deleting m:\ews\at4\bin\controller\interfaces\IControlOutTransmitter.class
-   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IControlOutReceiver.class
-   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IControlInTransmitter.class
+   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IFromMidi.class
+   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IPotsOut.class
    [delete] Deleting m:\ews\at4\bin\controller\interfaces\IControlInReceiver.class
+   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IControlInTransmitter.class
+   [delete] Deleting m:\ews\at4\bin\controller\interfaces\IControlOutReceiver.class
    [delete] Deleting directory m:\ews\at4\bin\controller\interfaces
-   [delete] Deleting m:\ews\at4\bin\controller\MidiPotControl.class
-   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel$BridgeButton.class
-   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel$ControllerChoice.class
-   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel.class
-   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel$TestButton.class
-   [delete] Deleting m:\ews\at4\bin\controller\ControllerPanelTest.class
    [delete] Deleting m:\ews\at4\bin\controller\ControllerPanelMapper$SimpleLock.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerPanelMapper$1.class
    [delete] Deleting m:\ews\at4\bin\controller\ControllerPanelMapper.class
    [delete] Deleting m:\ews\at4\bin\controller\ControllerPanelBase.class
-   [delete] Deleting m:\ews\at4\bin\controller\ControllerGroupMidiFighterTwister.class
-   [delete] Deleting m:\ews\at4\bin\controller\ControllerGroupBase.class
    [delete] Deleting m:\ews\at4\bin\controller\ControllerElementView.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerGroupBase.class
+   [delete] Deleting m:\ews\at4\bin\controller\MidiPotControl.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel$ControllerChoice.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel$TestButton.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel$BridgeButton.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerSelectPanel.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerPanelTest.class
+   [delete] Deleting m:\ews\at4\bin\controller\ControllerGroupMidiFighterTwister.class
    [delete] Deleting directory m:\ews\at4\bin\controller
+   [delete] Deleting m:\ews\at4\bin\util\Util.class
+   [delete] Deleting m:\ews\at4\bin\util\DIR.class
+   [delete] Deleting directory m:\ews\at4\bin\util
+   [delete] Deleting m:\ews\at4\bin\effect\ArcTan4.class
+   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog$StopButton.class
+   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog$RemView$Syncer.class
+   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog$RemView.class
+   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog.class
+   [delete] Deleting m:\ews\at4\bin\effect\CubeMix.class
+   [delete] Deleting m:\ews\at4\bin\effect\Delay.class
+   [delete] Deleting m:\ews\at4\bin\effect\DelayBase.class
+   [delete] Deleting m:\ews\at4\bin\effect\DualWashboard.class
+   [delete] Deleting m:\ews\at4\bin\effect\LoopMono.class
+   [delete] Deleting m:\ews\at4\bin\effect\LoopMul1.class
+   [delete] Deleting m:\ews\at4\bin\effect\LowMix.class
+   [delete] Deleting m:\ews\at4\bin\effect\Noiser.class
+   [delete] Deleting m:\ews\at4\bin\effect\OutputTest.class
+   [delete] Deleting m:\ews\at4\bin\effect\Reverb.class
+   [delete] Deleting m:\ews\at4\bin\effect\Rotator2.class
+   [delete] Deleting m:\ews\at4\bin\effect\Tuner$MyPanel$NoteChoice.class
+   [delete] Deleting m:\ews\at4\bin\effect\Tuner$MyPanel.class
+   [delete] Deleting m:\ews\at4\bin\effect\Tuner$1.class
+   [delete] Deleting m:\ews\at4\bin\effect\Tuner.class
+   [delete] Deleting m:\ews\at4\bin\effect\DNote.class
+   [delete] Deleting m:\ews\at4\bin\effect\Waschbrett.class
+   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog2$StopButton.class
+   [delete] Deleting m:\ews\at4\bin\effect\EffectDialog2.class
+   [delete] Deleting directory m:\ews\at4\bin\effect
    [delete] Deleting directory m:\ews\at4\bin
 
 build.number:
-     [echo] build.number 16
-     [echo] build.number 17
+     [echo] build.number 18
+     [echo] build.number 19
 
 build:
     [mkdir] Created dir: m:\ews\at4\bin
@@ -174,6 +173,7 @@ Overriding previous definition of reference to non.jar.merge
       [jar] adding entry effect/DNote.class
       [jar] adding entry effect/Delay.class
       [jar] adding entry effect/DelayBase.class
+      [jar] adding entry effect/DualWashboard.class
       [jar] adding entry effect/EffectDialog$RemView$Syncer.class
       [jar] adding entry effect/EffectDialog$RemView.class
       [jar] adding entry effect/EffectDialog$StopButton.class
@@ -350,8 +350,8 @@ Overriding previous definition of reference to non.jar.merge
      [copy] Copying m:\ews\at4\lib\jasio\jasiohost64.dll to m:\ews\at4\dist\jasiohost64.dll
 
 PushOut:
-   [delete] Could not find file m:\backup\at4_17.zip to delete.
-      [zip] Building zip: m:\backup\at4_17.zip
+   [delete] Could not find file m:\backup\at4_19.zip to delete.
+      [zip] Building zip: m:\backup\at4_19.zip
       [zip] adding directory disabled_sources/
       [zip] adding directory dist/
       [zip] adding directory dist_add/
@@ -426,6 +426,7 @@ PushOut:
       [zip] adding entry src/effect/DNote.java
       [zip] adding entry src/effect/Delay.java
       [zip] adding entry src/effect/DelayBase.java
+      [zip] adding entry src/effect/DualWashboard.java
       [zip] adding entry src/effect/EffectDialog.java
       [zip] adding entry src/effect/EffectDialog2.java
       [zip] adding entry src/effect/ForwardDelay.java
@@ -490,4 +491,4 @@ post_build:
 all:
 
 BUILD SUCCESSFUL
-Total time: 7 seconds
+Total time: 6 seconds

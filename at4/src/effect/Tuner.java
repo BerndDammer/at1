@@ -52,11 +52,14 @@ public class Tuner implements IFunction2
 		{
 			NoteChoice()
 			{
-				addItem( new DNote(-1,4));
+                addItem( new DNote(-2,11));
+                addItem( new DNote(-1,4));
 				addItem( new DNote(-1,9));
 				addItem( new DNote(0,2));
 				addItem( new DNote(0,7));
-				addItem( new DNote(0,4));
+
+                addItem( new DNote(-1,11));
+                addItem( new DNote(0,4));
 				addItem( new DNote(0,9));
 				addItem( new DNote(1,2));
 				addItem( new DNote(1,7));
