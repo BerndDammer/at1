@@ -7,6 +7,7 @@ import gui_help.MyGC;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.logging.Logger;
 
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -21,16 +22,18 @@ import controller.ControllerSelectPanel;
 public class MainFrame extends JFrame2 implements Runnable
 {
     private static final long serialVersionUID = 1L;
+    private final Logger logger = Logger.getLogger(this.getClass().getCanonicalName());
     private final MyGC gc = new MyGC();
 
     // ---------------------GUI_Elements
     private JPanel platformParameter = null;
     private JPanel panelEffect = null;
     private JPanel panelMidiControl = null;
-    private final ControllerPanelMapper controllerPanelMapper = new ControllerPanelMapper( this );
+    private final ControllerPanelMapper controllerPanelMapper = new ControllerPanelMapper(this);
 
     public MainFrame()
     {
+        logger.info("Starting");
         SwingUtilities.invokeLater(this);
     }
 
@@ -50,7 +53,7 @@ public class MainFrame extends JFrame2 implements Runnable
             gc.fill = GridBagConstraints.NONE;
 
             // row 1 PlatformParameter
-            platformParameter = new BorderPanel("PlatformParameter"); 
+            platformParameter = new BorderPanel("PlatformParameter");
             gc.nextRow();
             gc.pushHorizontal();
             add(platformParameter, gc);
@@ -63,14 +66,15 @@ public class MainFrame extends JFrame2 implements Runnable
             add(new FunctionPanel(MainFrame.this), gc);
             gc.popHorizontal();
 
-            panelEffect = new BorderPanel("EffectPanel"); 
+            panelEffect = new BorderPanel("EffectPanel");
             gc.nextRow();
             gc.pushHorizontal();
-            add( panelEffect, gc);
+            add(panelEffect, gc);
             gc.popHorizontal();
 
-            //panelMidiControl = new BorderPanel("MidiControlPanel");
-            //panelMidiControl = new ControllerPanelRun(MidiSystem.getMidiDeviceInfo()[0]);
+            // panelMidiControl = new BorderPanel("MidiControlPanel");
+            // panelMidiControl = new
+            // ControllerPanelRun(MidiSystem.getMidiDeviceInfo()[0]);
             panelMidiControl = controllerPanelMapper;
             gc.nextRow();
             gc.pushHorizontal();
@@ -95,14 +99,14 @@ public class MainFrame extends JFrame2 implements Runnable
     public void setEffectPanel(JPanel panel)
     {
         Container c = getContentPane();
-        
-        if( panelEffect != null) c.remove( panelEffect ); 
+
+        if (panelEffect != null) c.remove(panelEffect);
         panelEffect = panel != null ? panel : new BorderPanel("Off");
 
         gc.gridx = 0;
         gc.gridy = 3;
         gc.pushHorizontal();
-        c.add( panelEffect, gc);
+        c.add(panelEffect, gc);
         gc.popHorizontal();
 
         invalidate();
@@ -128,11 +132,12 @@ public class MainFrame extends JFrame2 implements Runnable
         Util.centerFrame(this);
         repaint();
     }
+
     public void newMidiControl(ControllerPanelBase cp)
     {
         Container c = getContentPane();
 
-        if (panelMidiControl != null) c.remove( panelMidiControl);
+        if (panelMidiControl != null) c.remove(panelMidiControl);
         panelMidiControl = cp;
         gc.gridx = 0;
         gc.gridy = 4;
