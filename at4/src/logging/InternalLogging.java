@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class InternalLogging
 {
     private static final String ROOT_LOGGER_NAME = "";
-    
+    private static final Level LEVEL = Level.FINE;
     private InternalLogging()
     {
         // static class only
@@ -20,11 +20,11 @@ public class InternalLogging
     {
         LogManager.getLogManager().reset();
         Logger rootLogger = LogManager.getLogManager().getLogger( ROOT_LOGGER_NAME );
-        rootLogger.setLevel( Level.FINE );
+        rootLogger.setLevel( LEVEL );
         FileHandler fh = null;
         Formatter sf;
         ConsoleHandler ch = new ConsoleHandler();
-        ch.setLevel( Level.FINE);
+        ch.setLevel( LEVEL );
         sf = new S2Formatter();
         ch.setFormatter(sf);
         rootLogger.addHandler(ch);
@@ -40,7 +40,8 @@ public class InternalLogging
         }
         sf = new S2Formatter();
         fh.setFormatter(sf);
-        fh.setLevel( Level.FINE );
+        fh.setLevel( LEVEL );
         rootLogger.addHandler(fh);
+        Logger.getLogger("sun").setLevel( Level.INFO );
     }
 }

@@ -1,8 +1,6 @@
 package starter;
 
 
-import java.util.logging.Logger;
-
 import platform.base.PlatformBase;
 
 public class Central
