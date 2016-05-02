@@ -4,7 +4,6 @@ import javafx.scene.control.Button;
 
 public class SelectionButton extends Button
 {
-
     public SelectionButton(String label)
     {
         setText(label);
@@ -12,5 +11,4 @@ public class SelectionButton extends Button
         setMinSize( StaticConst.GAP, StaticConst.GAP);
         // TODO Auto-generated constructor stub
     }
-
 }

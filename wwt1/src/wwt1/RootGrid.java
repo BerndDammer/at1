@@ -1,67 +1,64 @@
 package wwt1;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Logger;
+
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.paint.Color;
+import logging.LoggingInit;
 
 public class RootGrid extends GridPane
 {
-    private final HeaderBar headerBar = new HeaderBar(this);
-    private final SelectionBar functionBar = new SelectionBar(this);
-    //private List<Pane>  
-    class HeadlineTitle extends Text
+    private Logger logger = LoggingInit.get( this );
+
+    private final HeaderBar headerBar = new HeaderBar( this );
+    private final SelectionBar functionBar = new SelectionBar( this );
+    private List<FunctionPane> functionPanes = new LinkedList<>();
+
+    public RootGrid ()
     {
-        public HeadlineTitle()
-        {
-            super("Welcome");
-            setAlignment(Pos.TOP_LEFT);
-            setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        }
-    }
+        FunctionPane activePane;
 
-    class MyButton extends Button implements EventHandler<ActionEvent>
-    {
-        MyButton()
-        {
-            setText("Say Hello World");
-            setOnAction(this);
-        }
+        setBackground(new Background(new BackgroundFill(Color.OLIVEDRAB, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        @Override
-        public void handle(ActionEvent event)
-        {
-            System.out.println("Hello World!");
-        }
-    }
+        add( headerBar, 0, 0, GridPane.REMAINING, 1 );
+        //headerBar.
+        activePane = new T1Pane();
+        functionPanes.add( activePane );
 
-    public RootGrid()
-    {
-        setGridLinesVisible(true);
-        setPadding(new Insets(25, 25, 25, 25));
-        setVgap(2.0);
-        setHgap(1.0);
-        // add( new MyButton(),0, GridPane.REMAINING );
+        add( activePane.getPane(), 0, 1, GridPane.REMAINING, 1 );
 
-        add(new HeadlineTitle(), 0, 0, GridPane.REMAINING, 1);
-        Label pw = new Label("Password:");
-        add(pw, 0, 1);
-
-        PasswordField pwBox = new PasswordField();
-        add(pwBox, 0, 2);
-        add(new MyButton(), 0, 3);
-        add( functionBar, 0,4,GridPane.REMAINING, 1);
+        add( functionBar, 0, 2, GridPane.REMAINING, 1 );
         functionBar.add( new HomeButton() );
-        functionBar.add( new SelectionButton("Install") );
-        functionBar.add( new SelectionButton("Select") );
-        functionBar.add( new SelectionButton("Run") );
+        functionBar.add( new SelectionButton( "Install" ) );
+        functionBar.add( new SelectionButton( "Select" ) );
+        functionBar.add( new SelectionButton( "Run" ) );
         functionBar.add( new ExitButton() );
+
+        ObservableList<RowConstraints> rows = getRowConstraints();
+        logger.info( "size" + rows.size() );
+        RowConstraints rc;
+
+        rc = new RowConstraints();
+        //rc.setPercentHeight( 0 );
+        rc.setVgrow( Priority.NEVER );
+        rc.setMinHeight( StaticConst.GAP );
+        rows.add( rc );
+        rc = new RowConstraints();
+        //rc.setPercentHeight( 100 );
+        rc.setVgrow( Priority.ALWAYS );
+        rows.add( rc );
+        rc = new RowConstraints();
+        //rc.setPercentHeight( 0 );
+        rc.setVgrow( Priority.NEVER );
+        rows.add( rc );
     }
 }

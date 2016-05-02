@@ -6,9 +6,9 @@ import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import logging.LoggingInit;
 
 public class MYApplication5 extends Application
@@ -17,9 +17,9 @@ public class MYApplication5 extends Application
 
     class MyScene extends Scene
     {
-        MyScene()
+        MyScene(int w, int h)
         {
-            super( new RootGrid(), 400, 500, Color.ALICEBLUE );
+            super( new RootGrid(), w, h, Color.ALICEBLUE );
         }
     }
     
@@ -27,14 +27,31 @@ public class MYApplication5 extends Application
     @Override
     public void start( Stage primaryStage ) throws Exception
     {
-        // TODO Auto-generated method stub
+        int w,h;
+
+        if( isBigger())
+        {
+            primaryStage.initStyle( StageStyle.UNDECORATED );
+        }
+        else
+        {
+            primaryStage.setFullScreen( true );
+            primaryStage.initStyle( StageStyle.UNDECORATED );
+        }
         primaryStage.setTitle("Grid Root Test");
-        primaryStage.setScene( new MyScene() );
+        primaryStage.setScene( new MyScene(StaticConst.SCREEN_WIDTH, StaticConst.SCREEN_HEIGHT) );
         primaryStage.show();
 
+    }
+    private boolean isBigger()
+    {
+        boolean bigger;
         Screen root = Screen.getPrimary();
         Rectangle2D b = root.getBounds();
+        bigger = b.getWidth() > StaticConst.SCREEN_WIDTH;
+        bigger |= b.getHeight() > StaticConst.SCREEN_HEIGHT;
         logger.fine( "Screen Size >>>>" + b.toString() );
+        return bigger;
     }
 }
 

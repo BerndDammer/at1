@@ -3,7 +3,7 @@ package wwt1;
 import javafx.application.Application;
 import logging.LoggingInit;
 
-public class wwt1starter
+public class StaticStarter
 {
     public static void main( String[] args )
     {
