@@ -4,11 +4,9 @@ import javafx.scene.layout.Pane;
 
 public interface FunctionPane
 {
-//    FunctionPane()
-//    {
-//        
-//    }
-
-    
     Pane getPane();
+    static void none()
+    {
+        int a = StaticConst.GAP;
+    };
 }

@@ -3,7 +3,8 @@ package wwt1;
 import javafx.application.Application;
 import logging.LoggingInit;
 
-public class StaticStarter
+// test: define main in interface ???
+public interface StaticStarter
 {
     public static void main( String[] args )
     {

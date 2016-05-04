@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -17,20 +18,20 @@ import logging.LoggingInit;
 
 public class RootGrid extends GridPane
 {
-    private Logger logger = LoggingInit.get( this );
+    private final Logger logger = LoggingInit.get( this );
 
     private final HeaderBar headerBar = new HeaderBar( this );
     private final SelectionBar functionBar = new SelectionBar( this );
     private List<FunctionPane> functionPanes = new LinkedList<>();
 
-    public RootGrid ()
+    public RootGrid()
     {
         FunctionPane activePane;
 
-        setBackground(new Background(new BackgroundFill(Color.OLIVEDRAB, CornerRadii.EMPTY, Insets.EMPTY)));
+        setBackground( new Background( new BackgroundFill( Color.OLIVEDRAB, CornerRadii.EMPTY, Insets.EMPTY ) ) );
 
         add( headerBar, 0, 0, GridPane.REMAINING, 1 );
-        //headerBar.
+        // headerBar.
         activePane = new T1Pane();
         functionPanes.add( activePane );
 
@@ -43,22 +44,38 @@ public class RootGrid extends GridPane
         functionBar.add( new SelectionButton( "Run" ) );
         functionBar.add( new ExitButton() );
 
+        defineStretching();
+    }
+
+    private final void defineStretching()
+    {
+        //////////// give resizing hints
         ObservableList<RowConstraints> rows = getRowConstraints();
-        logger.info( "size" + rows.size() );
+        logger.info( "original row constraints size" + rows.size() );
+
         RowConstraints rc;
 
         rc = new RowConstraints();
-        //rc.setPercentHeight( 0 );
+        // rc.setPercentHeight( 0 );
         rc.setVgrow( Priority.NEVER );
         rc.setMinHeight( StaticConst.GAP );
         rows.add( rc );
         rc = new RowConstraints();
-        //rc.setPercentHeight( 100 );
+        // rc.setPercentHeight( 100 );
         rc.setVgrow( Priority.ALWAYS );
         rows.add( rc );
         rc = new RowConstraints();
-        //rc.setPercentHeight( 0 );
+        // rc.setPercentHeight( 0 );
         rc.setVgrow( Priority.NEVER );
         rows.add( rc );
+
+        ObservableList<ColumnConstraints> ccs = getColumnConstraints();
+        logger.info( "original column constraints size" + ccs.size() );
+        ColumnConstraints cc;
+
+        cc = new ColumnConstraints();
+        cc.setHgrow( Priority.ALWAYS );
+        ccs.add( cc );
     }
+
 }

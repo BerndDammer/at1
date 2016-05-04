@@ -13,32 +13,32 @@ public class T1Pane extends GridPane implements FunctionPane
 {
     class MyButton extends Button implements EventHandler<ActionEvent>
     {
-        MyButton()
+        MyButton ()
         {
-            setText("Say Hello World");
-            setOnAction(this);
+            setText( "Say Hello World" );
+            setOnAction( this );
         }
 
         @Override
-        public void handle(ActionEvent event)
+        public void handle( ActionEvent event )
         {
-            System.out.println("Hello World!");
+            System.out.println( "Hello World!" );
         }
     }
 
     T1Pane()
     {
-        setGridLinesVisible(true);
-        setPadding(new Insets(25, 25, 25, 25));
-        setVgap(2.0);
-        setHgap(1.0);
+        setGridLinesVisible( true );
+        setPadding( new Insets( 25, 25, 25, 25 ) );
+        setVgap( 2.0 );
+        setHgap( 1.0 );
 
-        Label pw = new Label("Password:");
-        add(pw, 0, 1);
+        Label pw = new Label( "Password:" );
+        add( pw, 0, 1 );
 
         PasswordField pwBox = new PasswordField();
-        add(pwBox, 0, 2);
-        add(new MyButton(), 0, 3);
+        add( pwBox, 0, 2 );
+        add( new MyButton(), 0, 3 );
 
     }
 
