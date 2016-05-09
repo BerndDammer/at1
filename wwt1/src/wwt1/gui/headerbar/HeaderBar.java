@@ -1,4 +1,4 @@
-package wwt1;
+package wwt1.gui.headerbar;
 
 import java.util.logging.Logger;
 
@@ -21,47 +21,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import logging.LoggingInit;
+import wwt1.gui.central.RootGrid;
+import wwt1.gui.interfaces.HeaderElement;
+import wwt1.gui.interfaces.HeaderInterface;
 
-public class HeaderBar extends GridPane
+public class HeaderBar extends GridPane implements HeaderInterface
 {
     private final Logger logger = LoggingInit.get( this );
 
-    interface HeaderElement
-    {
-        Node getNode();
-    }
-
-    class HeadlineTitle extends Text implements HeaderElement
-    {
-        public HeadlineTitle ()
-        {
-            super( "Welcome" );
-            setAlignment( Pos.TOP_LEFT );
-            setFont( Font.font( "Tahoma", FontWeight.NORMAL, 15 ) );
-        }
-
-        @Override
-        public Node getNode()
-        {
-            return this;
-        }
-    }
-
-    class HeadlineOther extends Text implements HeaderElement
-    {
-        HeadlineOther(String text)
-        {
-            super( text );
-            //setAlignment( Pos.TOP_LEFT );
-            setFont( Font.font( "Tahoma", FontWeight.NORMAL, 10 ) );
-        }
-
-        @Override
-        public Node getNode()
-        {
-            return this;
-        }
-    }
 
     // used to stretch between left headline and right statusses
     class DummyFiller extends Canvas
@@ -129,10 +96,12 @@ public class HeaderBar extends GridPane
         ccs.add( cc );
     }
 
+    @Override
     public void add( HeaderElement he)
     {
         getChildren().add( he.getNode() );
     }
+    @Override
     public void setTitle(String title)
     {
         headlineTitle.setText( title );

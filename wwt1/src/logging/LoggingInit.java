@@ -21,7 +21,7 @@ public class LoggingInit implements PropertyChangeListener
     }
     private static final boolean LOG_NEW = false;
     private static final boolean FILE_FORMAT_NEW = true;
-    private static final Level LEVEL = Level.ALL;
+    private static final Level LEVEL = Level.INFO;
     
     public static final void forceClassLoadingAndSetLogName( String filename )
     {

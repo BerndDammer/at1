@@ -1,4 +1,4 @@
-package wwt1;
+package wwt1.gui.selectionbar;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -8,7 +8,7 @@ public class ExitButton extends SelectionButton implements EventHandler<ActionEv
 {
     public ExitButton()
     {
-        super("Exit");
+        super("Exit", null, null);
         setOnAction(this);
     }
 

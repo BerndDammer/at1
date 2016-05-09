@@ -1,4 +1,6 @@
-package wwt1;
+package wwt1.gui.functionpanes;
+
+import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,9 +10,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import logging.LoggingInit;
+import wwt1.gui.interfaces.FunctionPane;
+import wwt1.gui.interfaces.RootParent;
+import wwt1.gui.selectionbar.HomeButton;
 
-public class T1Pane extends GridPane implements FunctionPane
+public class HomePane extends GridPane implements FunctionPane
 {
+    
     class MyButton extends Button implements EventHandler<ActionEvent>
     {
         MyButton ()
@@ -26,8 +33,15 @@ public class T1Pane extends GridPane implements FunctionPane
         }
     }
 
-    T1Pane()
+    private final Logger logger = LoggingInit.get( this );
+
+    private final RootParent rootParent;
+
+    public HomePane(RootParent rootParent)
     {
+        this.rootParent = rootParent;
+        rootParent.getSelectionInterface().add( new HomeButton(this, rootParent) );
+        
         setGridLinesVisible( true );
         setPadding( new Insets( 25, 25, 25, 25 ) );
         setVgap( 2.0 );
@@ -41,6 +55,15 @@ public class T1Pane extends GridPane implements FunctionPane
         add( new MyButton(), 0, 3 );
 
     }
+    @Override
+    public void setActive( boolean active )
+    {
+        if(active)
+        {
+            logger.info("home activated");
+            rootParent.getHeaderInterface().setTitle( "Home" );
+        }
+    }
 
     /////////////////////// vector implements
     @Override
@@ -49,4 +72,5 @@ public class T1Pane extends GridPane implements FunctionPane
         // TODO Auto-generated method stub
         return this;
     }
+
 }

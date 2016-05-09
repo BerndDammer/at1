@@ -1,4 +1,4 @@
-package wwt1;
+package wwt1.gui.central;
 
 import java.util.logging.Logger;
 
@@ -13,7 +13,7 @@ import logging.LoggingInit;
 
 public class MYApplication5 extends Application
 {
-    Logger logger = LoggingInit.get( this );
+    private final Logger logger = LoggingInit.get( this );
 
     class MyScene extends Scene
     {

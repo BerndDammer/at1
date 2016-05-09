@@ -1,4 +1,4 @@
-package wwt1;
+package wwt1.gui.central;
 
 import javafx.application.Application;
 import logging.LoggingInit;
