@@ -17,7 +17,6 @@ import javafx.scene.layout.Pane;
 
 public class HomePane extends GridPane implements IC_FunctionPane
 {
-    
     class MyButton extends Button implements EventHandler<ActionEvent>
     {
         MyButton ()
@@ -34,7 +33,6 @@ public class HomePane extends GridPane implements IC_FunctionPane
     }
 
     private final Logger logger = LoggingInit.get( this );
-
     private final IC_RootParent rootParent;
 
     public HomePane(IC_RootParent rootParent)
@@ -53,8 +51,9 @@ public class HomePane extends GridPane implements IC_FunctionPane
         PasswordField pwBox = new PasswordField();
         add( pwBox, 0, 2 );
         add( new MyButton(), 0, 3 );
-
     }
+
+    /////////////////////////////////////////////
     @Override
     public void setActive( boolean active )
     {
@@ -72,5 +71,4 @@ public class HomePane extends GridPane implements IC_FunctionPane
         // TODO Auto-generated method stub
         return this;
     }
-
 }

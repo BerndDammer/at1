@@ -1,14 +1,14 @@
 package as.starter;
 
-import as.clientport.ClientPort;
 import as.gui.central.ASApplication;
-import as.serverport.ServerPort;
+import as.interim.clientport.ClientPort;
+import as.interim.serverport.ServerPort;
 import javafx.application.Application;
 
 // test: define main in interface ???
 public class StaticStarter
 {
-    private static final Application application = null;
+    //private static final Application application = null;
     private static ClientPort clientPort;
     private static ServerPort serverPort;
     public static void main( String[] args )
@@ -18,4 +18,13 @@ public class StaticStarter
         clientPort = new ClientPort();
         Application.launch( ASApplication.class, args );
     }
+    public static ClientPort getClientPort()
+    {
+        return clientPort;
+    }
+    public static ServerPort getServerPort()
+    {
+        return serverPort;
+    }
+    
 }
