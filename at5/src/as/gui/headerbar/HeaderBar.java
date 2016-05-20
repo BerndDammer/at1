@@ -2,7 +2,7 @@ package as.gui.headerbar;
 
 import java.util.logging.Logger;
 
-import as.gui.central.RootNode;
+import as.gui.central.ASRootNode;
 import as.gui.interfaces.IC_HeaderElement;
 import as.gui.interfaces.IC_HeaderInterface;
 import as.starter.LoggingInit;
@@ -38,7 +38,7 @@ public class HeaderBar extends GridPane implements IC_HeaderInterface
     private final HeadlineOther o2 = new HeadlineOther( "o2" );
     private final HeadlineOther o3 = new HeadlineOther( "o3" );
 
-    public HeaderBar(RootNode parent)
+    public HeaderBar(ASRootNode parent)
     {
         setPadding( new Insets( 11, 11, 11, 11 ) );
         setVgap( 1.5 );

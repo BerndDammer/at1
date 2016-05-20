@@ -1,11 +1,15 @@
 package as.gui.functionpanes;
 
+import java.util.logging.Logger;
+
 import as.gui.interfaces.IC_FunctionPane;
 import as.gui.interfaces.IC_RootParent;
 import as.gui.selectionbar.SelectionButton;
 import as.interim.message.IL_Receiver;
 import as.interim.message.MessageBase;
 import as.interim.message.MessagePlatformSelect;
+import as.starter.LoggingInit;
+import as.starter.StaticConst;
 import as.starter.StaticStarter;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,7 +20,8 @@ import javafx.scene.layout.Pane;
 
 public class SelectPane extends GridPane implements IC_FunctionPane, IL_Receiver
 {
-    
+    private final Logger logger = LoggingInit.get( this );
+
     class MyButton extends Button implements EventHandler<ActionEvent>
     {
         MyButton ()
@@ -60,7 +65,7 @@ public class SelectPane extends GridPane implements IC_FunctionPane, IL_Receiver
             rootParent.getHeaderInterface().setTitle( "Select" );
             transmittPlatformSelect.cmd = MessagePlatformSelect.CMD.GET_LIST;
             StaticStarter.getClientPort().publish(transmittPlatformSelect );
-            StaticStarter.getClientPort().publish( new MessageBase() );
+            //StaticStarter.getClientPort().publish( new MessageBase() );
         }
     }
 
@@ -74,6 +79,8 @@ public class SelectPane extends GridPane implements IC_FunctionPane, IL_Receiver
     @Override
     public void receive( MessageBase message )
     {
-        
+        if (StaticConst.LOG_INTERIM)
+            logger.info( "Select Pane gots Message"  );
+
     }
 }

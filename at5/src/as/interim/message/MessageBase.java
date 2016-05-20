@@ -5,18 +5,16 @@ import java.io.Serializable;
 public class MessageBase implements Serializable, Cloneable
 {
     private static final long serialVersionUID = 1L;
-    //private final MessageType messageId = new MessageType(this); 
-    // cannot be here because it will be serialized
-    // private final IL_Receiver receiver; 
+    private final MessageIdentityDisk messageIdentityDisk = new MessageIdentityDisk(this); 
     
     public MessageBase()
     {
         //this.receiver = receiver;
     }
-    public MessageType getMessageId()
+    public MessageIdentityDisk getMessageIdentityDisk()
     {
         //return messageId;
-        return null;
+        return messageIdentityDisk;
     }
     public MessageBase clone()
     {

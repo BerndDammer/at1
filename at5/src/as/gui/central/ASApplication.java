@@ -20,12 +20,12 @@ public class ASApplication extends Application
     {
         MyScene( int w, int h )
         {
-            super( new RootNode(), w, h, Color.ALICEBLUE );
+            super( new ASRootNode(), w, h, Color.ALICEBLUE );
         }
 
         MyScene()
         {
-            super( new RootNode() );
+            super( new ASRootNode() );
         }
     }
 

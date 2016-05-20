@@ -30,7 +30,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 
-public class RootNode extends GridPane implements IC_RootParent
+public class ASRootNode extends GridPane implements IC_RootParent
 {
     private final Logger logger = LoggingInit.get( this );
 
@@ -39,7 +39,7 @@ public class RootNode extends GridPane implements IC_RootParent
     private List<IC_FunctionPane> functionPanes = new LinkedList<>();
     private IC_FunctionPane activePane;
 
-    public RootNode()
+    public ASRootNode()
     {
     	if( StaticConst.SET_SIZE_INTERNAL)
     	{

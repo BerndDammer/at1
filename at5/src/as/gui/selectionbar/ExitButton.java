@@ -8,13 +8,14 @@ public class ExitButton extends SelectionButton implements EventHandler<ActionEv
 {
     public ExitButton()
     {
-        super("Exit", null, null);
-        setOnAction(this);
+        super( "Exit", null, null );
+        setOnAction( this );
     }
 
     @Override
-    public void handle(ActionEvent event)
+    public void handle( ActionEvent event )
     {
         Platform.exit();
+        System.exit( 0 );
     }
 }

@@ -7,12 +7,12 @@ class ASScene extends Scene
 {
     ASScene( int w, int h )
     {
-        super( new RootNode(), w, h, Color.ALICEBLUE );
+        super( new ASRootNode(), w, h, Color.ALICEBLUE );
     }
 
     ASScene()
     {
-        super( new RootNode() );
+        super( new ASRootNode() );
         
     }
 }
