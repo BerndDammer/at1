@@ -22,6 +22,7 @@ public class FCPlatformSelector extends Thread implements IC_FunctionChainElemen
         JAVASOUND,
         ASIO;
     }
+
     private final MessagePlatformSelect receivePlatformSelect = new MessagePlatformSelect();
     private final MessagePlatformSelect transmittPlatformSelect = new MessagePlatformSelect();
 
@@ -59,7 +60,6 @@ public class FCPlatformSelector extends Thread implements IC_FunctionChainElemen
         {
         }
     }
-
 
     @Override
     public synchronized void receive( MessageBase message )

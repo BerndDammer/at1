@@ -6,6 +6,7 @@ import as.gui.central.ASRootNode;
 import as.gui.interfaces.IC_HeaderElement;
 import as.gui.interfaces.IC_HeaderInterface;
 import as.starter.LoggingInit;
+import buildnumber.BuildNumber;
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -36,7 +37,7 @@ public class HeaderBar extends GridPane implements IC_HeaderInterface
     private final DummyFiller dummyFiller = new DummyFiller();
     private final HeadlineOther o1 = new HeadlineOther( "o1" );
     private final HeadlineOther o2 = new HeadlineOther( "o2" );
-    private final HeadlineOther o3 = new HeadlineOther( "o3" );
+    private final HeadlineOther o3 = new HeadlineOther( "BuildNo : " + BuildNumber.get() );
 
     public HeaderBar(ASRootNode parent)
     {
