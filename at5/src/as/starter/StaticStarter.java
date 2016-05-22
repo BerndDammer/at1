@@ -34,5 +34,4 @@ public class StaticStarter
     {
         return serverPort;
     }
-
 }

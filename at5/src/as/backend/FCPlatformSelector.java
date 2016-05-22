@@ -8,6 +8,8 @@ import as.functionchain.IC_FunctionChainElement;
 import as.interim.message.IL_Receiver;
 import as.interim.message.MessageBase;
 import as.interim.message.MessagePlatformSelect;
+import as.persistent.IC_SubTreeBase;
+import as.persistent.PersistentCentral;
 import as.starter.LoggingInit;
 import as.starter.StaticConst;
 import as.starter.StaticStarter;
@@ -43,6 +45,9 @@ public class FCPlatformSelector extends Thread implements IC_FunctionChainElemen
     @Override
     public void run()
     {
+        IC_SubTreeBase para = PersistentCentral.subPlatformSelector();
+        para.put("Platform", "JAVASOUND");
+        para.flush();
         while (true)
         {
             process();
@@ -54,7 +59,6 @@ public class FCPlatformSelector extends Thread implements IC_FunctionChainElemen
         try
         {
             wait(3000);
-            
         }
         catch (InterruptedException e)
         {

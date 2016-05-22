@@ -1,58 +1,64 @@
 package as.persistent;
 
-import javax.json.JsonObject;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.logging.Logger;
+
+import as.persistent.templates.ResourceVector;
+import as.starter.LoggingInit;
 
 public class PersistentCentral
 {
-    private static JsonObject rootObject;
-    
-    private static class SubTree implements IC_PersistentSubtree
-    {
-        private JsonObject jo;
-        private SubTree(String subname)
-        {
-            JsonObject so = rootObject.getJsonObject( subname );
-            if( so != null)
-            {
-                this.jo = so;
-            }
-            else
-            {
-                
-            }
-            JsonObject so = rootObject.getJsonObject("Platform");
-            IC_PersistentSubtree result = new SubTree(so);
-            
-        }
-        @Override
-        public JsonObject getObject()
-        {
-            return jo;
-        }
 
-        @Override
-        public void flush()
-        {
-            update();
-        }
-    }
-    static
+    private final Logger logger = LoggingInit.get(this);
+    private final SubTreeJson rootObject;
+
+    InputStream getParameterInputStream(String name)
     {
-        // read file or create a new one
-        rootObject = null;
+        InputStream result = null;
+        File file;
+        file = new File(name);
+        try
+        {
+            FileInputStream fis = new FileInputStream(file);
+            result = fis;
+        }
+        catch (FileNotFoundException e)
+        {
+            logger.info("No File; try resource");
+        }
+        if (result == null)
+        {
+            result = ResourceVector.class.getResourceAsStream(name);
+        }
+        if (result == null)
+        {
+            logger.severe("No file; no resource; this should not happen!");
+        }
+        return (result);
     }
+
     private PersistentCentral()
     {
-        // dont create instance
+        rootObject = new SubTreeJsonRoot("asroot", this);
     }
-    private static void update()
+
+    private SubTreeJson getRootObject()
     {
-        
+        return rootObject;
     }
-    public static IC_PersistentSubtree subPlatformSelector()
+
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // static part
+    //
+    private static final PersistentCentral singletonPersistentCentral = new PersistentCentral();
+
+    public static IC_SubTreeBase subPlatformSelector()
     {
-        JsonObject so = rootObject.getJsonObject("Platform");
-        IC_PersistentSubtree result = new SubTree(so);
+        IC_SubTreeBase result = singletonPersistentCentral.getRootObject().getOrCreateSubTree("PlatformSelector");
         return result;
     }
 }
