@@ -21,8 +21,9 @@ public class DemuxCall
 //            receiveMethod = receiver.getClass().getMethod( "receiveMessage", MessageBase.class );
 //            logger.info( receiveMethod.toString() );
             receiveMethod = receiver.getClass().getMethod( "receiveMessage", message.getClass() );
+            receiveMethod = receiver.getClass().getMethod( "receiveMessage", MessageBase.class );
 //            logger.info( receiveMethod.toString() );
-            receiveMethod.invoke( message );
+            receiveMethod.invoke( receiver, message );
         }
         catch (NoSuchMethodException e)
         {
