@@ -1,18 +1,13 @@
 package as.interim.message;
 
-/*
- * this sub class should identify the type of a message
- * 
- * 
- */
 import java.io.Serializable;
 
-public class MessageIdentityDisk implements Serializable, Comparable<MessageIdentityDisk>
+public class MessageIdentityDisk3 implements Serializable, Comparable
 {
     private static final long serialVersionUID = 1L;
 
     private final String idstring;
-    public MessageIdentityDisk(MessageBase mb)
+    public MessageIdentityDisk3(MessageBase mb)
     {
         idstring = mb.getClass().getCanonicalName();
     }
@@ -20,18 +15,19 @@ public class MessageIdentityDisk implements Serializable, Comparable<MessageIden
     public boolean equals(Object o)
     {
         boolean result;
-        result = ((MessageIdentityDisk)o).idstring.equals( idstring );
+        result = ((MessageIdentityDisk3)o).idstring.equals( idstring );
         return result;
     }
-    public boolean equals(MessageIdentityDisk id)
+    public boolean equals(MessageIdentityDisk3 id)
     {
         boolean result;
         result = id.idstring.equals( idstring );
         return result;
     }
     @Override
-    public int compareTo( MessageIdentityDisk mid )
+    public int compareTo( Object o )
     {
-        return idstring.compareTo( mid.idstring );
+        MessageIdentityDisk3 md = (MessageIdentityDisk3)o;
+        return idstring.compareTo( md.idstring );
     }
 }

@@ -5,6 +5,6 @@
         "SpecVersionIndex":1
     },
     "PlatformSelector":{
-        "Platform":"JAVASOUND"
+        "Platform":"JACK"
     }
 }

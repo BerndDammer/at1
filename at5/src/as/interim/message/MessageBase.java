@@ -11,6 +11,10 @@ public class MessageBase implements Serializable, Cloneable
     {
         //this.receiver = receiver;
     }
+    long getID()
+    {
+        return serialVersionUID;
+    }
     public MessageIdentityDisk getMessageIdentityDisk()
     {
         //return messageId;

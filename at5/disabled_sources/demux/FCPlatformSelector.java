@@ -17,7 +17,7 @@ import as.starter.StaticConst;
 import as.starter.StaticStarter;
 
 public class FCPlatformSelector extends Thread
-        implements IC_FunctionChainElement, IL_MessageBaseReceiver<MessagePlatformSelect>
+        implements IC_FunctionChainElement, IL_Receiver, IL_MessageBaseReceiver<MessagePlatformSelect>
 {
     private enum SOUND_PLATFORM
     {
@@ -116,5 +116,21 @@ public class FCPlatformSelector extends Thread
             default:
                 break;
         }
+    }
+
+    @Override
+    public synchronized void receive( MessageBase mb )
+    {
+        if (StaticConst.LOG_INTERIM)
+            logger.info( "Command to platform selector" );
+        if (mb instanceof MessagePlatformSelect)
+        {
+            MessagePlatformSelect mps = (MessagePlatformSelect) mb;
+            receiveMessage( mps );
+        }
+        else
+        {
+        }
+        DemuxCall.doTheDemuxCall( this, mb );
     }
 }

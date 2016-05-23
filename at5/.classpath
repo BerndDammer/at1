@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="ElementID.java|ElementIDMap.java|JSonControlBlockBase.java|JSonControlBlockBson.java|JSonControlBlockJXS.java" kind="src" path="src"/>
+	<classpathentry excluding="ElementID.java|ElementIDMap.java|JSonControlBlockBase.java|JSonControlBlockBson.java|JSonControlBlockJXS.java|as/interim/message/IL_Receiver2.java|as/interim/message/MessageIdentityDisk4.java|as/interim/message/MessageIdentityDisk3.java" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<accessrules>
 			<accessrule kind="accessible" pattern="javafx/**"/>

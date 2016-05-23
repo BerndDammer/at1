@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 import as.interim.ByteBufferInputStream;
 import as.interim.ByteBufferOutputStream;
-import as.interim.message.DemuxCall;
+import as.interim.message.IL_Demultiplexer;
 import as.interim.message.IL_DemultiplexerMessage;
 import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.IL_Publish;
@@ -27,7 +27,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
 {
     private final Logger logger = LoggingInit.get( this );
 
-    private final Map<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>> receivers = new TreeMap<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>>();
+    private final Map<MessageIdentityDisk, List<IL_Receiver>> receivers = new TreeMap<>();
 
     private class ServerPortTransmitter extends Thread
     {
@@ -98,13 +98,12 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
                 }
             bbOutgoing.flip();
             StaticStarter.getClientPort().incoming( bbOutgoing );
-            logger.info( "Message downsend" );
+            logger.info( "Message downsend"  );
             bufferFull = false;
             notify();
         }
 
     }
-
     private class ServerPortReceiver extends Thread
     {
         private final ByteBuffer bbIncoming = ByteBuffer.allocate( StaticConst.BB_SIZE );
@@ -169,24 +168,24 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
                     logger.info( "read object : " + o.getClass().getCanonicalName() );
                 bufferFull = false;
                 notify();
-                if (o instanceof MessageBase)
+                if( o instanceof MessageBase)
                 {
-                    MessageBase mb = (MessageBase) o;
-                    MessageIdentityDisk md = mb.getMessageIdentityDisk();
-                    if (receivers.containsKey( md ))
+                    MessageBase mb = (MessageBase)o;
+                    MessageIdentityDisk md = mb.getMessageIdentityDisk(); 
+                    if( receivers.containsKey( md ))
                     {
-                        List<IL_MessageBaseReceiver<? extends MessageBase>> mrs = receivers.get( md );
-                        for (IL_MessageBaseReceiver<? extends MessageBase> r : mrs)
+                        List<IL_Receiver> mrs = receivers.get( md );
+                        for( IL_Receiver r : mrs)
                         {
-                            DemuxCall.doTheDemuxCall( r, mb );
+                            r.receive( mb );
                         }
                     }
                     else
                     {
                         if (StaticConst.LOG_INTERIM)
-                            logger.info( "message without receiver" );
+                            logger.info( "message without receiver"  );
                     }
-
+                    
                 }
                 else
                 {
@@ -230,14 +229,14 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
     public void register( MessageBase message, IL_MessageBaseReceiver<? extends MessageBase> receiver )
     {
         MessageIdentityDisk md = message.getMessageIdentityDisk();
-        if (receivers.containsKey( md ))
+        if( receivers.containsKey( md ))
         {
-            receivers.get( md ).add( receiver );
+            receivers.get( md ).add(receiver);
         }
         else
         {
-            List<IL_MessageBaseReceiver<? extends MessageBase>> mrs = new LinkedList<>();
-            mrs.add( receiver );
+            List<IL_Receiver> mrs = new LinkedList<>();
+            mrs.add( receiver);
             receivers.put( md, mrs );
         }
     }
