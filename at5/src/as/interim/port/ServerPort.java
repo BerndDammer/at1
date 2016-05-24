@@ -16,7 +16,6 @@ import as.interim.message.DemuxCall;
 import as.interim.message.IL_DemultiplexerMessage;
 import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.IL_Publish;
-import as.interim.message.IL_Receiver;
 import as.interim.message.MessageBase;
 import as.interim.message.MessageIdentityDisk;
 import as.starter.LoggingInit;
@@ -29,7 +28,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
 
     private final Map<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>> receivers = new TreeMap<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>>();
 
-    private class ServerPortTransmitter extends Thread
+    private class ServerPortTransmitter extends SmallWorker
     {
         private final ByteBuffer bbOutgoing = ByteBuffer.allocate( StaticConst.BB_SIZE );
         private final ByteBufferOutputStream bbosOutgoing = new ByteBufferOutputStream();
@@ -45,7 +44,6 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
         @Override
         public void run()
         {
-            // TODO Auto-generated method stub
             while (true)
             {
                 process();
@@ -59,14 +57,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized void publish( MessageBase message )
         {
             while (bufferFull)
-                try
-                {
-                    wait();
-                }
-                catch (InterruptedException e)
-                {
-                    logger.throwing( null, null, e );
-                }
+                controlWait();
             bbOutgoing.clear();
             bbosOutgoing.setByteBuffer( bbOutgoing );
             ObjectOutputStream oos;
@@ -88,24 +79,16 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized private void process()
         {
             while (!bufferFull)
-                try
-                {
-                    wait();
-                }
-                catch (InterruptedException e)
-                {
-                    logger.throwing( null, null, e );
-                }
+                defaultWait();
             bbOutgoing.flip();
             StaticStarter.getClientPort().incoming( bbOutgoing );
             logger.info( "Message downsend" );
             bufferFull = false;
             notify();
         }
-
     }
 
-    private class ServerPortReceiver extends Thread
+    private class ServerPortReceiver extends SmallWorker
     {
         private final ByteBuffer bbIncoming = ByteBuffer.allocate( StaticConst.BB_SIZE );
         private final ByteBufferInputStream bbisIncoming = new ByteBufferInputStream();
@@ -130,14 +113,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized void incoming( ByteBuffer bb )
         {
             while (bufferFull)
-                try
-                {
-                    wait();
-                }
-                catch (InterruptedException e)
-                {
-                    logger.throwing( null, null, e );
-                }
+                controlWait();
             bbIncoming.clear();
             bbIncoming.put( bb );
             bbIncoming.flip();
@@ -148,14 +124,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized private void process()
         {
             while (!bufferFull)
-                try
-                {
-                    wait();
-                }
-                catch (InterruptedException e)
-                {
-                    logger.throwing( null, null, e );
-                }
+                defaultWait();
 
             bbisIncoming.setByteBuffer( bbIncoming );
 
@@ -229,6 +198,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
     @Override
     public void register( MessageBase message, IL_MessageBaseReceiver<? extends MessageBase> receiver )
     {
+        DemuxCall.scan( receiver );
         MessageIdentityDisk md = message.getMessageIdentityDisk();
         if (receivers.containsKey( md ))
         {
@@ -241,5 +211,4 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
             receivers.put( md, mrs );
         }
     }
-
 }

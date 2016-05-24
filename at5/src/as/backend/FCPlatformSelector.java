@@ -5,15 +5,11 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import as.functionchain.IC_FunctionChainElement;
-import as.interim.message.DemuxCall;
 import as.interim.message.IL_MessageBaseReceiver;
-import as.interim.message.IL_Receiver;
-import as.interim.message.MessageBase;
 import as.interim.message.MessagePlatformSelect;
 import as.persistent.IC_SubTreeBase;
 import as.persistent.PersistentCentral;
 import as.starter.LoggingInit;
-import as.starter.StaticConst;
 import as.starter.StaticStarter;
 
 public class FCPlatformSelector extends Thread
@@ -21,9 +17,11 @@ public class FCPlatformSelector extends Thread
 {
     private enum SOUND_PLATFORM
     {
-        JAVASOUND, ASIO, ALSA, JACK;
+        //JAVASOUND, ASIO, ALSA, JACK;
+        JAVASOUND, ASIO;
     }
 
+    private STATE state; 
     private final Logger logger = LoggingInit.get( this );
     private final List<String> names = new LinkedList<>();
     private final String[] sfnames;
@@ -32,11 +30,15 @@ public class FCPlatformSelector extends Thread
     private final MessagePlatformSelect receivePlatformSelect = new MessagePlatformSelect();
     private final MessagePlatformSelect transmittPlatformSelect = new MessagePlatformSelect();
     private final IC_SubTreeBase para;
-
+    private ChannelSelectorBase platformActivator = null;
+    
+    // TODO crashes at invalid Platform string
+    
+    
     public FCPlatformSelector()
     {
         super( FCPlatformSelector.class.getCanonicalName() );
-
+        state = STATE.NO_PARA;
         for (SOUND_PLATFORM sp : SOUND_PLATFORM.values())
         {
             names.add( sp.name() );
@@ -52,15 +54,21 @@ public class FCPlatformSelector extends Thread
         {
             try
             {
-                selected = SOUND_PLATFORM.valueOf( (String) para.get( "Platform" ) );
+                String sPlatform = (String) para.get( "Platform" );
+                selected = SOUND_PLATFORM.valueOf( sPlatform );
+                state = STATE.HAS_PARA;
             }
             catch (Exception e)
             {
-                logger.warning( "Erroro reading platform" );
+                logger.warning( "Error reading platform" );
             }
         }
-        if (selected == null)
-            selected = SOUND_PLATFORM.JAVASOUND;
+        else
+        {
+            logger.warning( "missing parameter" );
+        }
+        if (selected != null)
+            activateChild();
         start();
     }
 
@@ -92,7 +100,6 @@ public class FCPlatformSelector extends Thread
             case ANSWER_LIST:
                 break;
             case REQUEST_LIST:
-                // transmittPlatformSelect.names = sfnames;
                 transmittPlatformSelect.names = names;
                 transmittPlatformSelect.selected = selected.name();
                 transmittPlatformSelect.cmd = MessagePlatformSelect.CMD.ANSWER_LIST;
@@ -102,6 +109,7 @@ public class FCPlatformSelector extends Thread
                 try
                 {
                     selected = SOUND_PLATFORM.valueOf( mps.selected );
+                    activateChild();
                 }
                 catch (Exception e)
                 {
@@ -110,11 +118,35 @@ public class FCPlatformSelector extends Thread
                 }
 
                 para.clear();
-                para.put( "Platform", mps.selected );
+                para.put( "Platform", selected.name() );
                 para.flush();
                 break;
             default:
                 break;
         }
+    }
+    private void activateChild()
+    {
+        if( platformActivator != null)
+        {
+            platformActivator.activeFromParent( false );
+            platformActivator = null;
+        }
+        switch( selected )
+        {
+            case ASIO:
+                platformActivator = new ChannelSelectorASIO();
+                break;
+            case JAVASOUND:
+                platformActivator = new ChannelSelectorJavasound();
+                break;
+        }
+        platformActivator.activeFromParent( true );
+        state = STATE.RUNNING;
+    }
+    @Override
+    public void activeFromParent( boolean active )
+    {
+        //ignored because here is no parent
     }
 }

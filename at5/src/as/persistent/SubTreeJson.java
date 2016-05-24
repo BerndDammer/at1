@@ -31,8 +31,22 @@ class SubTreeJson extends TreeMap<String, Object> implements IC_SubTreeBase
     @Override
     public IC_SubTreeBase getOrCreateSubTree(String name)
     {
-        IC_SubTreeBase result = new SubTreeJson(this);
-        put(name, result);
+        IC_SubTreeBase result = null;
+        if( containsKey(name) )
+        {
+            Object o = get(name);
+            if( o instanceof SubTreeJson)
+            {
+                result = (SubTreeJson)o;
+            }
+            else
+                logger.severe( "Json Structure Problem" );
+        }
+        if( result == null)
+        {
+            result = new SubTreeJson(this);
+            put(name, result);
+        }
         return (result);
     }
 

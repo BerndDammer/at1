@@ -9,7 +9,7 @@ import javafx.application.Application;
 // test: define main in interface ???
 public class StaticStarter
 {
-    private static final String[] names = {"rmiserver","bbobjectclient" };
+    private static final String[] start_parameters = {"rmiserver","bbobjectclient" };
     // private static final Application application = null;
     private static ClientPort clientPort;
     private static ServerPort serverPort;

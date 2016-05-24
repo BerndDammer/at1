@@ -1,10 +1,12 @@
 
 {
+    "ChannelSelector":{
+    },
     "General":{
         "Date":"now",
         "SpecVersionIndex":1
     },
     "PlatformSelector":{
-        "Platform":"JACK"
+        "Platform":"JAVASOUND"
     }
 }

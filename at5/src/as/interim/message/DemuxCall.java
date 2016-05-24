@@ -21,7 +21,7 @@ public class DemuxCall
 //            receiveMethod = receiver.getClass().getMethod( "receiveMessage", MessageBase.class );
 //            logger.info( receiveMethod.toString() );
             receiveMethod = receiver.getClass().getMethod( "receiveMessage", message.getClass() );
-            receiveMethod = receiver.getClass().getMethod( "receiveMessage", MessageBase.class );
+            //receiveMethod = receiver.getClass().getMethod( "receiveMessage", MessageBase.class );
 //            logger.info( receiveMethod.toString() );
             receiveMethod.invoke( receiver, message );
         }
@@ -44,6 +44,22 @@ public class DemuxCall
         catch (InvocationTargetException e)
         {
             logger.throwing( "DemuxCall", "doTheDemuxCall", e );
+        }
+    }
+    public static void scan( IL_MessageBaseReceiver<? extends MessageBase>receiver )
+    {
+        logger.info( "Demux Scan class : " + receiver.getClass().getCanonicalName() );
+        Method[] methods = receiver.getClass().getMethods();
+        for(Method m : methods)
+        {
+            if(m.getName().equals( "receiveMessage" ))
+            {
+                Class<?>[] parameter = m.getParameterTypes();
+                for(Class<?> p : parameter)
+                {
+                    logger.info( "Scan 4 Parameter : " + p.getCanonicalName() );
+                }
+            }
         }
     }
 }

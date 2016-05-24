@@ -61,4 +61,9 @@ public class PersistentCentral
         IC_SubTreeBase result = singletonPersistentCentral.getRootObject().getOrCreateSubTree("PlatformSelector");
         return result;
     }
+    public static IC_SubTreeBase subChannelSelector()
+    {
+        IC_SubTreeBase result = singletonPersistentCentral.getRootObject().getOrCreateSubTree("ChannelSelector");
+        return result;
+    }
 }

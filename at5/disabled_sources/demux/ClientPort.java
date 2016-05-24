@@ -12,22 +12,25 @@ import java.util.logging.Logger;
 
 import as.interim.ByteBufferInputStream;
 import as.interim.ByteBufferOutputStream;
-import as.interim.message.DemuxCall;
-import as.interim.message.IL_DemultiplexerMessage;
-import as.interim.message.IL_MessageBaseReceiver;
+import as.interim.message.IL_Demultiplexer;
 import as.interim.message.IL_Publish;
+import as.interim.message.IL_Receiver;
 import as.interim.message.MessageBase;
 import as.interim.message.MessageIdentityDisk;
 import as.starter.LoggingInit;
 import as.starter.StaticConst;
 import as.starter.StaticStarter;
-import javafx.application.Platform;
 
-public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
+public class ClientPort implements IL_Publish, IL_Demultiplexer
 {
     private final Logger logger = LoggingInit.get( this );
 
-    private class ClientPortTransmitter extends SmallWorker
+    private final Map<MessageIdentityDisk, List<IL_Receiver>> receivers = new TreeMap<>();
+
+    private final ClientPortTransmitter clientPortTransmitter;
+    private final ClientPortReceiver clientPortReceiver;
+
+    private class ClientPortTransmitter extends Thread
     {
         private final ByteBuffer bbOutgoing = ByteBuffer.allocate( StaticConst.BB_SIZE );
         private final ByteBufferOutputStream bbosOutgoing = new ByteBufferOutputStream();
@@ -57,7 +60,14 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized void publish( MessageBase message )
         {
             while (bufferFull)
-                controlWait();
+                try
+                {
+                    wait();
+                }
+                catch (InterruptedException e)
+                {
+                    logger.throwing( null, null, e );
+                }
             bbOutgoing.clear();
             bbosOutgoing.setByteBuffer( bbOutgoing );
             ObjectOutputStream oos;
@@ -79,17 +89,23 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized private void process()
         {
             while (!bufferFull)
-                defaultWait();
+                try
+                {
+                    wait();
+                }
+                catch (InterruptedException e)
+                {
+                    logger.throwing( null, null, e );
+                }
             bbOutgoing.flip();
             StaticStarter.getServerPort().incoming( bbOutgoing );
-            logger.info( "Message downsend" );
+            logger.info( "Message downsend"  );
             bufferFull = false;
             notify();
         }
 
     }
-
-    private class ClientPortReceiver extends SmallWorker
+    private class ClientPortReceiver extends Thread
     {
         private final ByteBuffer bbIncoming = ByteBuffer.allocate( StaticConst.BB_SIZE );
         private final ByteBufferInputStream bbisIncoming = new ByteBufferInputStream();
@@ -114,7 +130,14 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized void incoming( ByteBuffer bb )
         {
             while (bufferFull)
-                controlWait();
+                try
+                {
+                    wait();
+                }
+                catch (InterruptedException e)
+                {
+                    logger.throwing( null, null, e );
+                }
             bbIncoming.clear();
             bbIncoming.put( bb );
             bbIncoming.flip();
@@ -125,7 +148,14 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
         synchronized private void process()
         {
             while (!bufferFull)
-                defaultWait();
+                try
+                {
+                    wait();
+                }
+                catch (InterruptedException e)
+                {
+                    logger.throwing( null, null, e );
+                }
 
             bbisIncoming.setByteBuffer( bbIncoming );
 
@@ -139,25 +169,24 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
                     logger.info( "read object : " + o.getClass().getCanonicalName() );
                 bufferFull = false;
                 notify();
-                if (o instanceof MessageBase)
+                if( o instanceof MessageBase)
                 {
-                    MessageBase mb = (MessageBase) o;
-                    MessageIdentityDisk md = mb.getMessageIdentityDisk();
-                    if (receivers.containsKey( md ))
+                    MessageBase mb = (MessageBase)o;
+                    MessageIdentityDisk md = mb.getMessageIdentityDisk(); 
+                    if( receivers.containsKey( md ))
                     {
-
-                        List<IL_MessageBaseReceiver<? extends MessageBase>> mrs = receivers.get( md );
-                        for (IL_MessageBaseReceiver<? extends MessageBase> r : mrs)
+                        List<IL_Receiver> mrs = receivers.get( md );
+                        for( IL_Receiver r : mrs)
                         {
-                            fxpusher.push( r, mb, true );
+                            r.receive( mb );
                         }
                     }
                     else
                     {
                         if (StaticConst.LOG_INTERIM)
-                            logger.info( "message without receiver" );
+                            logger.info( "message without receiver"  );
                     }
-
+                    
                 }
                 else
                 {
@@ -176,58 +205,12 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
         }
     }
 
-    private class FXPusher implements Runnable
-    {
-        // TODO optimize Multithreadding by copy message before handle
-        // message copy
-        // message from to byte buffer
-        private IL_MessageBaseReceiver<? extends MessageBase> receiver = null;
-        private MessageBase message = null;
-
-        @Override
-        public void run()
-        {
-            pushFX();
-        }
-
-        private synchronized void pushFX()
-        {
-            DemuxCall.doTheDemuxCall( receiver, message );
-            message = null;
-            notify();
-        }
-
-        private synchronized void push( IL_MessageBaseReceiver<? extends MessageBase> receiver, MessageBase act_msg,
-                boolean mustWait )
-        {
-            this.receiver = receiver;
-            this.message = act_msg;
-            Platform.runLater( this );
-            if (mustWait)
-                while (this.message != null)
-                    try
-                    {
-                        wait();
-                    }
-                    catch (InterruptedException e)
-                    {
-                        e.printStackTrace();
-                    }
-        }
-    }
-
-    private final Map<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>> receivers = new TreeMap<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>>();
-
-    private final ClientPortTransmitter clientPortTransmitter;
-    private final ClientPortReceiver clientPortReceiver;
-    private final FXPusher fxpusher = new FXPusher();
-
-    
     public ClientPort()
     {
         clientPortTransmitter = new ClientPortTransmitter();
         clientPortReceiver = new ClientPortReceiver();
     }
+
 
     /**********************
      * this is called by the awt thread
@@ -241,24 +224,22 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
     }
 
     @Override
-    public void register( MessageBase message, IL_MessageBaseReceiver<? extends MessageBase> receiver )
+    public void register( MessageBase message, IL_Receiver receiver )
     {
-        DemuxCall.scan( receiver );
         MessageIdentityDisk md = message.getMessageIdentityDisk();
-        if (receivers.containsKey( md ))
+        if( receivers.containsKey( md ))
         {
-            receivers.get( md ).add( receiver );
+            receivers.get( md ).add(receiver);
         }
         else
         {
-            List<IL_MessageBaseReceiver<? extends MessageBase>> mrs = new LinkedList<>();
-            mrs.add( receiver );
+            List<IL_Receiver> mrs = new LinkedList<>();
+            mrs.add( receiver);
             receivers.put( md, mrs );
         }
     }
-
-    // intentionally package private
-    void incoming( ByteBuffer bb )
+    //intentionally package private
+    void incoming(ByteBuffer bb)
     {
         clientPortReceiver.incoming( bb );
     }
