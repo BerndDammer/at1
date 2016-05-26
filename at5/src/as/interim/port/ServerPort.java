@@ -19,7 +19,7 @@ import as.interim.message.IL_Publish;
 import as.interim.message.MessageBase;
 import as.interim.message.MessageIdentityDisk;
 import as.starter.LoggingInit;
-import as.starter.StaticConst;
+import as.starter.IC_StaticConst;
 import as.starter.StaticStarter;
 
 public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
@@ -30,7 +30,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
 
     private class ServerPortTransmitter extends SmallWorker
     {
-        private final ByteBuffer bbOutgoing = ByteBuffer.allocate( StaticConst.BB_SIZE );
+        private final ByteBuffer bbOutgoing = ByteBuffer.allocate( IC_StaticConst.BB_SIZE );
         private final ByteBufferOutputStream bbosOutgoing = new ByteBufferOutputStream();
 
         private boolean bufferFull = false;
@@ -90,7 +90,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
 
     private class ServerPortReceiver extends SmallWorker
     {
-        private final ByteBuffer bbIncoming = ByteBuffer.allocate( StaticConst.BB_SIZE );
+        private final ByteBuffer bbIncoming = ByteBuffer.allocate( IC_StaticConst.BB_SIZE );
         private final ByteBufferInputStream bbisIncoming = new ByteBufferInputStream();
 
         private boolean bufferFull = false;
@@ -134,7 +134,7 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
                 ois = new ObjectInputStream( bbisIncoming );
                 Object o = ois.readObject();
                 ois.close();
-                if (StaticConst.LOG_INTERIM)
+                if (IC_StaticConst.LOG_INTERIM)
                     logger.info( "read object : " + o.getClass().getCanonicalName() );
                 bufferFull = false;
                 notify();
@@ -152,14 +152,14 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
                     }
                     else
                     {
-                        if (StaticConst.LOG_INTERIM)
+                        if (IC_StaticConst.LOG_INTERIM)
                             logger.info( "message without receiver" );
                     }
 
                 }
                 else
                 {
-                    if (StaticConst.LOG_INTERIM)
+                    if (IC_StaticConst.LOG_INTERIM)
                         logger.info( "read suspicious object : " + o.getClass().getCanonicalName() );
                 }
             }

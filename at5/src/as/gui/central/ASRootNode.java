@@ -18,7 +18,7 @@ import as.gui.interfaces.IC_SelectionInterface;
 import as.gui.selectionbar.ExitButton;
 import as.gui.selectionbar.SelectionBar;
 import as.starter.LoggingInit;
-import as.starter.StaticConst;
+import as.starter.IC_StaticConst;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
@@ -41,9 +41,9 @@ public class ASRootNode extends GridPane implements IC_RootParent
 
     public ASRootNode()
     {
-    	if( StaticConst.SET_SIZE_INTERNAL)
+    	if( IC_StaticConst.SET_SIZE_INTERNAL)
     	{
-        	setPrefSize(StaticConst.SCREEN_WIDTH, StaticConst.SCREEN_HEIGHT);
+        	setPrefSize(IC_StaticConst.SCREEN_WIDTH, IC_StaticConst.SCREEN_HEIGHT);
     	}
         setBackground( new Background( new BackgroundFill( Color.OLIVEDRAB, CornerRadii.EMPTY, Insets.EMPTY ) ) );
         add( headerBar, 0, 0, GridPane.REMAINING, 1 );
@@ -76,7 +76,7 @@ public class ASRootNode extends GridPane implements IC_RootParent
         rc = new RowConstraints();
         // rc.setPercentHeight( 0 );
         rc.setVgrow( Priority.NEVER );
-        rc.setMinHeight( StaticConst.GU );
+        rc.setMinHeight( IC_StaticConst.GU );
         rows.add( rc );
         rc = new RowConstraints();
         // rc.setPercentHeight( 100 );

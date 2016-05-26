@@ -1,6 +1,6 @@
 package as.starter;
 
-public interface StaticConst
+public interface IC_StaticConst
 {
     public static final int GU = 64;
     //public static final int GU = 40;

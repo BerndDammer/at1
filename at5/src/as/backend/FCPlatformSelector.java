@@ -21,6 +21,7 @@ public class FCPlatformSelector extends Thread
         JAVASOUND, ASIO;
     }
 
+    private static final String TAG_PLATFORM = "Platform";
     private STATE state; 
     private final Logger logger = LoggingInit.get( this );
     private final List<String> names = new LinkedList<>();
@@ -30,7 +31,7 @@ public class FCPlatformSelector extends Thread
     private final MessagePlatformSelect receivePlatformSelect = new MessagePlatformSelect();
     private final MessagePlatformSelect transmittPlatformSelect = new MessagePlatformSelect();
     private final IC_SubTreeBase para;
-    private ChannelSelectorBase platformActivator = null;
+    private FCChannelSelectorBase platformActivator = null;
     
     // TODO crashes at invalid Platform string
     
@@ -54,7 +55,7 @@ public class FCPlatformSelector extends Thread
         {
             try
             {
-                String sPlatform = (String) para.get( "Platform" );
+                String sPlatform = (String) para.get( TAG_PLATFORM );
                 selected = SOUND_PLATFORM.valueOf( sPlatform );
                 state = STATE.HAS_PARA;
             }
@@ -118,7 +119,7 @@ public class FCPlatformSelector extends Thread
                 }
 
                 para.clear();
-                para.put( "Platform", selected.name() );
+                para.put( TAG_PLATFORM, selected.name() );
                 para.flush();
                 break;
             default:
@@ -135,10 +136,10 @@ public class FCPlatformSelector extends Thread
         switch( selected )
         {
             case ASIO:
-                platformActivator = new ChannelSelectorASIO();
+                platformActivator = new FCChannelSelectorASIO();
                 break;
             case JAVASOUND:
-                platformActivator = new ChannelSelectorJavasound();
+                platformActivator = new FCChannelSelectorJavasound();
                 break;
         }
         platformActivator.activeFromParent( true );

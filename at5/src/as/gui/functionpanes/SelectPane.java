@@ -8,12 +8,15 @@ import as.gui.interfaces.IC_FunctionPane;
 import as.gui.interfaces.IC_RootParent;
 import as.gui.selectionbar.SelectionButton;
 import as.interim.message.IL_MessageBaseReceiver;
+import as.interim.message.MessageBase;
+import as.interim.message.MessageChannelSelect;
 import as.interim.message.MessagePlatformSelect;
 import as.starter.LoggingInit;
 import as.starter.StaticStarter;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
@@ -21,7 +24,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class SelectPane extends GridPane implements IC_FunctionPane, IL_MessageBaseReceiver<MessagePlatformSelect>
+public class SelectPane extends GridPane implements IC_FunctionPane, IL_MessageBaseReceiver<MessageBase>, 
 {
     private final Logger logger = LoggingInit.get( this );
 
@@ -64,7 +67,9 @@ public class SelectPane extends GridPane implements IC_FunctionPane, IL_MessageB
     private final MessagePlatformSelect transmittPlatformSelect = new MessagePlatformSelect();
     private List<ToggleButton> platformButtons;
     private ToggleGroup platformGroup;
-    private VBox platformPanel=null;
+    private Node platformPanel = null;
+    private Node inputPanel=null;
+    private Node outputPanel=null;
 
     public SelectPane( IC_RootParent rootParent )
     {
@@ -99,7 +104,62 @@ public class SelectPane extends GridPane implements IC_FunctionPane, IL_MessageB
     }
 
     @Override
+    public void receiveMessage( MessageBase mb )
+    {
+        switch (mps.cmd)
+        {
+            case ANSWER_LIST:
+                if(platformPanel != null)
+                    getChildren().remove( platformPanel );
+                platformPanel = new VBox();
+                platformGroup = new ToggleGroup();
+                platformButtons = new LinkedList<>();
+                for (String pn : mps.names)
+                {
+                    PlatformButton tb = new PlatformButton( pn );
+                    platformButtons.add( tb );
+                    platformGroup.getToggles().add( tb );
+                    platformPanel.getChildren().add( tb );
+                    if( pn.equals( mps.selected ))
+                        tb.setSelected( true );
+                }
+                // TODO remove old
+                add( platformPanel, 0, 0 );
+                break;
+            default:
+                logger.warning( "Unexpected message cmd" );
+                break;
+        }
+    }
+    //@Override
     public void receiveMessage( MessagePlatformSelect mps )
+    {
+        switch (mps.cmd)
+        {
+            case ANSWER_LIST:
+                if(platformPanel != null)
+                    getChildren().remove( platformPanel );
+                platformPanel = new VBox();
+                platformGroup = new ToggleGroup();
+                platformButtons = new LinkedList<>();
+                for (String pn : mps.names)
+                {
+                    PlatformButton tb = new PlatformButton( pn );
+                    platformButtons.add( tb );
+                    platformGroup.getToggles().add( tb );
+                    platformPanel.getChildren().add( tb );
+                    if( pn.equals( mps.selected ))
+                        tb.setSelected( true );
+                }
+                // TODO remove old
+                add( platformPanel, 0, 0 );
+                break;
+            default:
+                logger.warning( "Unexpected message cmd" );
+                break;
+        }
+    }
+    public void receiveMessage( MessageChannelSelect mps )
     {
         switch (mps.cmd)
         {

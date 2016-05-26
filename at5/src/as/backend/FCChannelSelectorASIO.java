@@ -1,9 +1,9 @@
 package as.backend;
 
-public class ChannelSelectorASIO extends ChannelSelectorBase
+public class FCChannelSelectorASIO extends FCChannelSelectorBase
 {
 
-    public ChannelSelectorASIO()
+    public FCChannelSelectorASIO()
     {
     }
 
