@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.ByteBuffer;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -13,17 +12,17 @@ import java.util.logging.Logger;
 import as.interim.ByteBufferInputStream;
 import as.interim.ByteBufferOutputStream;
 import as.interim.message.DemuxCall;
-import as.interim.message.IL_DemultiplexerMessage;
+import as.interim.message.IC_DemultiplexerMessage;
 import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.IL_Publish;
 import as.interim.message.MessageBase;
 import as.interim.message.MessageIdentityDisk;
-import as.starter.LoggingInit;
 import as.starter.IC_StaticConst;
+import as.starter.LoggingInit;
 import as.starter.StaticStarter;
 import javafx.application.Platform;
 
-public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
+public class ClientPort extends PortBase implements IL_Publish, IC_DemultiplexerMessage
 {
     private final Logger logger = LoggingInit.get( this );
 
@@ -66,7 +65,8 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
                 oos = new ObjectOutputStream( bbosOutgoing );
                 oos.writeObject( message );
                 oos.close();
-                logger.info( "Message Size : " + bbOutgoing.position() );
+                if (IC_StaticConst.LOG_INTERIM)
+                    logger.info( "Message Size : " + bbOutgoing.position() );
                 bufferFull = true;
                 notify();
             }
@@ -82,7 +82,8 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
                 defaultWait();
             bbOutgoing.flip();
             StaticStarter.getServerPort().incoming( bbOutgoing );
-            logger.info( "Message downsend" );
+            if (IC_StaticConst.LOG_INTERIM)
+                logger.info( "Message downsend" );
             bufferFull = false;
             notify();
         }
@@ -222,7 +223,6 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
     private final ClientPortReceiver clientPortReceiver;
     private final FXPusher fxpusher = new FXPusher();
 
-    
     public ClientPort()
     {
         clientPortTransmitter = new ClientPortTransmitter();
@@ -238,23 +238,6 @@ public class ClientPort implements IL_Publish, IL_DemultiplexerMessage
     public void publish( MessageBase message )
     {
         clientPortTransmitter.publish( message );
-    }
-
-    @Override
-    public void register( MessageBase message, IL_MessageBaseReceiver<? extends MessageBase> receiver )
-    {
-        DemuxCall.scan( receiver );
-        MessageIdentityDisk md = message.getMessageIdentityDisk();
-        if (receivers.containsKey( md ))
-        {
-            receivers.get( md ).add( receiver );
-        }
-        else
-        {
-            List<IL_MessageBaseReceiver<? extends MessageBase>> mrs = new LinkedList<>();
-            mrs.add( receiver );
-            receivers.put( md, mrs );
-        }
     }
 
     // intentionally package private

@@ -1,6 +1,8 @@
 
 {
     "ChannelSelector":{
+        "Input":"Microphone Array (Realtek High ",
+        "Output":"Speakers / Headphones (Realtek High Definition Audio)"
     },
     "General":{
         "Date":"now",

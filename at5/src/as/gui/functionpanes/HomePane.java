@@ -59,7 +59,6 @@ public class HomePane extends GridPane implements IC_FunctionPane
     {
         if(active)
         {
-            logger.info("home activated");
             rootParent.getHeaderInterface().setTitle( "Home" );
         }
     }

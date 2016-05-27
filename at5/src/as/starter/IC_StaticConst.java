@@ -9,5 +9,7 @@ public interface IC_StaticConst
     public static final boolean SET_SIZE_INTERNAL = false;
     public static final int BB_SIZE = 65534;
     
-    public static final boolean LOG_INTERIM = true;
+    public static final boolean LOG_INTERIM = false;
+    public static final boolean LOG_AUDIO = false;
+    public static final boolean LOG_GUI = false;
 }

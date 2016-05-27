@@ -10,7 +10,6 @@ public class MessageChannelSelect extends MessageBase
     public String selectedInput;
     public String selectedOutput;
     public CMD cmd;
-    public String selected;
 
     public MessageChannelSelect()
     {
@@ -19,6 +18,6 @@ public class MessageChannelSelect extends MessageBase
 
     public enum CMD
     {
-        REQUEST_LIST, ANSWER_LIST, SET;
+        REQUEST_LIST, ANSWER_LIST, SET_INPUT, SET_OUTPUT;
     }
 }

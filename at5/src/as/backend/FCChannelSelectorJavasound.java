@@ -15,6 +15,7 @@ import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.MessageChannelSelect;
 import as.persistent.IC_SubTreeBase;
 import as.persistent.PersistentCentral;
+import as.starter.IC_StaticConst;
 import as.starter.LoggingInit;
 import as.starter.StaticStarter;
 
@@ -79,7 +80,9 @@ public class FCChannelSelectorJavasound extends FCChannelSelectorBase
         {
             StaticStarter.getServerPort().register( receiveChannelSelect, this );
             buildAvaiableLists();
-            if( checkPara()) activateChild();
+            pushInfo();
+            if (checkPara())
+                activateChild();
         }
         else // active false
         {
@@ -125,7 +128,8 @@ public class FCChannelSelectorJavasound extends FCChannelSelectorBase
             switch (getInputLineCount( mixer, inputLineInfos ))
             {
                 case 0:
-                    logger.info( name + " has no input lines" );
+                    if (IC_StaticConst.LOG_AUDIO)
+                        logger.info( name + " has no input lines" );
                     break;
                 case 1:
                     inputNames.add( name );
@@ -138,6 +142,7 @@ public class FCChannelSelectorJavasound extends FCChannelSelectorBase
             switch (getOutputLineCount( mixer, outputLineInfos ))
             {
                 case 0:
+                    if (IC_StaticConst.LOG_AUDIO)
                     logger.info( name + " has no outpu lines" );
                     break;
                 case 1:
@@ -202,32 +207,28 @@ public class FCChannelSelectorJavasound extends FCChannelSelectorBase
         switch (mcs.cmd)
         {
             case REQUEST_LIST:
-                transmittChannelSelect.inputNames = inputNames;
-                transmittChannelSelect.outputNames = outputNames;
-                transmittChannelSelect.selectedInput = selectedInput;
-                transmittChannelSelect.selectedOutput = selectedOutput;
-                transmittChannelSelect.cmd = MessageChannelSelect.CMD.ANSWER_LIST;
-                StaticStarter.getServerPort().publish( transmittChannelSelect );
+                pushInfo();
                 break;
-            case SET:
+            case SET_INPUT:
                 try
                 {
                     selectedInput = mcs.selectedInput;
+                }
+                catch (Exception e)
+                {
+                    logger.warning( "Error reading input" );
+                    selectedInput = null;
+                }
+                break;
+            case SET_OUTPUT:
+                try
+                {
                     selectedOutput = mcs.selectedOutput;
                 }
                 catch (Exception e)
                 {
-                    logger.warning( "Error reading platform" );
-                    selectedInput = null;
+                    logger.warning( "Error reading output" );
                     selectedOutput = null;
-                }
-                if( checkPara())
-                {
-                    para.clear();
-                    para.put( TAG_INPUT, selectedInput );
-                    para.put( TAG_OUTPUT, selectedOutput );
-                    para.flush();
-                    activateChild();
                 }
                 break;
             case ANSWER_LIST:
@@ -235,10 +236,29 @@ public class FCChannelSelectorJavasound extends FCChannelSelectorBase
                 logger.warning( "What do You want ?" );
                 break;
         }
+        if (checkPara())
+        {
+            para.clear();
+            para.put( TAG_INPUT, selectedInput );
+            para.put( TAG_OUTPUT, selectedOutput );
+            para.flush();
+            activateChild();
+        }
+
     }
-    
+
+    private void pushInfo()
+    {
+        transmittChannelSelect.inputNames = inputNames;
+        transmittChannelSelect.outputNames = outputNames;
+        transmittChannelSelect.selectedInput = selectedInput;
+        transmittChannelSelect.selectedOutput = selectedOutput;
+        transmittChannelSelect.cmd = MessageChannelSelect.CMD.ANSWER_LIST;
+        StaticStarter.getServerPort().publish( transmittChannelSelect );
+    }
+
     private void activateChild()
     {
-        
+
     }
 }

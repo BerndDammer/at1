@@ -17,8 +17,8 @@ import as.gui.interfaces.IC_RootParent;
 import as.gui.interfaces.IC_SelectionInterface;
 import as.gui.selectionbar.ExitButton;
 import as.gui.selectionbar.SelectionBar;
-import as.starter.LoggingInit;
 import as.starter.IC_StaticConst;
+import as.starter.LoggingInit;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
@@ -41,26 +41,26 @@ public class ASRootNode extends GridPane implements IC_RootParent
 
     public ASRootNode()
     {
-    	if( IC_StaticConst.SET_SIZE_INTERNAL)
-    	{
-        	setPrefSize(IC_StaticConst.SCREEN_WIDTH, IC_StaticConst.SCREEN_HEIGHT);
-    	}
+        if (IC_StaticConst.SET_SIZE_INTERNAL)
+        {
+            setPrefSize( IC_StaticConst.SCREEN_WIDTH, IC_StaticConst.SCREEN_HEIGHT );
+        }
         setBackground( new Background( new BackgroundFill( Color.OLIVEDRAB, CornerRadii.EMPTY, Insets.EMPTY ) ) );
         add( headerBar, 0, 0, GridPane.REMAINING, 1 );
 
         activePane = new HomePane( this );
         functionPanes.add( activePane );
-        functionPanes.add( new InfoPane(this) );
-        functionPanes.add( new SelectPane(this) );
-        functionPanes.add( new RunPane(this) );
-        functionPanes.add( new WebPane(this) );
-        functionPanes.add( new VideoPane(this) );
+        functionPanes.add( new InfoPane( this ) );
+        functionPanes.add( new SelectPane( this ) );
+        functionPanes.add( new RunPane( this ) );
+        functionPanes.add( new WebPane( this ) );
+        functionPanes.add( new VideoPane( this ) );
 
         add( activePane.getPane(), 0, 1, GridPane.REMAINING, 1 );
 
         add( functionBar, 0, 2, GridPane.REMAINING, 1 );
         functionBar.add( new ExitButton() );
-        
+
         defineStretching();
         activePane.setActive( true );
     }
@@ -69,7 +69,8 @@ public class ASRootNode extends GridPane implements IC_RootParent
     {
         //////////// give resizing hints
         ObservableList<RowConstraints> rows = getRowConstraints();
-        logger.info( "original row constraints size" + rows.size() );
+        if (IC_StaticConst.LOG_GUI)
+            logger.info( "original row constraints size" + rows.size() );
 
         RowConstraints rc;
 
@@ -88,7 +89,8 @@ public class ASRootNode extends GridPane implements IC_RootParent
         rows.add( rc );
 
         ObservableList<ColumnConstraints> ccs = getColumnConstraints();
-        logger.info( "original column constraints size" + ccs.size() );
+        if (IC_StaticConst.LOG_GUI)
+            logger.info( "original column constraints size" + ccs.size() );
         ColumnConstraints cc;
 
         cc = new ColumnConstraints();

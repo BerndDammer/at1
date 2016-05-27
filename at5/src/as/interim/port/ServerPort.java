@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import as.interim.ByteBufferInputStream;
 import as.interim.ByteBufferOutputStream;
 import as.interim.message.DemuxCall;
-import as.interim.message.IL_DemultiplexerMessage;
+import as.interim.message.IC_DemultiplexerMessage;
 import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.IL_Publish;
 import as.interim.message.MessageBase;
@@ -22,11 +22,10 @@ import as.starter.LoggingInit;
 import as.starter.IC_StaticConst;
 import as.starter.StaticStarter;
 
-public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
+public class ServerPort extends PortBase implements IL_Publish
 {
     private final Logger logger = LoggingInit.get( this );
 
-    private final Map<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>> receivers = new TreeMap<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>>();
 
     private class ServerPortTransmitter extends SmallWorker
     {
@@ -66,7 +65,8 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
                 oos = new ObjectOutputStream( bbosOutgoing );
                 oos.writeObject( message );
                 oos.close();
-                logger.info( "Message Size : " + bbOutgoing.position() );
+                if (IC_StaticConst.LOG_INTERIM)
+                    logger.info( "Message Size : " + bbOutgoing.position() );
                 bufferFull = true;
                 notify();
             }
@@ -82,7 +82,8 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
                 defaultWait();
             bbOutgoing.flip();
             StaticStarter.getClientPort().incoming( bbOutgoing );
-            logger.info( "Message downsend" );
+            if (IC_StaticConst.LOG_INTERIM)
+                logger.info( "Message downsend" );
             bufferFull = false;
             notify();
         }
@@ -195,20 +196,4 @@ public class ServerPort implements IL_Publish, IL_DemultiplexerMessage
         serverPortReceiver.incoming( bb );
     }
 
-    @Override
-    public void register( MessageBase message, IL_MessageBaseReceiver<? extends MessageBase> receiver )
-    {
-        DemuxCall.scan( receiver );
-        MessageIdentityDisk md = message.getMessageIdentityDisk();
-        if (receivers.containsKey( md ))
-        {
-            receivers.get( md ).add( receiver );
-        }
-        else
-        {
-            List<IL_MessageBaseReceiver<? extends MessageBase>> mrs = new LinkedList<>();
-            mrs.add( receiver );
-            receivers.put( md, mrs );
-        }
-    }
 }
