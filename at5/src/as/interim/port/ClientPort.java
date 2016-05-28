@@ -217,7 +217,6 @@ public class ClientPort extends PortBase implements IL_Publish, IC_Demultiplexer
         }
     }
 
-    private final Map<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>> receivers = new TreeMap<MessageIdentityDisk, List<IL_MessageBaseReceiver<? extends MessageBase>>>();
 
     private final ClientPortTransmitter clientPortTransmitter;
     private final ClientPortReceiver clientPortReceiver;

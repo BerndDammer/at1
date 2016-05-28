@@ -6,11 +6,10 @@ import java.util.logging.Logger;
 import as.gui.interfaces.IC_FunctionPane;
 import as.gui.interfaces.IC_RootParent;
 import as.gui.selectionbar.SelectionButton;
-import as.interim.message.IL_MessageBaseReceiver;
-import as.interim.message.MessageBase;
+import as.interim.message.DemuxReceiver;
+import as.interim.message.IF_DefaultReceiver;
 import as.interim.message.MessageChannelSelect;
 import as.interim.message.MessagePlatformSelect;
-import as.interim.message.DemuxReceiver;
 import as.starter.LoggingInit;
 import as.starter.StaticStarter;
 import javafx.event.ActionEvent;
@@ -22,7 +21,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class SelectPane extends GridPane implements IC_FunctionPane, IL_MessageBaseReceiver<MessageBase>
+//public class SelectPane extends GridPane implements IC_FunctionPane, IL_MessageBaseReceiver<MessageBase>
+public class SelectPane extends GridPane implements IC_FunctionPane, IF_DefaultReceiver
 {
     private final Logger logger = LoggingInit.get( this );
 
@@ -166,12 +166,12 @@ public class SelectPane extends GridPane implements IC_FunctionPane, IL_MessageB
         return this;
     }
 
-    @Override
-    @DemuxReceiver(used=false)
-    public void receiveMessage( MessageBase mb )
-    {
-        logger.severe( "Unexpected message cmd" );
-    }
+//    @Override
+//    @DemuxReceiver(used=false)
+//    public void receiveMessage( MessageBase mb )
+//    {
+//        logger.severe( "Unexpected message cmd" );
+//    }
 
     @DemuxReceiver(used=true)
     public void receiveMessage( MessagePlatformSelect mps )

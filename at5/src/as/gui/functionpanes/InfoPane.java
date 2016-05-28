@@ -46,13 +46,11 @@ public class InfoPane extends GridPane implements IC_FunctionPane
     @Override
     public void setActive( boolean active )
     {
-        logger.info( "Install switched" );
         if (active)
         {
             rootParent.getHeaderInterface().setTitle( "System Information" );
         }
     }
-
     /////////////////////// vector implements
     @Override
     public Pane getPane()
@@ -72,6 +70,7 @@ public class InfoPane extends GridPane implements IC_FunctionPane
 
     private void showFX( int x, int y )
     {
+        int counter = 0;
         add( new Label( "Conditional Features" ), x, y );
         y++;
         for (ConditionalFeature cf : ConditionalFeature.values())
@@ -79,6 +78,12 @@ public class InfoPane extends GridPane implements IC_FunctionPane
             add( new Label( cf.name() ), x, y );
             add( new Label( Platform.isSupported( cf ) ? "has" : "noo" ), x + 1, y );
             y++;
+            if(++counter > 12)
+            {
+                x+=2;
+                y = 0;
+                counter = 0;
+            }
         }
     }
 }
