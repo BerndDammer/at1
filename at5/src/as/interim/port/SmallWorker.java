@@ -2,7 +2,7 @@ package as.interim.port;
 
 import java.util.logging.Logger;
 
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 
 public class SmallWorker extends Thread
 {

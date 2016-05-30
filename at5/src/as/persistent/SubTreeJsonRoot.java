@@ -14,7 +14,7 @@ import javax.json.JsonWriter;
 import javax.json.JsonWriterFactory;
 import javax.json.stream.JsonGenerator;
 
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 
 class SubTreeJsonRoot extends SubTreeJson
 {

@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import as.gui.interfaces.IC_FunctionPane;
 import as.gui.interfaces.IC_RootParent;
 import as.gui.selectionbar.SelectionButton;
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;

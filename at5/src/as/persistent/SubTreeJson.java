@@ -8,7 +8,7 @@ import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import javax.json.JsonValue;
 
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 
 // package privat
 class SubTreeJson extends TreeMap<String, Object> implements IC_SubTreeBase

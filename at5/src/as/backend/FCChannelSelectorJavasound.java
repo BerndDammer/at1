@@ -13,10 +13,10 @@ import javax.sound.sampled.TargetDataLine;
 
 import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.MessageChannelSelect;
+import as.logging.LoggingInit;
 import as.persistent.IC_SubTreeBase;
 import as.persistent.PersistentCentral;
 import as.starter.IC_StaticConst;
-import as.starter.LoggingInit;
 import as.starter.StaticStarter;
 
 public class FCChannelSelectorJavasound extends FCChannelSelectorBase
@@ -87,6 +87,9 @@ public class FCChannelSelectorJavasound extends FCChannelSelectorBase
         else // active false
         {
             // fiewjfoew
+            int a = 1;
+            a--;
+            a = (a +1)/ a;
 
         }
     }

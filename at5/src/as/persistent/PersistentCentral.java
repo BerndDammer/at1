@@ -6,8 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.logging.Logger;
 
+import as.logging.LoggingInit;
 import as.persistent.templates.ResourceVector;
-import as.starter.LoggingInit;
 
 public class PersistentCentral
 {

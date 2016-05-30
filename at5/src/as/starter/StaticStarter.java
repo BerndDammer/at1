@@ -4,6 +4,7 @@ import as.backend.FCPlatformSelector;
 import as.gui.central.ASApplication;
 import as.interim.port.ClientPort;
 import as.interim.port.ServerPort;
+import as.logging.LoggingInit;
 import javafx.application.Application;
 
 // test: define main in interface ???

@@ -10,7 +10,7 @@ import as.interim.message.DemuxReceiver;
 import as.interim.message.IF_DefaultReceiver;
 import as.interim.message.MessageChannelSelect;
 import as.interim.message.MessagePlatformSelect;
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 import as.starter.StaticStarter;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

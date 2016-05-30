@@ -10,7 +10,7 @@ import as.interim.message.IC_DemultiplexerMessage;
 import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.MessageBase;
 import as.interim.message.MessageIdentityDisk;
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 
 public class PortBase implements  IC_DemultiplexerMessage
 {

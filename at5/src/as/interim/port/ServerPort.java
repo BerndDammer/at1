@@ -18,7 +18,7 @@ import as.interim.message.IL_MessageBaseReceiver;
 import as.interim.message.IL_Publish;
 import as.interim.message.MessageBase;
 import as.interim.message.MessageIdentityDisk;
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 import as.starter.IC_StaticConst;
 import as.starter.StaticStarter;
 

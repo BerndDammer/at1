@@ -1,4 +1,4 @@
-package as.starter;
+package as.logging;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -28,12 +28,15 @@ public class LoggingInit implements PropertyChangeListener
         LogManager.getLogManager().addPropertyChangeListener( new LoggingInit() );
         LogManager.getLogManager().reset();
 
+        dumpLogger();
+        
         Enumeration<String> es = LogManager.getLogManager().getLoggerNames();
         while (es.hasMoreElements())
         {
             boolean doFileHandler = false;
             String fhn = null;
             String loggerName = es.nextElement();
+            Logger logger = Logger.getLogger( loggerName );
             if (loggerName.equals( Logger.GLOBAL_LOGGER_NAME ))
             {
                 fhn = filename + "_G";
@@ -45,25 +48,15 @@ public class LoggingInit implements PropertyChangeListener
                 fhn = filename;
                 doFileHandler = true;
             }
-            LoggingInit.messageOutsideLogger( "(!§$)Logger Name : " + loggerName );
-            Logger logger = Logger.getLogger( loggerName );
+            if( doFileHandler )
             {
-                Logger parent = logger.getParent();
-                if (parent == null)
-                {
-                    LoggingInit.messageOutsideLogger( "(!§$)This Logger has no parent" );
-                }
-                else
-                {
-                    LoggingInit.messageOutsideLogger( "(!§$)Parent Logger : <" + parent.getName() + ">" );
-                }
-            }
-            {
-                logger.setLevel( LEVEL );
+                //logger.setLevel( LEVEL );
                 FileHandler fh = null;
                 ConsoleHandler ch = new ConsoleHandler();
-                ch.setLevel( LEVEL );
+                //ch.setLevel( LEVEL );
                 ch.setFormatter( new SingleLineOrThrowFormatter() );
+                ch.setFilter( new AlwaysThrowFilter(LEVEL) );
+                ch.setLevel( Level.ALL );
                 logger.addHandler( ch );
                 if( doFileHandler)
                 {
@@ -77,19 +70,22 @@ public class LoggingInit implements PropertyChangeListener
                         throwOutsideLogger( e );
                         return;
                     }
-                    fh.setLevel( LEVEL );
+                    //fh.setLevel( LEVEL );
                     fh.setFormatter( new SingleLineOrThrowFormatter() );
+                    fh.setFilter( new AlwaysThrowFilter(LEVEL) );
+                    fh.setLevel( Level.ALL );
                     logger.addHandler( fh );
                 }
+                logger.setLevel( Level.ALL );
             }
         }
         {
             // lower some internal logger
             //Logger.getLogger( "sun" ).setLevel( Level.INFO );
             //Logger.getLogger( "java.awt" ).setLevel( Level.INFO );
-            Logger.getLogger( "sun" ).setLevel( Level.INFO );
-            Logger.getLogger( "javafx" ).setLevel( Level.INFO );
-            Logger.getLogger( "com.sun" ).setLevel( Level.INFO );
+            //Logger.getLogger( "sun" ).setLevel( Level.INFO );
+            //Logger.getLogger( "javafx" ).setLevel( Level.INFO );
+            //Logger.getLogger( "com.sun" ).setLevel( Level.INFO );
         }
     }
 
@@ -153,6 +149,28 @@ public class LoggingInit implements PropertyChangeListener
         }
     }
 
+    private static final void dumpLogger()
+    {
+        Enumeration<String> es = LogManager.getLogManager().getLoggerNames();
+        while (es.hasMoreElements())
+        {
+            String loggerName = es.nextElement();
+            LoggingInit.messageOutsideLogger( "(!§$)Logger Name : " + loggerName );
+            Logger logger = Logger.getLogger( loggerName );
+            {
+                Logger parent = logger.getParent();
+                if (parent == null)
+                {
+                    LoggingInit.messageOutsideLogger( "(!§$)This Logger has no parent" );
+                }
+                else
+                {
+                    LoggingInit.messageOutsideLogger( "(!§$)Parent Logger : <" + parent.getName() + ">" );
+                }
+            }
+        }
+    }
+    
     //////////////////////// calls before logging init
     public static void messageOutsideLogger( String message )
     {

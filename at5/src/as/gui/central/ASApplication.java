@@ -2,7 +2,7 @@ package as.gui.central;
 
 import java.util.logging.Logger;
 
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 import as.starter.IC_StaticConst;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;

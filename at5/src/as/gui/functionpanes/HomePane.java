@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import as.gui.interfaces.IC_FunctionPane;
 import as.gui.interfaces.IC_RootParent;
 import as.gui.selectionbar.HomeButton;
-import as.starter.LoggingInit;
+import as.logging.LoggingInit;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
