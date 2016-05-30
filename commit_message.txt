@@ -1,1 +1,2 @@
-throw log
+log summary
+
