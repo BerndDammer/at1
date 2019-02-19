@@ -65,6 +65,11 @@
 
 		<javac srcdir="src" destdir="bin" debug="on" includeantruntime="0">
 			<include name="as/starter/StaticStarter.java" />
+			<classpath>
+				<pathelement location="lib/javax.json-1.0.4.jar" />
+				<pathelement location="lib/jasio/JAsioHost.jar" />
+			</classpath>
+
 		</javac>
 
 		<patternset id="non.jar.merge">
@@ -83,6 +88,14 @@
 			<fileset dir="src">
 				<include name="buildnumber/${projectname}.buildnumber" />
 			</fileset>
+			<zipfileset src="lib/javax.json-1.0.4.jar" includes="**/*.class">
+				<patternset id="non.jar.merge" />
+				<exclude name="META_INF/*" />
+			</zipfileset>
+			<zipfileset src="lib/jasio/JAsioHost.jar" includes="**/*.class">
+				<patternset id="non.jar.merge" />
+				<exclude name="META_INF/*" />
+			</zipfileset>
 			<manifest>
 				<attribute name="Main-Class" value="as.starter.StaticStarter" />
 			</manifest>
