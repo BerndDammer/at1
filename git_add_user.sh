@@ -1,3 +1,4 @@
-git config user.name susi
-git config user.email susi@blackhole.de
+git config user.name   SuSi
+git config user.email  SuSi@web.de
 git config push.default simple 
+

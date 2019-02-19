@@ -1,3 +1,3 @@
-git push --mirror
+git pull
 echo press key
 read
