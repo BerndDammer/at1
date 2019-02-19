@@ -4,3 +4,4 @@ echo "-------------------------------"
 echo "commit message ok ?"
 read
 git commit --file=commit_message.txt
+read
