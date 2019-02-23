@@ -25,7 +25,7 @@ public class LoggingInit implements PropertyChangeListener
     
     public static final void forceClassLoadingAndSetLogName( String filename )
     {
-        LogManager.getLogManager().addPropertyChangeListener( new LoggingInit() );
+        //LogManager.getLogManager().aaddPropertyChangeListener( new LoggingInit() );
         LogManager.getLogManager().reset();
 
         dumpLogger();
