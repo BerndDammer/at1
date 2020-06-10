@@ -1,2 +1,2 @@
 
-../eclipse_x64/eclipse -data . -vm ../jdk_x64/bin/java 
+/work/bin/eclipse/eclipse -data . -vm /work/bin/jdk_win64/bin/java 

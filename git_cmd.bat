@@ -1,2 +1,1 @@
-
-..\git\git-bash
+\work\bin\git\git-cmd

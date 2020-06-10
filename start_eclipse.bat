@@ -1,1 +1,1 @@
-start ..\eclipse_win64\eclipse -data . -vm \jdk_win64\bin
+start \work\bin\eclipse\eclipse -data . -vm \work\bin\jdk_win64\bin
