@@ -15,7 +15,8 @@ import function.IPlayer;
 
 public class PlatformPlayerJavaSound implements Runnable, IPlayer
 {
-	private static final int SAMPLES_PER_BUFFER = 48000;
+	//private static final int SAMPLES_PER_BUFFER = 48000;
+	private static final int SAMPLES_PER_BUFFER = 300;
 	private static final int READ_BUFFER_SIZE = SAMPLES_PER_BUFFER * 4;
 	private static final int WRITE_BUFFER_SIZE = SAMPLES_PER_BUFFER * 4;
 
